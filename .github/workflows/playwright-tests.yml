@@ -24,8 +24,8 @@ jobs:
 
       - name: Update .env values
         run: |
-          sed -i "s/^EMAIL=.*/EMAIL=${{ secrets.EMAIL }}/" .env
-          sed -i "s/^PASSWORD=.*/PASSWORD=${{ secrets.PASSWORD }}/" .env
+          echo "EMAIL=${{ secrets.EMAIL }}" > .env
+          echo "PASSWORD=${{ secrets.PASSWORD }}" > .env
     
       - name: Install dependencies
         run: npm ci
