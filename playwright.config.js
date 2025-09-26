@@ -5,7 +5,7 @@ export default defineConfig({
     reporter: 'html',
     use: {
         baseURL: 'https://id.atlassian.com',
-        headless: false,
+        headless: true,
         screenshot: 'only-on-failure', 
     },
     projects: [
