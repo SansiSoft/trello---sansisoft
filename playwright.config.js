@@ -5,7 +5,7 @@ export default defineConfig({
   reporter: 'html',
   use: {
     baseURL: 'https://trello.com',
-    headless: false,
+    headless: true,
     screenshot: 'only-on-failure',
   },
   projects: [
