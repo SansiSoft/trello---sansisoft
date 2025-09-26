@@ -16,7 +16,7 @@ const test = base.extend({
     ]);
 
     await trelloPage.waitForLoadState();
-    await expect(trelloPage).toHaveTitle(/Trello/);
+    await expect(trelloPage).toHaveTitle(/Trello/, { timeout: 20000 });
 
     // Pasar la página de Trello al test
     await use(trelloPage);
