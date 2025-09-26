@@ -1,19 +1,27 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-    testDir: 'tests',
-    reporter: 'html',
-    use: {
-        baseURL: 'https://id.atlassian.com',
-        headless: false,
-        screenshot: 'only-on-failure', 
+  testDir: './tests',
+  reporter: 'html',
+  use: {
+    baseURL: 'https://trello.com',
+    headless: false,
+    screenshot: 'only-on-failure',
+  },
+  projects: [
+    /*{
+      name: 'setup',
+      testMatch: /.*auth\.setup\.js/, 
+    },*/
+    {
+      name: 'chromium',
+      use: { 
+        ...devices['Desktop Chrome'],
+        storageState: './data/storageState.json',
+      },
+      //dependencies: ['setup'],
     },
-    projects: [
-        {
-            name: 'chromium',
-            use: { ...devices['Desktop Chrome'] },
-        },
-    ],
-    timeout: 60000, 
+  ],
+  timeout: 60000,
 });
 
