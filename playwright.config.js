@@ -1,19 +1,32 @@
 import { defineConfig, devices } from '@playwright/test';
+import fs from 'fs';
+
+// Verificar si existe el storageState
+const storageStatePath = './data/storageState.json';
+const storageStateExists = fs.existsSync(storageStatePath);
 
 export default defineConfig({
-    testDir: 'tests',
-    reporter: 'html',
-    use: {
-        baseURL: 'https://id.atlassian.com',
-        headless: true,
-        screenshot: 'only-on-failure', 
+  testDir: './tests',
+  reporter: 'html',
+  use: {
+    baseURL: 'https://trello.com',
+    headless: true,
+    screenshot: 'only-on-failure',
+  },
+  projects: [
+    ...(storageStateExists ? [] : [{
+      name: 'setup',
+      testMatch: /.*\.setup\.js$/, 
+    }]),
+    {
+      name: 'chromium',
+      use: { 
+        ...devices['Desktop Chrome'],
+        ...(storageStateExists ? { storageState: storageStatePath } : {}),
+      },
+      ...(storageStateExists ? {} : { dependencies: ['setup'] }),
     },
-    projects: [
-        {
-            name: 'chromium',
-            use: { ...devices['Desktop Chrome'] },
-        },
-    ],
-    timeout: 60000, 
+  ],
+  timeout: 60000,
 });
 
