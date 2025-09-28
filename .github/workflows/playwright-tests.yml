@@ -2,16 +2,23 @@ name: Playwright Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: 
+      - main
+      - dev
   pull_request:
-    branches: [ main ]
+    branches: 
+      - main
+      - dev
   schedule:
     - cron: "0 */6 * * *"       # Se ejecuta cada 6 horas (00:00, 06:00, 12:00, 18:00 UTC)
-  workflow_dispatch:             # Permite ejecución manual desde la pestaña Actions
-  
+  workflow_dispatch:             # Permite ejecutar el workflow manualmente
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    # TODO: Pending to check if this is faster to add more browsers
+    #container: 
+    #  image: mcr.microsoft.com/playwright:v1.55.1-jammy 
     
     steps:
       - name: Checkout repository
@@ -28,13 +35,13 @@ jobs:
           echo "PASSWORD=${{ secrets.PASSWORD }}" > .env
     
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Install Playwright Chromium
-        run: npx playwright install chromium
+      - name: Install Playwright Browsers
+        run: npx playwright install chromium --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test --reporter=line
+        run: npx playwright test
 
       - name: Upload Playwright HTML report
         if: always() 
@@ -51,3 +58,8 @@ jobs:
           name: test-results
           path: test-results
           retention-days: 7
+
+          # CMD to test locally
+          # act workflow_dispatch -j test --artifact-server-path ./mis-artifacts-ui -P ubuntu-latest=node:20-bullseye-slim
+
+          
