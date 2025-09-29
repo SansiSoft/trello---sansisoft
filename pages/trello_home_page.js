@@ -25,6 +25,23 @@ class TrelloHomePage {
         await this.page.fill(this.titleBoardInput, titleBoard);
         await this.page.click(this.submitCreateBoardBtn);
     }
+
+
+    async deleteBoard() {
+
+        await this.page.locator('[aria-label="Show menu"]').click();
+        await this.page.getByRole('button', { name: /close board/i }).click();
+        await this.page.getByRole('button', { name: /^close$/i }).click();
+
+        const deleteBtn = this.page.getByRole('button', { name: /delete|eliminar/i });
+        if (await deleteBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
+            await deleteBtn.click();
+            const confirmDelete = this.page.getByRole('button', { name: /^delete$|^eliminar$/i });
+            if (await confirmDelete.isVisible({ timeout: 3000 }).catch(() => false)) {
+                await confirmDelete.click();
+            }
+        }
+    }
 }
 
 module.exports = { TrelloHomePage };
