@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Editar el nombre de una lista exitosamente",
+    "priority": "Alta",
+    "description": "Verificar que un usuario pueda editar el nombre de una lista existente y que el nuevo nombre se muestre correctamente en el tablero.",
+    "newName": "FAKER:listName"
+  },
+  {
+    "id": 2,
+    "title": "Editar el nombre de una lista con texto vacío",
+    "priority": "Alta",
+    "description": "Comprobar que el sistema no permita dejar el nombre de la lista vacío y que muestre el valor anterior o un mensaje de error según el comportamiento esperado.",
+    "newName": "EMPTY"
+  },
+  {
+    "id": 3,
+    "title": "Editar el nombre de una lista con caracteres especiales",
+    "priority": "Media",
+    "description": "Validar que el sistema acepte nombres de lista con caracteres especiales (ej: !@#$% Lista ^&*()) y se muestre correctamente en la UI.",
+    "newName": "SPECIAL:symbols"
+  },
+  {
+    "id": 4,
+    "title": "Editar el nombre de una lista con nombre muy largo",
+    "priority": "Media",
+    "description": "Verificar que al ingresar un nombre de lista mayor a 512 caracteres (límite del campo), el sistema no permita sobrepasar el máximo y trunque o bloquee la entrada.",
+    "newName": "REPEAT:L:600"
+  }
+]
