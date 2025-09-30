@@ -33,6 +33,8 @@ jobs:
         run: |
           echo "EMAIL=${{ secrets.EMAIL }}" > .env
           echo "PASSWORD=${{ secrets.PASSWORD }}" > .env
+          echo "TRELLO_KEY=${{ secrets.TRELLO_KEY }}" > .env
+          echo "TRELLO_TOKEN=${{ secrets.TRELLO_TOKEN }}" > .env
     
       - name: Install dependencies
         run: npm install
