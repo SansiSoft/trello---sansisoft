@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "dotenv": "^17.2.2",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.1"
+  }
+}

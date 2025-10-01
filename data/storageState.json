@@ -1,0 +1,262 @@
+{
+  "cookies": [
+    {
+      "name": "auth.csrf",
+      "value": "s%3AaPuGmWfa7YFaT5O1HUhOoGvll6QCxCMV5fNNOdiZJ0g%3D.olZNMTJCmVihFE6yfTw5R8xsx%2FOxAN5Xz1oK9k8UVDo",
+      "domain": "trello.com",
+      "path": "/auth/callback",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "dsc",
+      "value": "5097f6a609bf4e73f565469e4c72d20b3ae73b57f60d01932a64b6ead0fd6f4d",
+      "domain": "trello.com",
+      "path": "/",
+      "expires": 1760291121.490217,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "atlassian.account.ffs.id",
+      "value": "dd9dbe46-f692-41e8-88bb-ce66560fc6bf",
+      "domain": "id.atlassian.com",
+      "path": "/",
+      "expires": 1790617523.021569,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "atlassian.account.xsrf.token",
+      "value": "32e54a8b-d84b-426a-83c6-60d2237c72d1",
+      "domain": "id.atlassian.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%2277523643-605c-43aa-93c1-7873826fda8c%22",
+      "domain": ".atlassian.com",
+      "path": "/",
+      "expires": 1790617523,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cuid",
+      "value": "40d416ae69c44f179db34d7857b57eb4",
+      "domain": ".atlassian.com",
+      "path": "/",
+      "expires": 1793641523,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cuid",
+      "value": "40d416ae69c44f179db34d7857b57eb4",
+      "domain": ".id.atlassian.com",
+      "path": "/",
+      "expires": 1793641523,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "atlassian.account.xsrf.token",
+      "value": "f2b5762d-3f97-4090-b725-ebef33c048e0",
+      "domain": "trello.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cloud.session.token",
+      "value": "eyJraWQiOiJzZXNzaW9uLXNlcnZpY2UvcHJvZC0xNzM4Nzk0ODc0IiwiYWxnIjoiUlMyNTYifQ.eyJhc3NvY2lhdGlvbnMiOltdLCJzdWIiOiI3MTIwMjA6NzgwODcxNDQtZjdhMi00OGI2LTk0OTQtMDZkNGIzNTljMmIyIiwiZW1haWxEb21haW4iOiJnb29nbGVncm91cHMuY29tIiwiaW1wZXJzb25hdGlvbiI6W10sImNyZWF0ZWQiOjE3NTkwODE1MjUsInJlZnJlc2hUaW1lb3V0IjoxNzU5MDgyMTI1LCJ2ZXJpZmllZCI6dHJ1ZSwiaXNzIjoic2Vzc2lvbi1zZXJ2aWNlIiwic2Vzc2lvbklkIjoiNjc4YTdjNmUtNzZhMi00MTdmLTk0ZDQtY2QwNjkxOTBiNzRlIiwic3RlcFVwcyI6W10sImF1ZCI6ImF0bGFzc2lhbiIsIm5iZiI6MTc1OTA4MTUyNSwiZXhwIjoxNzYxNjczNTI1LCJpYXQiOjE3NTkwODE1MjUsImVtYWlsIjoic2Fuc2lzb2Z0QGdvb2dsZWdyb3Vwcy5jb20iLCJqdGkiOiI2NzhhN2M2ZS03NmEyLTQxN2YtOTRkNC1jZDA2OTE5MGI3NGUifQ.RmYwtpjZdQ1IWjSTLnjXg5rTrjZ_Gdr6z1kl4moBY8IQk_Fgyuu6oyunJdA8JDO-5CmQHdZH5T_o7J6dR6vTgidQG_VZul_aWKobNMg5UwS5a9V1eB1-ufDqRxcW96CR8WxpFTX8nREEuzu_CNlZ0l-qmbqm0aWK7guB5NIMvgNB1nPWsyCutwiEUtsQ6vAPOKorkp3H9lmF5W1DRGQVik0eDEYrsi5u7wV5pS0zPJZWoQQ0YCaXi0mKfOCxgZ_tq2aln3iWCa51O0lYfGMl1ZgoxALb-JYW_waQCJPGxlyf6HaR64v_W45V-LOeGcTXtBEWs4ZZTbcmtTKLKL3IKA",
+      "domain": "id.atlassian.com",
+      "path": "/",
+      "expires": 1761673525.811292,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__aid_user_id",
+      "value": "712020%3A78087144-f7a2-48b6-9494-06d4b359c2b2",
+      "domain": ".atlassian.com",
+      "path": "/",
+      "expires": 1761673525.811374,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cloud.session.token",
+      "value": "eyJraWQiOiJzZXNzaW9uLXNlcnZpY2UvcHJvZC0xNzM4Nzk0ODc0IiwiYWxnIjoiUlMyNTYifQ.eyJhc3NvY2lhdGlvbnMiOltdLCJzdWIiOiI3MTIwMjA6NzgwODcxNDQtZjdhMi00OGI2LTk0OTQtMDZkNGIzNTljMmIyIiwiZW1haWxEb21haW4iOiJnb29nbGVncm91cHMuY29tIiwiaW1wZXJzb25hdGlvbiI6W10sImNyZWF0ZWQiOjE3NTkwODE1MjUsInJlZnJlc2hUaW1lb3V0IjoxNzU5MDgyMTI1LCJ2ZXJpZmllZCI6dHJ1ZSwiaXNzIjoic2Vzc2lvbi1zZXJ2aWNlIiwic2Vzc2lvbklkIjoiNjc4YTdjNmUtNzZhMi00MTdmLTk0ZDQtY2QwNjkxOTBiNzRlIiwic3RlcFVwcyI6W10sImF1ZCI6ImF0bGFzc2lhbiIsIm5iZiI6MTc1OTA4MTUyNSwiZXhwIjoxNzYxNjczNTI1LCJpYXQiOjE3NTkwODE1MjUsImVtYWlsIjoic2Fuc2lzb2Z0QGdvb2dsZWdyb3Vwcy5jb20iLCJqdGkiOiI2NzhhN2M2ZS03NmEyLTQxN2YtOTRkNC1jZDA2OTE5MGI3NGUifQ.RmYwtpjZdQ1IWjSTLnjXg5rTrjZ_Gdr6z1kl4moBY8IQk_Fgyuu6oyunJdA8JDO-5CmQHdZH5T_o7J6dR6vTgidQG_VZul_aWKobNMg5UwS5a9V1eB1-ufDqRxcW96CR8WxpFTX8nREEuzu_CNlZ0l-qmbqm0aWK7guB5NIMvgNB1nPWsyCutwiEUtsQ6vAPOKorkp3H9lmF5W1DRGQVik0eDEYrsi5u7wV5pS0zPJZWoQQ0YCaXi0mKfOCxgZ_tq2aln3iWCa51O0lYfGMl1ZgoxALb-JYW_waQCJPGxlyf6HaR64v_W45V-LOeGcTXtBEWs4ZZTbcmtTKLKL3IKA",
+      "domain": "trello.com",
+      "path": "/",
+      "expires": 1761673525.99092,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "loggedIn",
+      "value": "1",
+      "domain": ".trello.com",
+      "path": "/",
+      "expires": 1761673526.265612,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "aaId",
+      "value": "712020%3A78087144-f7a2-48b6-9494-06d4b359c2b2",
+      "domain": "trello.com",
+      "path": "/",
+      "expires": 1761673526.266474,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "idMember",
+      "value": "68d343d1804221008d6d5290",
+      "domain": "trello.com",
+      "path": "/",
+      "expires": 1790617526.266319,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "lang",
+      "value": "en-US",
+      "domain": "trello.com",
+      "path": "/",
+      "expires": 1761673526.266104,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "hasAccount",
+      "value": "atlassian",
+      "domain": "trello.com",
+      "path": "/",
+      "expires": 1761673526.266627,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cid",
+      "value": "r6vvBoF0WuOy51Mf6sD0TwJeMsePB5dUBTeWIG9Ooml5A-wWNw_RSRI7xBkmvtrL0RbCfAkF0A4RO5VLfGQT7lY-qNoDM4VFAcC-LExUoCBtV7tmNBXqaSlj63g6G5Ygb06iaXkD7BY3D_NpQEuqJWRsvytKUq5mNAjtZzIN-mFKc44ETRf6JWhQv2lGXrkibhL6CmlJtSRkFOt9MRXqZzEV6mlSWrwoc1L1fDIM9Ho3V9JwOF7semQOuD4CPFFJlTPrfTlZv3wxCUYKQHWdBUQb8gBvT78lLRuXLHJa-gBvT78lKWnzaVRznmlGSbs5aVK5OiEN6HkhE40BTRudHTMS9mlOS78nRnf6fS8N8-0XCuhmMgr1eDgN42UhA-B5MQHqeSFrl-YJO29oxIsKggHo25SCAz1J6jgtFXHtpZP-O9KJATvaSQE72kkBO9pJATvaSQE72kkBO9pJATvaSQE72kkBe5oJQXuaSQE72kkBO9pJATvaCQE72kkBO9pJATvatg",
+      "domain": ".trello.com",
+      "path": "/",
+      "expires": 1793641527.354235,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://trello.com",
+      "localStorage": [
+        {
+          "name": "memberCohorts-68d343d1804221008d6d5290",
+          "value": "{\"cohorts\":{\"userCohortPersonalProductivity\":\"ga\"}}"
+        },
+        {
+          "name": "workspaceNavigation-68d343d1804221008d6d5290",
+          "value": "{\"expanded\":true,\"expandedViewStatus\":\"visible-transition-complete\"}"
+        },
+        {
+          "name": "dynamicConfigUserData",
+          "value": "{\"lastUpdated\":1759081528239,\"key\":\"68d343d1804221008d6d5290\",\"data\":{\"clientVersion\":\"build-228934\",\"emailDomain\":\"googlegroups.com\",\"hasBC\":true,\"hasMultipleEmails\":false,\"head\":\"build\",\"idEnterprises\":[],\"idOrgs\":[\"68d343e7c4cc3baf39a82d17\",\"68d34c2fec23ec5aae3d9232\"],\"isClaimable\":true,\"inEnterprise\":false,\"orgs\":[\"[Redacted]\"],\"signupDate\":1758675921000,\"premiumFeatures\":[\"activity\",\"additionalBoardBackgrounds\",\"additionalStickers\",\"advancedChecklists\",\"aiQuickCapture\",\"atlassianIntelligence\",\"boardExport\",\"butlerBC\",\"butlerPremium\",\"collapsibleLists\",\"csvExport\",\"customBoardBackgrounds\",\"customEmoji\",\"customStickers\",\"deactivated\",\"export\",\"goldMembers\",\"inviteBoard\",\"inviteOrg\",\"isBc\",\"isPremium\",\"largeAttachments\",\"listColors\",\"multiBoardGuests\",\"observers\",\"paidCorePlugins\",\"plugins\",\"premiumMirrorCards\",\"privateTemplates\",\"readSecrets\",\"removal\",\"restrictVis\",\"savedSearches\",\"shortExportHistory\",\"starCounts\",\"superAdmins\",\"tags\",\"views\",\"workspaceViews\"],\"products\":[110],\"version\":228934}}"
+        },
+        {
+          "name": "home_68d343d1804221008d6d5290_last_tab_2",
+          "value": "\"/u/sansisoft/boards\""
+        },
+        {
+          "name": "awc.session.id",
+          "value": "1759081528030"
+        },
+        {
+          "name": "developerConsoleState",
+          "value": "{\"lastActiveTab\":0,\"developerConsoleOpen\":false,\"developerConsoleEnabled\":false,\"plainTextEditor\":false,\"disableEditorViewRendering\":false,\"showModelIds\":false,\"useTrelloTimingHeader\":false,\"logConnectionInformation\":false,\"operationNameInUrl\":false}"
+        },
+        {
+          "name": "serverTimeDelta",
+          "value": "-157"
+        },
+        {
+          "name": "memberEnterpriseData-68d343d1804221008d6d5290-f5e89a12fa7aa1a021f6fc50c7014c9bd4db058d",
+          "value": "{\"idEnterprises\":[],\"inEnterprise\":false,\"inRealEnterprise\":false,\"hasEnterpriseDomain\":false}"
+        },
+        {
+          "name": "locale-68d343d1804221008d6d5290",
+          "value": "\"en-US\""
+        },
+        {
+          "name": "global-theme",
+          "value": "{\"colorMode\":\"auto\",\"effectiveColorMode\":\"light\"}"
+        },
+        {
+          "name": "dynamicConfigClient",
+          "value": "{\"timeStamp\":1759081528515,\"config\":\"{\\\"trello_web_forcefully_reload_to_exact_version\\\":{\\\"value\\\":0},\\\"trello_web_enable_ufo\\\":{\\\"value\\\":true},\\\"trello_web_enable_web_vitals\\\":{\\\"value\\\":true},\\\"trello_web_max_first_active_delay\\\":{\\\"value\\\":2000},\\\"trello_web_billing_down_for_maintenance\\\":{\\\"value\\\":false},\\\"trello_web_pp_ga_rollout_enterprises\\\":{\\\"value\\\":\\\"\\\"},\\\"trello_web_sentry_perf_monitoring\\\":{\\\"value\\\":true},\\\"mirror_cards_ent_blocklist\\\":{\\\"value\\\":[\\\"55c389e4e94b6c5acb767b23\\\",\\\"61e9ee0e55c98e00dcbbd7ee\\\"]},\\\"butler_ent_admin_only_allowlist\\\":{\\\"value\\\":[\\\"55c389e4e94b6c5acb767b23\\\"]},\\\"trello_web_atlassian_team\\\":{\\\"value\\\":false},\\\"trello_web_max_first_idle_delay\\\":{\\\"value\\\":60000},\\\"trello_web_native_current_board_info\\\":{\\\"value\\\":true},\\\"trello_web_inbox_native_graphql_provisioning\\\":{\\\"value\\\":true},\\\"trello_enterprise_planner_blocklist\\\":{\\\"value\\\":[\\\"55c389e4e94b6c5acb767b23\\\",\\\"5fd8cfc9785a2025b182dd74\\\",\\\"5d6554cdf5c66c171ba2c969\\\",\\\"6470cba78a1d7134083eb509\\\",\\\"5d164d8ed0d7f641a591e34a\\\",\\\"626826476aa73d0fb5802504\\\",\\\"642b0d54c8e597ba45f55475\\\"]},\\\"trello_web_take_trello_offline\\\":{\\\"value\\\":false},\\\"trello_web_pp_ga_rollout_nudge_show_delay\\\":{\\\"value\\\":0},\\\"trello_web_native_member_boards\\\":{\\\"value\\\":true},\\\"trello_web_update_nudge_time_interval\\\":{\\\"value\\\":604800000},\\\"trello_web_error_handling_rrs\\\":{\\\"value\\\":false},\\\"trello_web_apollo_cache_hydrator_metrics\\\":{\\\"value\\\":false},\\\"trello_web_passively_reload_to_minimum_version\\\":{\\\"value\\\":0},\\\"trello_web_ufo_sampling_rate\\\":{\\\"value\\\":25},\\\"trello_web_google_tag_manager\\\":{\\\"value\\\":true},\\\"trello_web_disconnect_active_clients\\\":{\\\"value\\\":false},\\\"trello_web_log_connection_information\\\":{\\\"value\\\":false},\\\"trello_web_mirror_cards_quickload\\\":{\\\"value\\\":true},\\\"trello_web_somethings_wrong\\\":{\\\"value\\\":false},\\\"trello_web_apollo_read_write_metrics\\\":{\\\"value\\\":false}}\",\"isFetching\":false}"
+        },
+        {
+          "name": "ajs_anonymous_id",
+          "value": "\"acbe32d2-5981-40cd-b424-bddc7af117d0\""
+        },
+        {
+          "name": "awc.session.expiry",
+          "value": "1759083328030"
+        },
+        {
+          "name": "NotificationsSeenState-68d343d1804221008d6d5290",
+          "value": "{\"lastSeenNotificationGroup\":{}}"
+        }
+      ]
+    },
+    {
+      "origin": "https://id.atlassian.com",
+      "localStorage": [
+        {
+          "name": "statsig.session_id.3569395337",
+          "value": "{\"sessionID\":\"ca7b33f1-eb4b-4b1f-9b0b-4770021d4583\",\"startTime\":1759081524016,\"lastUpdate\":1759081524018}"
+        },
+        {
+          "name": "__cuid",
+          "value": "40d416ae69c44f179db34d7857b57eb4"
+        },
+        {
+          "name": "awc.session.expiry",
+          "value": "1759083323056"
+        },
+        {
+          "name": "ajs_anonymous_id",
+          "value": "\"77523643-605c-43aa-93c1-7873826fda8c\""
+        },
+        {
+          "name": "awc.session.id",
+          "value": "1759081523056"
+        }
+      ]
+    }
+  ]
+}
