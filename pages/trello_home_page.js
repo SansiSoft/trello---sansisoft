@@ -1,3 +1,5 @@
+const { BoardPage } = require('./board_page.js')
+
 class TrelloHomePage {
 
     constructor(page) {
@@ -30,6 +32,7 @@ class TrelloHomePage {
 
         await this.page.fill(this.titleBoardInput, titleBoard);
         await this.page.click(this.submitCreateBoardBtn);
+        return new BoardPage(this.page)
     }
 
    async openMenu() {
