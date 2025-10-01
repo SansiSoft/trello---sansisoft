@@ -24,3 +24,4 @@ test('Verificar que se elimine el tablero', async ({ trelloPage }) => {
 //     const deletedBoard = trelloPage.getByRole('link', { name: boardName, exact: true });
 //     await expect(deletedBoard).toHaveCount(0);
 // })
+

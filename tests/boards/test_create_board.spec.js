@@ -1,3 +1,4 @@
+
 const { test, expect } = require('../../fixtures/board.js');
 const { TrelloHomePage } = require('../../pages/trello_home_page.js');
 const { reportKnownBug, captureUIBug } = require('../../utils/helpers');
@@ -78,5 +79,6 @@ test('create a board from a template', async ({ trelloPage,cleanupBoard}) => {
 //       });
 //   }
 // });
+
 
 

@@ -1,3 +1,4 @@
+
 const { BoardPage } = require('./board_page.js');
 const { logger } = require('../utils/logger.js');
 

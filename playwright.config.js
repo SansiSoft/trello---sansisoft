@@ -12,7 +12,6 @@ export default defineConfig({
     baseURL: 'https://trello.com',
     headless: true,
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
   },
   projects: [
     ...(storageStateExists ? [] : [{
