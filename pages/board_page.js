@@ -10,8 +10,8 @@ class BoardPage{
         this.toWorkspaceButton = this.page.locator('button[data-testid="board-visibility-dropdown-Workspace"]');
         this.toPublicButton = this.page.locator('button[data-testid="board-visibility-dropdown-Public"]');
         this.isPublicButtonConfirm = this.page.getByText('Yes, make board public');
+    
     }
-
 
     async changeBoardName(newName){
         await this.nameBoard.click();
