@@ -1,73 +1,114 @@
+
+const { BoardPage } = require('./board_page.js');
+const { logger } = require('../utils/logger.js');
+
+/** @param {import('@playwright/test').Page} page */
 class TrelloHomePage {
+  constructor(page) {
+    this.page = page;
 
-    constructor(page) {
-        this.page = page;
+    // Header create menu
+    this.createBtn = this.page.locator('button[data-testid="header-create-menu-button"]');
+    this.createBoardBtn = this.page.locator('button[data-testid="header-create-board-button"]');
+    this.createBoardFromTemplateBtn = this.page.locator('button[data-testid="header-create-board-from-template-button"]');
 
-        this.createBtn = 'button[data-testid="header-create-menu-button"]' 
-        this.createBoardBtn = 'button[data-testid="header-create-board-button"]'
-        this.titleBoardInput =  'input[data-testid="create-board-title-input"]'
-        this.submitCreateBoardBtn = 'button[data-testid="create-board-submit-button"]'
+    // Create board modal
+    this.titleBoardInput = this.page.locator('input[data-testid="create-board-title-input"]');
+    this.submitCreateBoardBtn = this.page.locator('button[data-testid="create-board-submit-button"]');
+    this.errorMessage = this.page.locator('#board-title-required-error');
 
-        this.showmenuBtn = 'button[aria-label="Show menu"]'
-        this.closeBoardBtnRole = { name: /close board|cerrar tablero/i };
-        this.closeBtn = 'button[data-testid="popover-close-board-confirm"]'
-        this.confirmDeleteBtnRole = { name: /permanently delete board|eliminar permanentemente/i };
+    // Templates
+    this.templateList = this.page.locator('button[role="menuitem"]');
 
-    }
+    // Board list
+    this.boardListButton = this.page.getByRole('link', { name: 'Boards', exact: true });
 
-    async createANewBoard(titleBoard) {
-        await this.page.waitForLoadState();
-        await this.page.waitForTimeout(5000);  
+    // Board menu & delete
+    this.closeBoardBtn = this.page.getByRole('button', { name: /close board|cerrar tablero/i });
+    this.closeBtn = this.page.locator('button[data-testid="popover-close-board-confirm"]');
+    this.isClosed = this.page.getByText(/this board is closed|este tablero está cerrado/i);
+    this.deleteBoardBtn = this.page.getByRole('button', { name: /permanently delete board|eliminar permanentemente/i });
+    this.confirmDeleteBtn = this.page.locator('button[data-testid="close-board-delete-board-confirm-button"]');
+  }
 
-        // Espera que el botón sea visible y clickeable
-        const createBtnLocator = this.page.locator(this.createBtn);
-        await createBtnLocator.waitFor({ state: 'visible' });
-        await createBtnLocator.click();
+  async goToBoardList() {
+    logger.info('Navegando a la lista de tableros...');
+    await this.boardListButton.click();
+    logger.success('Navegación a lista de tableros completada.');
+  }
 
-        const createBoardBtnLocator = this.page.locator(this.createBoardBtn);
-        await createBoardBtnLocator.waitFor({ state: 'visible' });
-        await createBoardBtnLocator.click();
+  async openCreateBoardModal() {
+    logger.info('Abriendo modal para crear un tablero...');
+    await this.page.waitForLoadState();
+    await this.createBtn.waitFor({ state: 'visible', timeout: 5000 });
+    await this.createBtn.click();
+    logger.success('Modal de creación abierto.');
+  }
 
-        await this.page.fill(this.titleBoardInput, titleBoard);
-        await this.page.click(this.submitCreateBoardBtn);
-    }
+  async createANewBoard(titleBoard) {
+    logger.info(`Creando un nuevo tablero: "${titleBoard}"`);
+    await this.openCreateBoardModal();
+    await this.createBoardBtn.waitFor({ state: 'visible' });
+    await this.createBoardBtn.click();
+    await this.titleBoardInput.fill(titleBoard);
+    await this.submitCreateBoardBtn.click();
+    logger.success(`Tablero creado exitosamente: "${titleBoard}"`);
+  }
 
-   async openMenu() {
-        const showMenuBtn = this.page.locator(this.showmenuBtn);
-        await showMenuBtn.waitFor({ state: 'visible', timeout: 5000 });
-        await showMenuBtn.click();
-    }
+  async attemptToCreateBoard(titleBoard) {
+    logger.info(`Intentando crear tablero con título: "${titleBoard}"`);
+    await this.openCreateBoardModal();
+    await this.createBoardBtn.waitFor({ state: 'visible' });
+    await this.createBoardBtn.click();
+    await this.titleBoardInput.fill(titleBoard);
+    logger.warn('Tablero no enviado aún (submit pendiente).');
+  }
 
-    async deleteBoard() {
-        await this.page.waitForLoadState();
-        await this.openMenu();
-        await this.page.waitForTimeout(1000);
+  async createBoardFromTemplate(titleBoard, templateName = '1-on-1 Meeting Agenda') {
+    logger.info(`Creando tablero desde plantilla: "${templateName}" → "${titleBoard}"`);
+    await this.openCreateBoardModal();
+    await this.createBoardFromTemplateBtn.waitFor({ state: 'visible' });
+    await this.createBoardFromTemplateBtn.click();
+    await this.page.getByRole('menuitem', { name: templateName }).click();
+    await this.titleBoardInput.fill(titleBoard);
+    await this.submitCreateBoardBtn.click();
+    logger.success(`Tablero creado desde plantilla: "${titleBoard}"`);
+  }
 
-        // Selecciona el boton 'Close Board'
-        const closeBoardBtn = this.page.getByRole('button', this.closeBoardBtnRole);
-        await closeBoardBtn.waitFor({ state: 'visible', timeout: 5000 });
-        await closeBoardBtn.click();
+  async openMenu() {
+    logger.info('Abriendo menú del tablero...');
+    const board_page = new BoardPage(this.page);
+    await board_page.openMenuButton.click();
+    logger.success('Menú del tablero abierto.');
+  }
 
-       
-        const closeBtn = this.page.locator(this.closeBtn);
-        await closeBtn.waitFor({ state: 'visible', timeout: 5000 });
-        await closeBtn.click();
+  async deleteBoard() {
+    logger.info('Eliminando tablero actual...');
+    await this.page.waitForLoadState();
+    await this.openMenu();
 
-      
-        await this.page.getByText(/this board is closed|este tablero está cerrado/i).waitFor({ state: 'visible', timeout: 10000 });
+    await this.closeBoardBtn.waitFor({ state: 'visible', timeout: 5000 });
+    await this.closeBoardBtn.click();
 
-        
-        await this.openMenu();
-        await this.page.waitForTimeout(1000);
+    await this.closeBtn.waitFor({ state: 'visible', timeout: 5000 });
+    await this.closeBtn.click();
 
-        
-        const confirmDeleteBtn = this.page.getByRole('button', this.confirmDeleteBtnRole);
-        await confirmDeleteBtn.waitFor({ state: 'visible', timeout: 5000 });
-        await confirmDeleteBtn.click();
+    await this.isClosed.waitFor({ state: 'visible', timeout: 10000 });
+    logger.info('Tablero cerrado. Procediendo a eliminación definitiva...');
 
-    }   
+    await this.openMenu();
+    await this.deleteBoardBtn.click();
+    await this.confirmDeleteBtn.click();
+    logger.success('Tablero eliminado permanentemente.');
+  }
 
+  async deleteExistingBoard(boardName) {
+    logger.info(`Eliminando tablero existente: "${boardName}"`);
+    await this.goToBoardList();
+    const boardLink = this.page.getByRole('link', { name: boardName, exact: true });
+    await boardLink.click();
+    await this.deleteBoard();
+  }
 }
 
 module.exports = { TrelloHomePage };
-
