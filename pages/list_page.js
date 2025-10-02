@@ -12,6 +12,8 @@ class ListPage {
     this.overflowMenu = '[data-testid="OverflowMenuHorizontalIcon"]';
     this.listEditMenuButton = '[data-testid="list-edit-menu-button"]';
     this.moveListOption = 'text=Move list';
+    this.archiveListButton = '[data-testid="list-actions-archive-list-button"]';
+    this.undoArchiveButton = 'button:has-text("Undo")';
     this.boardSelect = '#move-list-screen-board-options-select';
     this.positionSelect = '#move-list-screen-position-select';
     this.saveButton = 'button[type="submit"]';
@@ -249,6 +251,114 @@ class ListPage {
       return true;
     } catch (error) {
       logger.error(`Tarjeta "${cardName}" no encontrada en la lista "${listName}": ${error.message}`);
+      throw error;
+    }
+  }
+
+  /**
+   * Abrir modal de archivar lista
+   * @param {number} listIndex - Índice de la lista (0-based)
+   */
+  async openArchiveListModal(listIndex = 0) {
+    logger.info(`Abriendo modal de archivar lista para la lista en posición ${listIndex}`);
+    
+    // Esperar a que la página esté completamente cargada
+    await this.page.waitForLoadState('networkidle');
+    await this.page.waitForTimeout(1000);
+    
+    // Seleccionar el botón de menú de la lista específica
+    const listEditMenuButtons = this.page.locator(this.listEditMenuButton);
+    
+    // Asegurar que el botón existe y es clickeable
+    await listEditMenuButtons.nth(listIndex).waitFor({ state: 'visible', timeout: 10000 });
+    await listEditMenuButtons.nth(listIndex).click();
+    
+    logger.info('Haciendo clic en "Archive list"');
+    
+    // Esperar que el menú aparezca y hacer clic en archivar
+    await this.page.locator(this.archiveListButton).waitFor({ state: 'visible', timeout: 5000 });
+    await this.page.locator(this.archiveListButton).click();
+    
+    logger.success('Lista archivada exitosamente');
+  }
+
+  /**
+   * Deshacer el archivado de una lista usando el botón Undo
+   */
+  async undoArchiveList() {
+    logger.info('Intentando deshacer el archivado de la lista');
+    
+    try {
+      // Esperar que aparezca el botón Undo (aparece por pocos segundos)
+      await this.page.locator(this.undoArchiveButton).waitFor({ state: 'visible', timeout: 8000 });
+      await this.page.locator(this.undoArchiveButton).click();
+      
+      // Esperar que la operación se complete
+      await this.page.waitForLoadState('networkidle');
+      await this.page.waitForTimeout(2000);
+      
+      logger.success('Archivado deshecho exitosamente - Lista restaurada');
+      return true;
+    } catch (error) {
+      logger.error(`No se pudo deshacer el archivado: ${error.message}`);
+      throw error;
+    }
+  }
+
+  /**
+   * Verificar que una lista ya no está visible en el tablero (fue archivada)
+   * @param {string} listName - Nombre de la lista que debería estar archivada
+   */
+  async expectListArchived(listName) {
+    logger.info(`Verificando que la lista "${listName}" fue archivada (no visible)`);
+    
+    await this.page.waitForTimeout(2000); // Esperar que el DOM se actualice
+    
+    const listTitles = this.page.locator('[data-testid="list-name"] span');
+    
+    try {
+      // Obtener todas las listas visibles
+      const visibleLists = await listTitles.allTextContents();
+      
+      if (visibleLists.includes(listName)) {
+        logger.error(`La lista "${listName}" aún está visible. No fue archivada.`);
+        logger.error(`Listas visibles: ${JSON.stringify(visibleLists)}`);
+        throw new Error(`La lista "${listName}" no fue archivada correctamente`);
+      }
+      
+      logger.success(`Lista "${listName}" archivada correctamente - No visible en el tablero`);
+      return true;
+    } catch (error) {
+      logger.error(`Error verificando archivado: ${error.message}`);
+      throw error;
+    }
+  }
+
+  /**
+   * Verificar que una lista está visible en el tablero (no archivada)
+   * @param {string} listName - Nombre de la lista que debería estar visible
+   */
+  async expectListVisible(listName) {
+    logger.info(`Verificando que la lista "${listName}" está visible en el tablero`);
+    
+    await this.page.waitForTimeout(2000); // Esperar que el DOM se actualice
+    
+    const listTitles = this.page.locator('[data-testid="list-name"] span');
+    
+    try {
+      // Esperar que al menos una lista sea visible
+      await listTitles.first().waitFor({ state: 'visible', timeout: 10000 });
+      
+      // Verificar que la lista específica está presente
+      const listWithName = this.page.locator(`[data-testid="list-name"] span:has-text("${listName}")`);
+      await listWithName.waitFor({ state: 'visible', timeout: 10000 });
+      
+      logger.success(`Lista "${listName}" está visible en el tablero`);
+      return true;
+    } catch (error) {
+      const visibleLists = await listTitles.allTextContents();
+      logger.error(`Lista "${listName}" no está visible`);
+      logger.error(`Listas visibles: ${JSON.stringify(visibleLists)}`);
       throw error;
     }
   }

@@ -15,7 +15,7 @@ test.describe('Mover listas - Tests simples', () => {
     await listPage.expectListPosition(list.name, 2); // posición 3 = índice 2
   });
 
-  test('5 - Cancelar la acción de mover lista desde el modal', async ({ trelloPage, board, list }) => {
+  test('2 - Cancelar la acción de mover lista desde el modal', async ({ trelloPage, board, list }) => {
     const listPage = new ListPage(trelloPage);
     
     await trelloPage.goto(board.url);
@@ -30,33 +30,29 @@ test.describe('Mover listas - Tests simples', () => {
 
 multiTest.describe('Mover listas - Tests con múltiples tableros', () => {
 
-  multiTest('2 - Mover lista a otro tablero con listas existentes', async ({ trelloPage, board, targetBoard, list, targetList }) => {
+  multiTest('3 - Mover lista a otro tablero con listas existentes', async ({ trelloPage, board, targetBoard, list, targetList }) => {
     const listPage = new ListPage(trelloPage);
-    
-    // Ir al tablero origen y esperar estabilidad
     await trelloPage.goto(board.url);
     await trelloPage.waitForLoadState('networkidle');
-    await trelloPage.waitForTimeout(2000); // Espera adicional para estabilidad en CI
-    
-    // Verificar que la lista está presente antes de moverla
+    await trelloPage.waitForTimeout(2000); 
+  
     await listPage.expectListPosition(list.name, 0);
-    
     await listPage.openMoveListModal(0);
     await listPage.moveList({ boardName: targetBoard.name, position: 2 });
     
-    // Navegar al tablero destino con esperas robustas
+    // Navegar al tablero destino 
     await trelloPage.goto(targetBoard.url);
     await trelloPage.waitForLoadState('networkidle');
-    await trelloPage.waitForTimeout(3000); // Espera crítica para que el movimiento se refleje
+    await trelloPage.waitForTimeout(3000);
     
     // Verificar que la lista existe en el tablero destino
     await listPage.expectListPosition(list.name, 1); // posición 2 = índice 1
   });
 
-  multiTest('3 - Mover lista a un tablero vacío (posición 1)', async ({ trelloPage, board, targetBoard, list }) => {
+  multiTest('4 - Mover lista a un tablero vacío (posición 1)', async ({ trelloPage, board, targetBoard, list }) => {
     const listPage = new ListPage(trelloPage);
     
-    // Ir al tablero origen y esperar estabilidad
+    // Ir al tablero origen 
     await trelloPage.goto(board.url);
     await trelloPage.waitForLoadState('networkidle');
     await trelloPage.waitForTimeout(2000);
@@ -67,14 +63,13 @@ multiTest.describe('Mover listas - Tests con múltiples tableros', () => {
     // Navegar al tablero destino y verificar que quedó en posición 1
     await trelloPage.goto(targetBoard.url);
     await trelloPage.waitForLoadState('networkidle');
-    await trelloPage.waitForTimeout(3000); // Espera crítica
-    await listPage.expectListPosition(list.name, 0); // posición 1 = índice 0
+    await trelloPage.waitForTimeout(3000);
+    await listPage.expectListPosition(list.name, 0);
   });
 
-  multiTest('6 - Verificar que las tarjetas se mueven junto con la lista', async ({ trelloPage, board, targetBoard, list, card }) => {
+  multiTest('5 - Verificar que las tarjetas se mueven junto con la lista', async ({ trelloPage, board, targetBoard, list, card }) => {
     const listPage = new ListPage(trelloPage);
-    
-    // Ir al tablero origen y esperar estabilidad
+    // Ir al tablero origen
     await trelloPage.goto(board.url);
     await trelloPage.waitForLoadState('networkidle');
     await trelloPage.waitForTimeout(2000);
@@ -88,7 +83,7 @@ multiTest.describe('Mover listas - Tests con múltiples tableros', () => {
     // Navegar al tablero destino y verificar que la tarjeta se movió con la lista
     await trelloPage.goto(targetBoard.url);
     await trelloPage.waitForLoadState('networkidle');
-    await trelloPage.waitForTimeout(3000); // Espera crítica
+    await trelloPage.waitForTimeout(3000);
     await listPage.expectCardInList(card.name, list.name);
   });
 
