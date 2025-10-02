@@ -53,6 +53,7 @@ class TrelloHomePage {
     await this.titleBoardInput.fill(titleBoard);
     await this.submitCreateBoardBtn.click();
     logger.success(`Tablero creado exitosamente: "${titleBoard}"`);
+    return new BoardPage(this.page);
   }
 
   async attemptToCreateBoard(titleBoard) {
