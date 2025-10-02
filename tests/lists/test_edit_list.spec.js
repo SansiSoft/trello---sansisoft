@@ -31,10 +31,10 @@ for (const testCase of listCases) {
           trelloPage,
           `case-${testCase.id}-long-text-overflow`, 
           `Texto largo (${layoutInfo.textLength} chars) causa desbordamiento visual`,
-          {}, 
-          testInfo 
+          {},
+          testInfo
         ); 
-        reportKnownBug({
+        reportKnownBug({ //definir reporte de bugs
           id: `UI-OVERFLOW-LONG-TEXT-${testCase.id}`,
           title: 'Desbordamiento visual con texto largo en nombres de lista',
           description: `Cuando se usa un nombre de lista de ${layoutInfo.textLength} caracteres (límite: 512), el texto se desborda visualmente del contenedor, afectando la usabilidad aunque la funcionalidad core funciona correctamente.`,
@@ -50,3 +50,4 @@ for (const testCase of listCases) {
     }
   });
 }
+

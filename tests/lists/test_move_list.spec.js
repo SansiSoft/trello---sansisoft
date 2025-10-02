@@ -1,0 +1,83 @@
+const { test, test: multiTest } = require('../../fixtures/list');
+const { ListPage } = require('../../pages/list_page');
+
+test.describe('Mover listas - Tests simples', () => {
+
+  test('1 - Mover lista dentro del mismo tablero a otra posición válida', async ({ trelloPage, board, list }) => {
+    const listPage = new ListPage(trelloPage);
+    
+    await trelloPage.goto(board.url);
+    await trelloPage.waitForLoadState('networkidle');
+    
+    await listPage.openMoveListModal(0);
+    await listPage.moveList({ position: 3 });
+    await listPage.expectListPosition(list.name, 2); // posición 3 = índice 2
+  });
+
+  test('5 - Cancelar la acción de mover lista desde el modal', async ({ trelloPage, board, list }) => {
+    const listPage = new ListPage(trelloPage);
+    
+    await trelloPage.goto(board.url);
+    await trelloPage.waitForLoadState('networkidle');
+    
+    await listPage.openMoveListModal(0);
+    await listPage.cancelMoveListModal();
+    await listPage.expectListPosition(list.name, 0);
+  });
+
+});
+
+multiTest.describe('Mover listas - Tests con múltiples tableros', () => {
+
+  multiTest('2 - Mover lista a otro tablero con listas existentes', async ({ trelloPage, board, targetBoard, list, targetList }) => {
+    const listPage = new ListPage(trelloPage);
+    
+    // Ir al tablero origen
+    await trelloPage.goto(board.url);
+    await trelloPage.waitForLoadState('networkidle');
+    
+    await listPage.openMoveListModal(0);
+    await listPage.moveList({ boardName: targetBoard.name, position: 2 });
+    
+    // Navegar al tablero destino y verificar que la lista existe ahí
+    await trelloPage.goto(targetBoard.url);
+    await trelloPage.waitForLoadState('networkidle');
+    await listPage.expectListPosition(list.name, 1); // posición 2 = índice 1
+  });
+
+  multiTest('3 - Mover lista a un tablero vacío (posición 1)', async ({ trelloPage, board, targetBoard, list }) => {
+    const listPage = new ListPage(trelloPage);
+    
+    // Ir al tablero origen
+    await trelloPage.goto(board.url);
+    await trelloPage.waitForLoadState('networkidle');
+    
+    await listPage.openMoveListModal(0);
+    await listPage.moveList({ boardName: targetBoard.name });
+    
+    // Navegar al tablero destino y verificar que quedó en posición 1
+    await trelloPage.goto(targetBoard.url);
+    await trelloPage.waitForLoadState('networkidle');
+    await listPage.expectListPosition(list.name, 0); // posición 1 = índice 0
+  });
+
+  multiTest('6 - Verificar que las tarjetas se mueven junto con la lista', async ({ trelloPage, board, targetBoard, list, card }) => {
+    const listPage = new ListPage(trelloPage);
+    
+    // Ir al tablero origen
+    await trelloPage.goto(board.url);
+    await trelloPage.waitForLoadState('networkidle');
+    
+    // Verificar que la tarjeta existe en la lista original
+    await listPage.expectCardInList(card.name, list.name);
+    
+    await listPage.openMoveListModal(0);
+    await listPage.moveList({ boardName: targetBoard.name });
+    
+    // Navegar al tablero destino y verificar que la tarjeta se movió con la lista
+    await trelloPage.goto(targetBoard.url);
+    await trelloPage.waitForLoadState('networkidle');
+    await listPage.expectCardInList(card.name, list.name);
+  });
+
+});
