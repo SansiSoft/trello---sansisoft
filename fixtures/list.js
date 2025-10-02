@@ -1,4 +1,4 @@
-const { test: base, expect } = require('@playwright/test');
+const { test: base, expect } = require('./login.js');
 const path = require('path');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const { logger } = require('../utils/logger');
@@ -9,16 +9,7 @@ const API_KEY = process.env.TRELLO_KEY;
 const API_TOKEN = process.env.TRELLO_TOKEN;
 
 const test = base.extend({
-  trelloPage: async ({ browser }, use) => {
-    const context = await browser.newContext({
-      storageState: path.join(__dirname, '../data/storageState.json'),
-    });
-    const page = await context.newPage();
-    await page.goto('https://trello.com');
-    await page.waitForLoadState('networkidle');
-    await use(page);
-    await context.close();
-  },
+  // trelloPage ya está definido en login.js, no necesitamos redefinirlo
 
   // Tablero principal con lista
   board: async ({}, use) => {
