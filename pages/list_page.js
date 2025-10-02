@@ -122,26 +122,69 @@ class ListPage {
   async openMoveListModal(listIndex = 0) {
     logger.info(`Abriendo modal de mover lista para la lista en posición ${listIndex}`);
     
+    // Esperar a que la página esté completamente cargada
+    await this.page.waitForLoadState('networkidle');
+    await this.page.waitForTimeout(1000); // Espera adicional para estabilidad
+    
     // Seleccionar el botón de menú de la lista específica (tres puntos de la lista)
     const listEditMenuButtons = this.page.locator(this.listEditMenuButton);
+    
+    // Asegurar que el botón existe y es clickeable
+    await listEditMenuButtons.nth(listIndex).waitFor({ state: 'visible', timeout: 10000 });
     await listEditMenuButtons.nth(listIndex).click();
     
     logger.info('Haciendo clic en "Move list"');
+    
+    // Esperar que el menú aparezca y sea clickeable
+    await this.page.locator(this.moveListOption).waitFor({ state: 'visible', timeout: 5000 });
     await this.page.locator(this.moveListOption).click();
+    
+    // Verificar que el modal se abrió
+    await this.page.waitForSelector(this.boardSelect, { timeout: 10000 });
     
     logger.success('Modal de mover lista abierto exitosamente');
   }
 
   async moveList({ boardName, position }) {
+    logger.info(`Moviendo lista - Tablero: ${boardName || 'mismo'}, Posición: ${position || 'por defecto'}`);
+    
     if (boardName) {
+      // Esperar que el selector de tablero esté listo
+      await this.page.locator(this.boardSelect).waitFor({ state: 'visible', timeout: 10000 });
+      await this.page.waitForTimeout(500); // Pequeña pausa para estabilidad
+      
+      // Limpiar y escribir el nombre del tablero
+      await this.page.locator(this.boardSelect).clear();
       await this.page.locator(this.boardSelect).fill(boardName);
+      await this.page.waitForTimeout(1000); // Esperar que aparezcan las opciones
       await this.page.keyboard.press('Enter');
+      
+      logger.info(`Tablero seleccionado: ${boardName}`);
     }
+    
     if (position) {
+      // Esperar que el selector de posición esté disponible
+      await this.page.locator(this.positionSelect).waitFor({ state: 'visible', timeout: 10000 });
+      await this.page.waitForTimeout(500);
+      
+      await this.page.locator(this.positionSelect).clear();
       await this.page.locator(this.positionSelect).fill(position.toString());
+      await this.page.waitForTimeout(500);
       await this.page.keyboard.press('Enter');
+      
+      logger.info(`Posición seleccionada: ${position}`);
     }
+    
+    // Esperar y hacer clic en guardar
+    await this.page.locator(this.saveButton).waitFor({ state: 'visible', timeout: 10000 });
+    await this.page.waitForTimeout(500);
     await this.page.locator(this.saveButton).click();
+    
+    // Esperar que la operación se complete
+    await this.page.waitForLoadState('networkidle');
+    await this.page.waitForTimeout(2000); // Espera crítica para que Trello procese el movimiento
+    
+    logger.success('Lista movida exitosamente');
   }
 
   async cancelMoveListModal() {
@@ -151,15 +194,35 @@ class ListPage {
 
   async expectListPosition(listName, positionIndex) {
     logger.info(`Verificando que la lista "${listName}" está en la posición ${positionIndex}`);
+    
+    // Esperar que la página se estabilice después del movimiento
+    await this.page.waitForLoadState('networkidle');
+    await this.page.waitForTimeout(2000); // Espera crítica para que el DOM se actualice
+    
     const listTitles = this.page.locator('[data-testid="list-name"] span');
     
     try {
-      // Usar expect de Playwright para verificar el texto
-      await expect(listTitles.nth(positionIndex)).toHaveText(listName);
+      // Esperar que las listas estén visibles
+      await listTitles.first().waitFor({ state: 'visible', timeout: 15000 });
+      
+      // Verificar que tenemos suficientes listas
+      const listCount = await listTitles.count();
+      logger.info(`Número de listas encontradas: ${listCount}`);
+      
+      if (positionIndex >= listCount) {
+        throw new Error(`Posición ${positionIndex} no existe. Solo hay ${listCount} listas.`);
+      }
+      
+      // Usar expect de Playwright para verificar el texto con reintentos automáticos
+      await expect(listTitles.nth(positionIndex)).toHaveText(listName, { timeout: 10000 });
       logger.success(`Lista "${listName}" encontrada en posición ${positionIndex}`);
       return true;
     } catch (error) {
+      // Debug adicional en caso de fallo
+      const actualTexts = await listTitles.allTextContents();
       logger.error(`Error verificando posición de lista: ${error.message}`);
+      logger.error(`Listas encontradas: ${JSON.stringify(actualTexts)}`);
+      logger.error(`Se buscaba "${listName}" en posición ${positionIndex}`);
       throw error;
     }
   }
