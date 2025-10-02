@@ -3,6 +3,7 @@ const { TrelloHomePage } = require('../../pages/trello_home_page.js');
 const { BoardPage } = require('../../pages/board_page.js');
 const { BoardList } = require('../../pages/board_list.js');
 
+
 test.beforeEach(async ({ trelloPage }) => {
   const trello_home_page = new TrelloHomePage(trelloPage);
   await trello_home_page.goToBoardList();
@@ -13,14 +14,14 @@ test.beforeEach(async ({ trelloPage }) => {
 });
 
 
-test.describe('Changing visibility of a board',()=>{
+test.describe('Cambiando los estados del tablero',()=>{
   const states = [
     { isPublic: true, label: 'Public' },
     { isWorkspace: true, label: 'Workspace' },
   ];
 
   for (const state of states) {
-    test(`should change board visibility to ${state.label}`, async ({ trelloPage }) => {
+    test(`Verificar que se cambie la visibilidad a :  ${state.label}`, async ({ trelloPage }) => {
       const boardPage = new BoardPage(trelloPage);
       await boardPage.changeBoardVisibility(state);
       await boardPage.openMenuButton.click();
@@ -30,9 +31,17 @@ test.describe('Changing visibility of a board',()=>{
   }
 })
 
-test('should stay in Private', async ({ trelloPage }) => {
+test('El board debe mantenerse en privado', async ({ trelloPage }) => {
   const boardPage = new BoardPage(trelloPage);
   await boardPage.openMenuButton.click();
   await boardPage.visibilityButton.click();
   await expect(boardPage.visibilityButton).toHaveText(/Private/);
+});
+
+
+test('Verificar que se edite el nombre del tablero', async ({ trelloPage }) => {
+    const boardPage = new BoardPage(trelloPage);
+    const newName = 'Edited Board Name ' + Date.now();
+    await boardPage.changeBoardName(newName);
+    await expect(boardPage.nameBoard).toHaveText(newName);
 });

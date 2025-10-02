@@ -13,8 +13,6 @@ class BoardPage {
         this.toWorkspaceButton = this.page.locator('button[data-testid="board-visibility-dropdown-Workspace"]');
         this.toPublicButton = this.page.locator('button[data-testid="board-visibility-dropdown-Public"]');
         this.isPublicButtonConfirm = this.page.getByText('Yes, make board public');
-
-        // Locators para las columnas del board
         this.listTitleInput = this.page.locator('textarea[data-testid="list-name-textarea"]'); 
         this.confirmTitleTitleButton = this.page.locator('button[data-testid="list-composer-add-list-button"]');
     }

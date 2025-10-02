@@ -62,8 +62,19 @@ class TrelloHomePage {
     await this.createBoardBtn.waitFor({ state: 'visible' });
     await this.createBoardBtn.click();
     await this.titleBoardInput.fill(titleBoard);
+    await this.submitCreateBoardBtn.waitFor({ state: 'visible' });
     logger.warn('Tablero no enviado aún (submit pendiente).');
   }
+async isCreateButtonEnabled(titleBoard) {
+  await this.openCreateBoardModal();
+  await this.createBoardBtn.click();
+  await this.titleBoardInput.fill(titleBoard);
+  await this.submitCreateBoardBtn.waitFor({ state: 'visible' });
+  return await this.submitCreateBoardBtn.isEnabled();
+}
+
+
+
 
   async createBoardFromTemplate(titleBoard, templateName = '1-on-1 Meeting Agenda') {
     logger.info(`Creando tablero desde plantilla: "${templateName}" → "${titleBoard}"`);
