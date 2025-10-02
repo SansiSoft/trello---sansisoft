@@ -1,4 +1,7 @@
-class BoardPage{
+const { ColumnListComponent } = require('./components/column_list_component.js'); 
+const { clickButton, fillInput } = require('../utils/helpers_ui.js')
+
+class BoardPage {
     constructor(page) {
         this.page = page;
         this.nameBoard=this.page.locator("h1[data-testid='board-name-display']");
@@ -10,8 +13,11 @@ class BoardPage{
         this.toWorkspaceButton = this.page.locator('button[data-testid="board-visibility-dropdown-Workspace"]');
         this.toPublicButton = this.page.locator('button[data-testid="board-visibility-dropdown-Public"]');
         this.isPublicButtonConfirm = this.page.getByText('Yes, make board public');
-    }
 
+        // Locators para las columnas del board
+        this.listTitleInput = this.page.locator('textarea[data-testid="list-name-textarea"]'); 
+        this.confirmTitleTitleButton = this.page.locator('button[data-testid="list-composer-add-list-button"]');
+    }
 
     async changeBoardName(newName){
         await this.nameBoard.click();
@@ -20,8 +26,8 @@ class BoardPage{
     }
 
     async changeBoardVisibility({ isPublic = false, isPrivate = false, isWorkspace = false }) {
-    await this.openMenuButton.click();
-    await this.visibilityButton.click();
+        await this.openMenuButton.click();
+        await this.visibilityButton.click();
 
         if (isPublic) {
             const alreadyPublic = await this.toPublicButton
@@ -58,5 +64,23 @@ class BoardPage{
         }
 
         await this.closeMenuButton.click();
+    }
+
+    async createAList(titleList) {
+        await fillInput(this.listTitleInput, titleList);
+        await clickButton(this.confirmTitleTitleButton);
+
+        // Esperar a que la lista aparezca
+        const listLocator = this.page.locator(
+        `li[data-testid="list-wrapper"]:has(h2[data-testid="list-name"] span:has-text("${titleList}"))`
+        );
+        await listLocator.waitFor({ state: 'visible' });
+
+        // Caso constrario, lanza error locator.click: Target page, context or browser has been closed en el siguiente paso
+        await this.page.waitForTimeout(1000);
+        return new ColumnListComponent(this.page, titleList);
+    }
+
 }
-} module.exports = { BoardPage };
+
+module.exports = { BoardPage };
