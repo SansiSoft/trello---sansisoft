@@ -98,16 +98,12 @@ async isCreateButtonEnabled(titleBoard) {
     logger.info('Eliminando tablero actual...');
     await this.page.waitForLoadState();
     await this.openMenu();
-
     await this.closeBoardBtn.waitFor({ state: 'visible', timeout: 5000 });
     await this.closeBoardBtn.click();
-
     await this.closeBtn.waitFor({ state: 'visible', timeout: 5000 });
     await this.closeBtn.click();
-
     await this.isClosed.waitFor({ state: 'visible', timeout: 10000 });
     logger.info('Tablero cerrado. Procediendo a eliminación definitiva...');
-
     await this.openMenu();
     await this.deleteBoardBtn.click();
     await this.confirmDeleteBtn.click();

@@ -1,4 +1,4 @@
-const { test, expect } = require('../../fixtures/login.js');
+const { test, expect } = require('../../fixtures/td_board.js');
 const { TrelloHomePage } = require('../../pages/trello_home_page.js');
 const { BoardPage } = require('../../pages/board_page.js');
 const { BoardList } = require('../../pages/board_list.js');
@@ -39,9 +39,15 @@ test('El board debe mantenerse en privado', async ({ trelloPage }) => {
 });
 
 
-test('Verificar que se edite el nombre del tablero', async ({ trelloPage }) => {
+test.only('Verificar que se edite el nombre del tablero en la lista de tableros', async ({ trelloPage,cleanupBoard }) => {
     const boardPage = new BoardPage(trelloPage);
     const newName = 'Edited Board Name ' + Date.now();
     await boardPage.changeBoardName(newName);
     await expect(boardPage.nameBoard).toHaveText(newName);
+    await  boardPage.goBack();
+    const trello_home_page = new TrelloHomePage(trelloPage);
+    await trello_home_page.goToBoardList();
+    const boardLink = trelloPage.getByRole('link', { name: newName, exact: true });
+    await expect(boardLink).toHaveCount(1);
+    cleanupBoard.registerBoard(newName);
 });

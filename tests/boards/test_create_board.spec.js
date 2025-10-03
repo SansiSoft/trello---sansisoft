@@ -1,7 +1,9 @@
 
 const { test, expect } = require('../../fixtures/td_board.js');
 const { TrelloHomePage } = require('../../pages/trello_home_page.js');
-const { reportKnownBug, captureUIBug } = require('../../utils/helpers');
+const { BoardPage } = require('../../pages/board_page.js');
+const { BoardList } = require('../../pages/board_list.js');
+
 const { processTestCases } = require('../../utils/helpers');
 const fs = require('fs');
 const path = require('path');
@@ -28,6 +30,14 @@ test('Verificar que se crea un tablero con caracteres especiales', async ({ trel
   cleanupBoard.registerBoard(titleBoard);
   await expect(trelloPage).toHaveTitle(`${titleBoard} | Trello`);
 
+});
+
+test('Verificar que al cerrar modal con ESC no se crea tablero', async ({ trelloPage }) => {
+  const trello_home_page = new TrelloHomePage(trelloPage);
+  await trello_home_page.openCreateBoardModal();
+  await trelloPage.keyboard.press('Escape');
+  await expect(trello_home_page.createBoardBtn).toBeHidden();
+  await expect(trelloPage).toHaveTitle(/Trello/);
 });
 
 
@@ -59,7 +69,21 @@ test('BUG-CB - No deberia crear un tablero con nombre duplicado',async({trelloPa
     await expect(trello_home_page.submitCreateBoardBtn).toBeDisabled();
 })
 
-
+test.only('Visualizar tablero creado desde la lista',async ({trelloPage,cleanupBoard})=>{
+  const trello_home_page = new TrelloHomePage(trelloPage);
+  const titleBoard = "New title board - " + Date.now();
+  await trello_home_page.createANewBoard(titleBoard);
+  await expect(trelloPage).toHaveTitle(`${titleBoard} | Trello`);
+  const boardPage = new BoardPage(trelloPage);
+  await boardPage.goBack();
+  await trello_home_page.goToBoardList();
+  const boardList = new BoardList(trello_home_page.page);
+  await boardList.loadMoreBoards();
+   await trelloPage.waitForLoadState("networkidle");
+   const boardLink = trelloPage.getByRole('link', { name: titleBoard, exact: true });
+  await expect(boardLink).toHaveCount(1, { timeout: 20000 });
+   cleanupBoard.registerBoard(titleBoard);
+});
 
 // test.describe('Board name validation', () => {
 //   const cases = [
