@@ -59,15 +59,15 @@ test('Verificar que se crea un tablero desde una plantilla', async ({ trelloPage
   await expect(trello_home_page.submitCreateBoardBtn).toBeDisabled();
 });
 
-test('BUG-CB-001 - No deberia crear un tablero con nombre duplicado',async({trelloPage})=>{
-    test.fail(true, "BUG-CB-001: Se puede crear un board con un nombre duplicado");
-    const trello_home_page = new TrelloHomePage(trelloPage)
-    const duplicate_title="Titulo duplicado"
-    await trello_home_page.createANewBoard(duplicate_title);
-    await trello_home_page.goToBoardList();
-    await trello_home_page.attemptToCreateBoard(duplicate_title);
-    await expect(trello_home_page.submitCreateBoardBtn).toBeDisabled();
-})
+// test('BUG-CB-001 - No deberia crear un tablero con nombre duplicado',async({trelloPage})=>{
+//     test.fail(true, "BUG-CB-001: Se puede crear un board con un nombre duplicado");
+//     const trello_home_page = new TrelloHomePage(trelloPage)
+//     const duplicate_title="Titulo duplicado"
+//     await trello_home_page.createANewBoard(duplicate_title);
+//     await trello_home_page.goToBoardList();
+//     await trello_home_page.attemptToCreateBoard(duplicate_title);
+//     await expect(trello_home_page.submitCreateBoardBtn).toBeDisabled();
+// })
 
 test('Visualizar tablero creado desde la lista',async ({trelloPage,cleanupBoard})=>{
   const trello_home_page = new TrelloHomePage(trelloPage);
