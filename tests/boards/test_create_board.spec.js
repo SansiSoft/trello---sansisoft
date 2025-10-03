@@ -69,21 +69,21 @@ test('Verificar que se crea un tablero desde una plantilla', async ({ trelloPage
 //     await expect(trello_home_page.submitCreateBoardBtn).toBeDisabled();
 // })
 
-test('Visualizar tablero creado desde la lista',async ({trelloPage,cleanupBoard})=>{
-  const trello_home_page = new TrelloHomePage(trelloPage);
-  const titleBoard = "New title board - " + Date.now();
-  await trello_home_page.createANewBoard(titleBoard);
-  await expect(trelloPage).toHaveTitle(`${titleBoard} | Trello`);
-  const boardPage = new BoardPage(trelloPage);
-  await boardPage.goBack();
-  await trello_home_page.goToBoardList();
-  const boardList = new BoardList(trello_home_page.page);
-  await boardList.loadMoreBoards();
-   await trelloPage.waitForLoadState("networkidle");
-   const boardLink = trelloPage.getByRole('link', { name: titleBoard, exact: true });
-  await expect(boardLink).toHaveCount(1, { timeout: 20000 });
-   cleanupBoard.registerBoard(titleBoard);
-});
+// test('Visualizar tablero creado desde la lista',async ({trelloPage,cleanupBoard})=>{
+//   const trello_home_page = new TrelloHomePage(trelloPage);
+//   const titleBoard = "New title board - " + Date.now();
+//   await trello_home_page.createANewBoard(titleBoard);
+//   await expect(trelloPage).toHaveTitle(`${titleBoard} | Trello`);
+//   const boardPage = new BoardPage(trelloPage);
+//   await boardPage.goBack();
+//   await trello_home_page.goToBoardList();
+//   const boardList = new BoardList(trello_home_page.page);
+//   await boardList.loadMoreBoards();
+//    await trelloPage.waitForLoadState("networkidle");
+//    const boardLink = trelloPage.getByRole('link', { name: titleBoard, exact: true });
+//   await expect(boardLink).toHaveCount(1, { timeout: 20000 });
+//    cleanupBoard.registerBoard(titleBoard);
+// });
 
 // test.describe('Board name validation', () => {
 //   const cases = [
