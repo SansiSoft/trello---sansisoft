@@ -39,7 +39,7 @@ test('El board debe mantenerse en privado', async ({ trelloPage }) => {
 });
 
 
-test.only('Verificar que se edite el nombre del tablero en la lista de tableros', async ({ trelloPage,cleanupBoard }) => {
+test('Verificar que se edite el nombre del tablero en la lista de tableros', async ({ trelloPage,cleanupBoard }) => {
     const boardPage = new BoardPage(trelloPage);
     const newName = 'Edited Board Name ' + Date.now();
     await boardPage.changeBoardName(newName);

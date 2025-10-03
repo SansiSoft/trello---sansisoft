@@ -59,7 +59,7 @@ test('Verificar que se crea un tablero desde una plantilla', async ({ trelloPage
   await expect(trello_home_page.submitCreateBoardBtn).toBeDisabled();
 });
 
-test('BUG-CB - No deberia crear un tablero con nombre duplicado',async({trelloPage})=>{
+test('BUG-CB-001 - No deberia crear un tablero con nombre duplicado',async({trelloPage})=>{
     test.fail(true, "BUG-CB-001: Se puede crear un board con un nombre duplicado");
     const trello_home_page = new TrelloHomePage(trelloPage)
     const duplicate_title="Titulo duplicado"
