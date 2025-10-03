@@ -69,7 +69,7 @@ test('BUG-CB - No deberia crear un tablero con nombre duplicado',async({trelloPa
     await expect(trello_home_page.submitCreateBoardBtn).toBeDisabled();
 })
 
-test.only('Visualizar tablero creado desde la lista',async ({trelloPage,cleanupBoard})=>{
+test('Visualizar tablero creado desde la lista',async ({trelloPage,cleanupBoard})=>{
   const trello_home_page = new TrelloHomePage(trelloPage);
   const titleBoard = "New title board - " + Date.now();
   await trello_home_page.createANewBoard(titleBoard);
