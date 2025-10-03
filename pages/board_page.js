@@ -1,5 +1,6 @@
 const { ColumnListComponent } = require('./components/column_list_component.js'); 
-const { clickButton, fillInput } = require('../utils/helpers_ui.js')
+const { clickButton, fillInput } = require('../utils/helpers_ui.js');
+const { logger } = require('../utils/logger.js');
 
 class BoardPage {
     constructor(page) {
@@ -13,8 +14,6 @@ class BoardPage {
         this.toWorkspaceButton = this.page.locator('button[data-testid="board-visibility-dropdown-Workspace"]');
         this.toPublicButton = this.page.locator('button[data-testid="board-visibility-dropdown-Public"]');
         this.isPublicButtonConfirm = this.page.getByText('Yes, make board public');
-
-        // Locators para las columnas del board
         this.listTitleInput = this.page.locator('textarea[data-testid="list-name-textarea"]'); 
         this.confirmTitleTitleButton = this.page.locator('button[data-testid="list-composer-add-list-button"]');
     }
@@ -25,17 +24,24 @@ class BoardPage {
         await this.editBoardInput.press('Enter');
     }
 
+    async goBack(){
+        logger.info('Regresando a la página principal...');
+        await this.page.goBack();
+        logger.success('Regreso a la página principal completado.');
+    }
+
     async changeBoardVisibility({ isPublic = false, isPrivate = false, isWorkspace = false }) {
         await this.openMenuButton.click();
         await this.visibilityButton.click();
-
+        logger.info(`Cambiando la visibilidad del tablero a: ${isPublic ? 'Público' : isPrivate ? 'Privado' : isWorkspace ? 'Workspace' : 'Ninguno'}`);
         if (isPublic) {
             const alreadyPublic = await this.toPublicButton
             .locator('[data-testid="CheckIcon"]')
             .isVisible()
             .catch(() => false);
-
+         
             if (!alreadyPublic) {
+            logger.info('Cambiando a visibilidad Pública...');
             await this.toPublicButton.click();
             await this.isPublicButtonConfirm.click();
             }
@@ -48,6 +54,7 @@ class BoardPage {
             .catch(() => false);
 
             if (!alreadyPrivate) {
+            logger.info('Cambiando a visibilidad Privada...');
             await this.toPrivateButton.click();
             }
         }
@@ -59,10 +66,11 @@ class BoardPage {
             .catch(() => false);
 
             if (!alreadyWorkspace) {
+            logger.info('Cambiando a visibilidad Workspace...');
             await this.toWorkspaceButton.click();
             }
         }
-
+        logger.success('Cambio de visibilidad completado.');
         await this.closeMenuButton.click();
     }
 
