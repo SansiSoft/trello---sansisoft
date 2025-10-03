@@ -4,6 +4,10 @@ const { logger } = require('../utils/logger.js');
 class ListPage {
   constructor(page) {
     this.page = page;
+    this.addListButton = this.page.locator('[data-testid="list-composer-button"]');
+    this.listNameInput = this.page.getByPlaceholder('Enter list name…');
+    this.saveListButton = this.page.getByRole('button', { name: 'Add list' });
+    this.cancelListButton = this.page.locator('[data-testid="list-composer-cancel-button"]');
     this.listByName = (listName) =>
       this.page.locator(`h2[data-testid="list-name"] button span:has-text("${listName}")`);
     this.getListTextarea = (listName) =>
@@ -112,6 +116,62 @@ class ListPage {
         return { hasOverflow: false, hasVerticalOverflow: false, error: error.message };
       }
   }
+
+  /**
+   * Crear nueva lista
+   * @param {string} listName
+   */
+  async createList(listName) {
+    logger.info(`Creando lista con nombre: "${listName}"`);
+    await this.addListButton.click();
+    if (listName !== 'CANCEL:createList') {
+      await this.listNameInput.fill(listName === 'EMPTY' ? '' : listName);
+      await this.saveListButton.click();
+    } else {
+      await this.cancelListButton.click();
+    }
+    await this.page.waitForTimeout(500);
+  }
+  
+  /**
+   * Validar que la lista se creó
+   * @param {string} expectedName
+   */
+  async expectListName(expectedName) {
+    logger.info(`Verificando lista creada: "${expectedName}"`);
+    await this.listByName(expectedName).waitFor({ state: 'visible', timeout: 5000 });
+  }
+
+  /**
+ * Validar que no se creó la lista
+ * @param {string} listName - nombre de la lista a verificar
+ */
+async expectListNotCreated(listName) {
+  logger.info(`Verificando que no se haya creado la lista: "${listName}"`);
+
+  let notCreated = true;
+
+  if (listName === 'EMPTY' || listName === 'CANCEL:createList') {
+    // Caso input vacío o acción cancelada
+    const emptyList = this.page.locator('h2[data-testid="list-name"] span:has-text("")');
+    const count = await emptyList.count();
+    notCreated = count === 0;
+  } else {
+    // Otros casos: verificamos que la lista con el nombre exacto no exista
+    const list = this.page.locator(`h2[data-testid="list-name"] span:has-text("${listName}")`);
+    const count = await list.count();
+    notCreated = count === 0;
+  }
+
+  if (!notCreated) {
+    throw new Error(`La lista "${listName}" se creó cuando no debía`);
+  } else {
+    logger.success(`La lista "${listName}" NO se creó (correcto)`);
+  }
+
+  return notCreated;
+}
+
 }
  
 
