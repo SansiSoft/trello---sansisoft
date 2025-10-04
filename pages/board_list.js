@@ -1,9 +1,11 @@
+const { logger } = require("../utils/logger");
+
 class BoardList {
   constructor(page) {
     this.page = page;
     this.boards = this.page.locator('section[data-testid="workspace-boards-list-section"] a');
     this.searchInput = this.page.locator('input[placeholder="Search boards"]');
-    this.moreBoardsButton = this.page.getByRole('button', { name: 'Load more boards' });
+   this.moreBoardsButton = this.page.locator('button:has-text("Load more boards")');
     this.firstBoard = this.boards.first();
   }
 
@@ -12,11 +14,16 @@ class BoardList {
   }
 
 async loadMoreBoards() {
-    while (await this.moreBoardsButton.isVisible()) {
-       await this.moreBoardsButton.click();
-       await this.page.waitForTimeout(500);
-     }
+  const button = this.moreBoardsButton;
+  const count = await button.count();
+  logger.info(`Botones 'Load more boards' encontrados: ${count}`);
+  while (await button.count() > 0 && await button.isVisible()) {
+    logger.info("Haciendo click en 'Load more boards'");
+    await button.click();
+    await this.page.waitForTimeout(800);
   }
+  logger.success("Ya no hay más tableros que cargar");
+}
 
  
   async searchBoardByName(boardName) {

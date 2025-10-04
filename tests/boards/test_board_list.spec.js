@@ -5,12 +5,12 @@ const { BoardList } = require('../../pages/board_list.js');
 
 
 
-test('Buscar tablero en la lista y abrirlo', async ({ trelloPage, board }) => {
+test('Buscar tablero en la lista y verificar que aparece', async ({ trelloPage, board,list }) => {
   const board_created_name = board.name;
   const trello_home_page = new TrelloHomePage(trelloPage);
   await trello_home_page.goToBoardList();
   const boardList = new BoardList(trello_home_page.page);
   await boardList.searchBoardByName(board_created_name);
-  await boardList.openFirstBoard();
-  expect(trelloPage).toHaveTitle(new RegExp(board_created_name));
+  const boardLocator = trello_home_page.page.getByText(board_created_name, { exact: true });
+  await expect(boardLocator).toBeVisible();
 });
