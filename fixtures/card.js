@@ -12,7 +12,7 @@ const cardList = test.extend({
         // await expect(trelloPage).toHaveTitle(`${titleBoard} | Trello`);
         await trelloPage.waitForTimeout(7000);
 
-        // Create new Card and open
+        // Crear nueva Card y abrirla
         const cardTitle = "Test Card - " + Date.now();
         const testList = await board.createAList("TESTS");
         await testList.addCard(cardTitle);

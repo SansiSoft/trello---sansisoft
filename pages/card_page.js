@@ -22,6 +22,8 @@ class CardPage {
         this.labelOptions = page.locator('section[data-testid="labels-popover-labels-screen"] label[data-testid="clickable-checkbox"]');
 
         //section members
+        this.membersModal = page.locator('button[data-testid="card-back-members-button"]');
+        this.addMemberSearchInput = page.locator('input[aria-placeholder="Search members"]');
 
         //section dates
         this.dueDateModal = page.locator('button[data-testid="card-back-due-date-button"]');
@@ -169,6 +171,75 @@ class CardPage {
         const actualText = (await dueDateLocator.textContent()).trim();
         console.log('rango de fechas actual', actualText);
         return actualText.includes(expectedStartDate) && actualText.includes(expectedEndDate);
+    }
+
+    async addMembers(members = [], stepDelay = 1500) {
+        try {
+            this.addButton.click();
+            console.log('Step 1: Abriendo modal de miembros...');
+            await this.membersModal .click();
+            await this.page.waitForTimeout(stepDelay);
+            // Espera a que aparezca la lista de miembros
+            const modalMembers = this.page.locator('section[aria-labelledby="card-back-add-members"]');
+            await expect(modalMembers).toBeVisible({ timeout: 10000 });
+            await this.page.waitForTimeout(stepDelay);
+            const searchInput = this.page.locator('input[aria-placeholder="Search members"]');
+            await expect(searchInput).toBeVisible({ timeout: 10000 });
+            // Espera a que haya al menos un miembro renderizado
+            const memberItem = modalMembers.locator('button[data-testid="choose-member-item-add-member-button"]');
+            await expect(memberItem.first()).toBeVisible({ timeout: 10000 });
+            console.log('Modal abierto y miembros cargados');
+
+            if (!Array.isArray(members)) {
+                members = [members];
+            }
+
+            for (const member of members) {
+                try {
+                    console.log(`Step: Buscando miembro "${member}"...`);
+
+                    await this.addMemberSearchInput.clear();
+                    await this.addMemberSearchInput.fill(member);
+                    const results = this.page.locator('button[data-testid="choose-member-item-add-member-button"]');
+                    //Buscar coincidencia con el texto ingresado (insensible a mayúsculas/minúsculas)
+                    let itemToSelect = results.filter({ hasText: new RegExp(member, 'i') }).first();
+
+                    //Fallback: si no hay coincidencia, seleccionar el primer resultado
+                    if (!(await itemToSelect.isVisible())) {
+                        console.log(`No se encontró coincidencia exacta para "${member}", seleccionando el primero...`);
+                        itemToSelect = results.first();
+                    }
+
+                    await itemToSelect.click();
+                    console.log(`Miembro "${member}" seleccionado correctamente`);
+                    await this.page.waitForTimeout(stepDelay);
+                } catch (error) {
+                    console.error(`Error al seleccionar miembro "${member}":`, error);
+                }
+            }
+            console.log('Cerrando modal...');
+            await this.closeBtn.click();
+
+        } catch (error) {
+            console.error('Error seleccionando miembros:', error);
+            await this.page.screenshot({ path: `error-members-${Date.now()}.png` });
+            throw error;
+        }
+    }
+
+    async areMembersAdded(members = []) {
+        if (!Array.isArray(members)) {
+            members = [members];
+        }
+        for (const member of members) {
+            const memberLocator = this.page.locator(
+                `section:has(h3:has-text("Members")) button[data-testid="card-back-member-avatar"] span[aria-label*="${member}"]`
+            );
+            if (!(await memberLocator.isVisible())) {
+                return false;
+            }
+        }
+        return true;
     }
 }
 module.exports = {CardPage};

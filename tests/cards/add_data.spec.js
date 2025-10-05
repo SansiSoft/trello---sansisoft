@@ -27,3 +27,9 @@ cardList('Verificar que se pueda asignar una fecha a una tarjeta', async ({ test
     await testCard.selectDueDate(startDateISO, endDateISO,1500);
     expect(await testCard.isDueDateSet(expectedStartDate, expectedEndDate)).toBe(true);
 });
+
+cardList('Verificar que se pueda asignar miembros a una tarjeta', async ({ testCard }) => {
+    const members = ['sansisoft'];
+    await testCard.addMembers(members, 1500);
+    expect(await testCard.areMembersAdded(members)).toBe(true);
+});
