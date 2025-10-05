@@ -2,6 +2,7 @@ const { test, expect } = require('../../fixtures/td_board.js');
 const { TrelloHomePage } = require('../../pages/trello_home_page.js');
 const { BoardPage } = require('../../pages/board_page.js');
 const { BoardList } = require('../../pages/board_list.js');
+const { BoardSwitcher } = require('../../pages/components/board_switcher.js');
 
 
 test.beforeEach(async ({ trelloPage }) => {
@@ -51,3 +52,5 @@ test('Verificar que se edite el nombre del tablero en la lista de tableros', asy
     await expect(boardLink).toHaveCount(1);
     cleanupBoard.registerBoard(newName);
 });
+
+

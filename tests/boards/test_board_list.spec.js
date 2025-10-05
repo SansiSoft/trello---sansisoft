@@ -14,3 +14,14 @@ test('Buscar tablero en la lista y verificar que aparece', async ({ trelloPage, 
   const boardLocator = trello_home_page.page.getByText(board_created_name, { exact: true });
   await expect(boardLocator).toBeVisible();
 });
+
+test.only('Cambiar al segundo tablero desde el modal de boards', async ({ trelloPage }) => {
+  const trello_home_page = new TrelloHomePage(trelloPage);
+  await trello_home_page.goToBoardList();
+  const board_list = new BoardList(trello_home_page.page);
+  await board_list.openFirstBoard();
+  const board_page = new BoardPage(board_list.page);
+  const switcher = await board_page.openSwitchBoard();
+  const newBoardName = await switcher.selectNRecentBoard(1);
+  await expect(trelloPage).toHaveTitle(`${newBoardName} | Trello`);
+});
