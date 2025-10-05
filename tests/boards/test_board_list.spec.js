@@ -15,7 +15,7 @@ test('Buscar tablero en la lista y verificar que aparece', async ({ trelloPage, 
   await expect(boardLocator).toBeVisible();
 });
 
-test.only('Cambiar al segundo tablero desde el modal de boards', async ({ trelloPage }) => {
+test('Cambiar al segundo tablero desde el modal de boards', async ({ trelloPage }) => {
   const trello_home_page = new TrelloHomePage(trelloPage);
   await trello_home_page.goToBoardList();
   const board_list = new BoardList(trello_home_page.page);
