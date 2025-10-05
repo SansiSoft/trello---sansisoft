@@ -29,6 +29,12 @@ class TrelloHomePage {
     this.isClosed = this.page.getByText(/this board is closed|este tablero está cerrado/i);
     this.deleteBoardBtn = this.page.getByRole('button', { name: /permanently delete board|eliminar permanentemente/i });
     this.confirmDeleteBtn = this.page.locator('button[data-testid="close-board-delete-board-confirm-button"]');
+
+    // Board background change
+  this.changeBackgroundBtn = this.page.getByRole('button', { name: /Change background|Cambiar fondo/i });
+  this.colorsTab = this.page.getByRole('button', { name: /Colors|Colores/i });
+  this.alienColorBtn = this.page.locator('button[style*="rgb(0, 121, 191)"]'); // Color azul
+
   }
 
   async goToBoardList() {
@@ -74,8 +80,6 @@ async isCreateButtonEnabled(titleBoard) {
 }
 
 
-
-
   async createBoardFromTemplate(titleBoard, templateName = '1-on-1 Meeting Agenda') {
     logger.info(`Creando tablero desde plantilla: "${templateName}" → "${titleBoard}"`);
     await this.openCreateBoardModal();
@@ -117,6 +121,24 @@ async isCreateButtonEnabled(titleBoard) {
     await boardLink.click();
     await this.deleteBoard();
   }
+
+  async changeBoardBackground() {
+    logger.info('Cambiando el fondo del tablero');
+    await this.page.waitForLoadState();
+
+    await this.openMenu();
+    await this.changeBackgroundBtn.waitFor({ state: 'visible', timeout: 5000 });
+    await this.changeBackgroundBtn.click();
+
+    await this.colorsTab.waitFor({ state: 'visible', timeout: 5000 });
+    await this.colorsTab.click();
+
+    await this.alienColorBtn.waitFor({ state: 'visible', timeout: 5000 });
+    await this.alienColorBtn.click();
+
+    logger.success(' Fondo del tablero cambiado correctamente');
+  }
+  
 }
 
 module.exports = { TrelloHomePage };
