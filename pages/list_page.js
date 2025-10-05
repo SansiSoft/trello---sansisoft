@@ -16,11 +16,16 @@ class ListPage {
     this.overflowMenu = '[data-testid="OverflowMenuHorizontalIcon"]';
     this.listEditMenuButton = '[data-testid="list-edit-menu-button"]';
     this.moveListOption = 'text=Move list';
+    this.copyListOption = 'text=Copy list';
     this.archiveListButton = '[data-testid="list-actions-archive-list-button"]';
     this.undoArchiveButton = 'button:has-text("Undo")';
     this.boardSelect = '#move-list-screen-board-options-select';
     this.positionSelect = '#move-list-screen-position-select';
     this.saveButton = 'button[type="submit"]';
+    this.copyListModal = this.page.locator('#copy-list-header');
+    this.listNameCopyInput = this.page.locator('#listName');
+    this.createListButton = this.page.getByRole('button', { name: 'Create list' });
+    this.closePopoverButton = this.page.locator('button[aria-label="Close popover"]');
   }
 
   /**
@@ -396,33 +401,109 @@ class ListPage {
  * Validar que no se creó la lista
  * @param {string} listName - nombre de la lista a verificar
  */
-async expectListNotCreated(listName) {
-  logger.info(`Verificando que no se haya creado la lista: "${listName}"`);
+  async expectListNotCreated(listName) {
+    logger.info(`Verificando que no se haya creado la lista: "${listName}"`);
 
-  let notCreated = true;
+    let notCreated = true;
 
-  if (listName === 'EMPTY' || listName === 'CANCEL:createList') {
-    // Caso input vacío o acción cancelada
-    const emptyList = this.page.locator('h2[data-testid="list-name"] span:has-text("")');
-    const count = await emptyList.count();
-    notCreated = count === 0;
-  } else {
-    // Otros casos: verificamos que la lista con el nombre exacto no exista
-    const list = this.page.locator(`h2[data-testid="list-name"] span:has-text("${listName}")`);
-    const count = await list.count();
-    notCreated = count === 0;
+    if (listName === 'EMPTY' || listName === 'CANCEL:createList') {
+      // Caso input vacío o acción cancelada
+      const emptyList = this.page.locator('h2[data-testid="list-name"] span:has-text("")');
+      const count = await emptyList.count();
+      notCreated = count === 0;
+    } else {
+      // Otros casos: verificamos que la lista con el nombre exacto no exista
+      const list = this.page.locator(`h2[data-testid="list-name"] span:has-text("${listName}")`);
+      const count = await list.count();
+      notCreated = count === 0;
+    }
+
+    if (!notCreated) {
+      throw new Error(`La lista "${listName}" se creó cuando no debía`);
+    } else {
+      logger.success(`La lista "${listName}" NO se creó (correcto)`);
+    }
+
+    return notCreated;
   }
 
-  if (!notCreated) {
-    throw new Error(`La lista "${listName}" se creó cuando no debía`);
-  } else {
-    logger.success(`La lista "${listName}" NO se creó (correcto)`);
+  async  openCopyListModal(listIndex = 0) {
+    logger.info(`Abriendo modal de mover lista para la lista en posición ${listIndex}`);
+    
+    // Esperar a que la página esté completamente cargada
+    await this.page.waitForLoadState('networkidle');
+    await this.page.waitForTimeout(1000); // Espera adicional para estabilidad
+    
+    // Seleccionar el botón de menú de la lista específica (tres puntos de la lista)
+    const listEditMenuButtons = this.page.locator(this.listEditMenuButton);
+    
+    // Asegurar que el botón existe y es clickeable
+    await listEditMenuButtons.nth(listIndex).waitFor({ state: 'visible', timeout: 10000 });
+    await listEditMenuButtons.nth(listIndex).click();
+    
+    logger.info('Haciendo clic en "Copy list"');
+    
+    // Esperar que el menú aparezca y sea clickeable
+    await this.page.locator(this.copyListOption).waitFor({ state: 'visible', timeout: 5000 });
+    await this.page.locator(this.copyListOption).click();
+    
+    // Verificar que el modal se abrió
+    await this.copyListModal.waitFor({ state: 'visible', timeout: 10000 });
+    
+    logger.success('Modal de copiar lista abierto exitosamente');
   }
 
-  return notCreated;
-}
+  /**
+   * Copiar lista
+   * @param {string} originalName - Nombre actual de la lista a copiar.
+   * @param {string} newName - Nuevo nombre que se le asignará a la copia.
+   * @param {boolean} confirm
+   */
+  async copyList(originalName, newName = '', confirm = true) {
+    
+    // Configurar las opciones dentro del modal
+    if (newName) {
+      logger.info(`Copiando lista con otro nombre: "${originalName}" → "${newName}"`);
+      await this.listNameCopyInput.press('Control+a');
+      await this.listNameCopyInput.fill(newName);
+    }else{
+      logger.info(`Copiando lista sin cambiar nombre: "${originalName}"`);
+    }
+    // Confirmar o cancelar la copia
+      if (confirm) {
+        await this.createListButton.click();
+      } else {
+        await this.closePopoverButton.click();
+      }
+  }
+
+/**
+   * @param {string} originalName
+   * @param {string} newName
+   * @param {boolean} confirm
+   */
+  async expectedResultCopyList(originalName, newName='', confirm = true){
+    // Esperar el resultado
+    try {
+      if (confirm && newName) {
+        await expect(this.listByName(newName)).toBeVisible({ timeout: 10000 });
+      } else if (confirm && !newName) {
+        await expect(this.listByName(originalName)).toHaveCount(2);
+      } else {
+        // Si se canceló, solo verificamos que no haya cambio
+        await expect(this.copyListModal).toBeHidden();
+      }
+      logger.success(`Copia exitosa - Nombre de Lista copiada: "${newName}"`);
+      return true;
+    } catch (error) {
+      logger.error(`Error en verificación: ${error.message}`);
+      throw error;
+    }
+  }
+
 
 }
  
+
 
 module.exports = { ListPage };
