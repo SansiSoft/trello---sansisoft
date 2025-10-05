@@ -183,7 +183,10 @@ async createBoardAPI(boardName) {
 
   if (!response.ok) {
     const errorText = await response.text();
-    logger.error(`Falló la creación del tablero: ${response.status} ${errorText}`);
+    const text = await response.text().catch(() => '');
+    logger.error(`Falló la creación del tablero`);
+    throw new Error(`Fallo al crear tablero`);
+    
     //throw new Error(`Falló la creación del tablero: ${response.status}`);
   }
 
