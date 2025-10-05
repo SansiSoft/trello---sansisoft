@@ -23,7 +23,7 @@ for (const testCase of boardCases) {
 }
 
 
-test.only('No se debe crear un tablero con solo espacios (API)', async ({ trelloPage }) => {
+test('No se debe crear un tablero con solo espacios (API)', async ({ trelloPage }) => {
   const trello_home_page = new TrelloHomePage(trelloPage);
   const invalidName = "          ";
   let errorCaught = false;
