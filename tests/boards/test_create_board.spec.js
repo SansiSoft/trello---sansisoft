@@ -18,8 +18,8 @@ for (const testCase of boardCases) {
     const trello_home_page = new TrelloHomePage(trelloPage);
     const finalName = `${testCase.newName} - ${Date.now()}`;
     await trello_home_page.createANewBoard(finalName);
-    cleanupBoard.registerBoard(finalName);
     await expect(trelloPage).toHaveTitle(`${finalName} | Trello`);
+    cleanupBoard.registerBoard(finalName);
   });
 }
 
@@ -78,8 +78,6 @@ test('Visualizar tablero creado desde la lista',async ({trelloPage,cleanupBoard}
   await boardPage.goBack();
   await trello_home_page.goToBoardList();
   const boardList = new BoardList(trello_home_page.page);
-  
-
   await boardList.loadMoreBoards();
   await trelloPage.waitForLoadState("networkidle");
   const boardLink = trelloPage.getByRole('link', { name: titleBoard, exact: true });
