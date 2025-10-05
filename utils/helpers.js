@@ -1,7 +1,55 @@
 const { faker } = require('@faker-js/faker');
 
-// En Faker v8+ no se puede cambiar el locale después de la importación
-// Se usa el locale por defecto (en)
+/**
+ * Genera nombres para tableros de Trello
+ * @returns {string} - Nombre de tablero generado
+ */
+function generateBoardName() {
+  const patterns = [
+    () => `${faker.company.buzzPhrase()}`,
+    () => `Proyecto ${faker.company.buzzNoun()}`,
+    () => `${faker.hacker.noun()} Dashboard`,
+    () => `${faker.commerce.department()} Board`,
+    () => `Team ${faker.word.adjective()} ${faker.word.noun()}`
+  ];
+  
+  const randomPattern = faker.helpers.arrayElement(patterns);
+  return randomPattern();
+}
+
+/**
+ * Genera nombres para listas de Trello
+ * @returns {string} - Nombre de lista generado
+ */
+function generateListName() {
+  const patterns = [
+    () => `${faker.hacker.ingverb()} ${faker.hacker.noun()}`,
+    () => `Lista ${faker.word.adjective()}`,
+    () => `${faker.company.buzzNoun()} Tasks`,
+    () => `${faker.word.verb()} & ${faker.word.verb()}`,
+    () => `${faker.date.month()} Goals`
+  ];
+  
+  const randomPattern = faker.helpers.arrayElement(patterns);
+  return randomPattern();
+}
+
+/**
+ * Genera nombres para tarjetas de Trello
+ * @returns {string} - Nombre de tarjeta generado
+ */
+function generateCardName() {
+  const patterns = [
+    () => `${faker.hacker.ingverb()} ${faker.hacker.noun()}`,
+    () => `${faker.company.buzzVerb()} ${faker.commerce.productName()}`,
+    () => `Review ${faker.word.noun()}`,
+    () => `Fix ${faker.hacker.abbreviation()} ${faker.word.noun()}`,
+    () => faker.lorem.sentence(4).replace('.', '')
+  ];
+  
+  const randomPattern = faker.helpers.arrayElement(patterns);
+  return randomPattern();
+}
 
 /**
  * Procesa placeholders especiales en datos de test cases
@@ -167,4 +215,7 @@ module.exports = {
   processTestCases,
   reportKnownBug,
   captureUIBug,
+  generateBoardName,
+  generateListName,
+  generateCardName,
 };
