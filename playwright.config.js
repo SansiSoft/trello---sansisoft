@@ -26,6 +26,7 @@ export default defineConfig({
       },
       ...(storageStateExists ? {} : { dependencies: ['setup'] }),
     },
+    
   ],
   timeout: 60000,
 });

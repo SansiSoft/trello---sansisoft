@@ -203,7 +203,7 @@ async createBoardAPI(boardName) {
 
     const apiKey = process.env.TRELLO_KEY;
     const apiToken = process.env.TRELLO_TOKEN;
-
+    const BASE_URL = 'https://api.trello.com/1';
     const response = await fetch(`${BASE_URL}/boards/${boardId}?key=${apiKey}&token=${apiToken}`, {
       method: 'DELETE',
     });
@@ -213,6 +213,7 @@ async createBoardAPI(boardName) {
     } else {
       logger.success(`Tablero eliminado correctamente: ${boardId}`);
     }
+    return response;
   }
 }
 
