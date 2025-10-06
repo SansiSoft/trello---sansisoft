@@ -60,7 +60,7 @@ test('CB-07:Verificar que se crea un tablero desde una plantilla', async ({ trel
     
 })
 
-test.only('CB-10:Visualizar tablero creado desde la lista',async ({trelloPage,cleanupBoard})=>{
+test('CB-10:Visualizar tablero creado desde la lista',async ({trelloPage,cleanupBoard})=>{
   const trello_home_page = new TrelloHomePage(trelloPage);
   const titleBoard = "New title board - " + Date.now();
   await trello_home_page.createANewBoard(titleBoard);
