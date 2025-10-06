@@ -38,12 +38,20 @@ class TrelloHomePage {
 
   }
 
+/**
+   * Navega a la lista de tableros
+   * 
+   */
   async goToBoardList() {
     logger.info('Navegando a la lista de tableros...');
     await this.boardListButton.click();
     logger.success('Navegación a lista de tableros completada.');
   }
 
+  /**
+   * Abre el modal para la creacion de un tablero
+   * 
+   */
   async openCreateBoardModal() {
     logger.info('Abriendo modal para crear un tablero...');
     await this.page.waitForLoadState();
@@ -52,6 +60,10 @@ class TrelloHomePage {
     logger.success('Modal de creación abierto.');
   }
 
+/**
+   * Flujo de creacion de un tablero correcto
+   * 
+   */
   async createANewBoard(titleBoard) {
     logger.info(`Creando un nuevo tablero: "${titleBoard}"`);
     await this.openCreateBoardModal();
@@ -63,6 +75,10 @@ class TrelloHomePage {
     return new BoardPage(this.page);
   }
 
+ /**
+   * Trata de crear un tablero
+   * 
+   */
   async attemptToCreateBoard(titleBoard) {
     logger.info(`Intentando crear tablero con título: "${titleBoard}"`);
     await this.openCreateBoardModal();
@@ -72,6 +88,11 @@ class TrelloHomePage {
     await this.submitCreateBoardBtn.waitFor({ state: 'visible' });
     logger.warn('Tablero no enviado aún (submit pendiente).');
   }
+
+  /**
+   * Devuelve el estado del boton de crear
+   * @param {string} titleBoard - Nombre del tablero
+   */
 async isCreateButtonEnabled(titleBoard) {
   await this.openCreateBoardModal();
   await this.createBoardBtn.click();
@@ -80,6 +101,13 @@ async isCreateButtonEnabled(titleBoard) {
   return await this.submitCreateBoardBtn.isEnabled();
 }
 
+
+
+
+/**
+   * Crea un tablero a traves de una plantilla
+   * 
+   */
 
   async createBoardFromTemplate(titleBoard, templateName = '1-on-1 Meeting Agenda') {
     logger.info(`Creando tablero desde plantilla: "${templateName}" → "${titleBoard}"`);
@@ -92,6 +120,10 @@ async isCreateButtonEnabled(titleBoard) {
     logger.success(`Tablero creado desde plantilla: "${titleBoard}"`);
   }
 
+  /**
+   * Abre el menu de un tablero existente
+   * 
+   */
   async openMenu() {
     logger.info('Abriendo menú del tablero...');
     const board_page = new BoardPage(this.page);
@@ -99,6 +131,10 @@ async isCreateButtonEnabled(titleBoard) {
     logger.success('Menú del tablero abierto.');
   }
 
+/**
+   * Elimina un tablero existente 
+   * 
+   */
   async deleteBoard() {
     logger.info('Eliminando tablero actual...');
     await this.page.waitForLoadState();
@@ -115,6 +151,10 @@ async isCreateButtonEnabled(titleBoard) {
     logger.success('Tablero eliminado permanentemente.');
   }
 
+ /**
+   * Elimina un tablero existente usando mediante su nombre
+   * @param {string} boardName - Nombre del tablero a eliminar
+   */
   async deleteExistingBoard(boardName) {
     logger.info(`Eliminando tablero existente: "${boardName}"`);
     await this.goToBoardList();

@@ -1,6 +1,7 @@
 const { ColumnListComponent } = require('./components/column_list_component.js'); 
 const { clickButton, fillInput } = require('../utils/helpers_ui.js');
 const { logger } = require('../utils/logger.js');
+const { BoardSwitcher } = require('./components/board_switcher.js');
 
 class BoardPage {
     constructor(page) {
@@ -16,6 +17,7 @@ class BoardPage {
         this.isPublicButtonConfirm = this.page.getByText('Yes, make board public');
         this.listTitleInput = this.page.locator('textarea[data-testid="list-name-textarea"]'); 
         this.confirmTitleTitleButton = this.page.locator('button[data-testid="list-composer-add-list-button"]');
+        this.switchBoardButton = this.page.locator('button[data-testid="panel-nav-board-switcher-button"]');
         this.listTitlesCSS = 'h2[data-testid="list-name"]'
         this.createNewListBtnCSS = 'button[data-testid="list-composer-button"]'
     }
@@ -24,6 +26,13 @@ class BoardPage {
         await this.nameBoard.click();
         await this.editBoardInput.fill(newName);
         await this.editBoardInput.press('Enter');
+    }
+
+   async openSwitchBoard() {
+        await this.page.keyboard.press('b');
+        const board_switcher = new BoardSwitcher(this.page);
+        await board_switcher.waitForOpen();
+        return board_switcher;
     }
 
     async goBack(){

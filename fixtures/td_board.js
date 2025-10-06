@@ -2,6 +2,8 @@ const { test: base, expect } = require('@playwright/test');
 const path = require('path');
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const { logger } = require('../utils/logger');
+const { generateBoardName, generateListName, generateCardName } = require('../utils/helpers');
+
 require('dotenv').config();
 
 const API_KEY = process.env.TRELLO_KEY;
@@ -47,6 +49,24 @@ const test = base.extend({
         logger.error(`Error al eliminar tablero - ID: ${board.id}`);
       }
     },
+
+
+    list: async ({ board }, use) => {
+    const listName = generateListName();
+    const listResp = await fetch(
+      `https://api.trello.com/1/lists?name=${listName}&idBoard=${board.id}&key=${API_KEY}&token=${API_TOKEN}`,
+      { method: 'POST' }
+    );
+    const list = await listResp.json();
+    
+    if (list.id) {
+      logger.success(`Lista creada - ID: ${list.id}, Nombre: ${list.name}, Board: ${board.name}`);
+    } else {
+      logger.error(`Error al crear lista: ${JSON.stringify(list)}`);
+    }
+
+    await use(list);
+  },
 
   cleanupBoard: async ({}, use) => {
     let boardName;
