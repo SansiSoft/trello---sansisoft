@@ -15,8 +15,10 @@ class BoardList {
 
 async loadMoreBoards() {
   const button = this.moreBoardsButton;
+  await this.page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await this.page.waitForTimeout(1000);
   logger.info(`Verificando si el boton de cargar mas Tableros esta habilitado`);
-  if(await button.isEnabled()){
+  if(await button.isVisible()){
      logger.info(`Boton habilitado: existen varios tableros`);
     while (await button.count() > 0 && await button.isVisible()) {
     logger.info("Haciendo click en 'Load more boards'");
