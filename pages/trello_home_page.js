@@ -33,7 +33,8 @@ class TrelloHomePage {
     // Board background change
   this.changeBackgroundBtn = this.page.getByRole('button', { name: /Change background|Cambiar fondo/i });
   this.colorsTab = this.page.getByRole('button', { name: /Colors|Colores/i });
-  this.alienColorBtn = this.page.locator('button[style*="rgb(0, 121, 191)"]'); // Color azul
+  this.colorOptions = this.page.locator('button[style*="background-color"]');
+
 
   }
 
@@ -123,7 +124,7 @@ async isCreateButtonEnabled(titleBoard) {
   }
 
   async changeBoardBackground() {
-    logger.info('Cambiando el fondo del tablero');
+    logger.info('Cambiando fondo del tablero');
     await this.page.waitForLoadState();
 
     await this.openMenu();
@@ -133,12 +134,15 @@ async isCreateButtonEnabled(titleBoard) {
     await this.colorsTab.waitFor({ state: 'visible', timeout: 5000 });
     await this.colorsTab.click();
 
-    await this.alienColorBtn.waitFor({ state: 'visible', timeout: 5000 });
-    await this.alienColorBtn.click();
+    await this.colorOptions.first().waitFor({ state: 'visible', timeout: 5000 });
+    const totalColors = await this.colorOptions.count();
 
-    logger.success(' Fondo del tablero cambiado correctamente');
-  }
-  
+    const randomIndex = Math.floor(Math.random() * totalColors);
+    const selectedColor = this.colorOptions.nth(randomIndex);
+    await selectedColor.click();
+
+    await this.page.waitForTimeout(3000);
+  }  
 }
 
 module.exports = { TrelloHomePage };
