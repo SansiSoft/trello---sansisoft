@@ -62,8 +62,19 @@ class TrelloHomePage {
     await this.createBoardBtn.waitFor({ state: 'visible' });
     await this.createBoardBtn.click();
     await this.titleBoardInput.fill(titleBoard);
+    await this.submitCreateBoardBtn.waitFor({ state: 'visible' });
     logger.warn('Tablero no enviado aún (submit pendiente).');
   }
+async isCreateButtonEnabled(titleBoard) {
+  await this.openCreateBoardModal();
+  await this.createBoardBtn.click();
+  await this.titleBoardInput.fill(titleBoard);
+  await this.submitCreateBoardBtn.waitFor({ state: 'visible' });
+  return await this.submitCreateBoardBtn.isEnabled();
+}
+
+
+
 
   async createBoardFromTemplate(titleBoard, templateName = '1-on-1 Meeting Agenda') {
     logger.info(`Creando tablero desde plantilla: "${templateName}" → "${titleBoard}"`);
@@ -87,16 +98,12 @@ class TrelloHomePage {
     logger.info('Eliminando tablero actual...');
     await this.page.waitForLoadState();
     await this.openMenu();
-
     await this.closeBoardBtn.waitFor({ state: 'visible', timeout: 5000 });
     await this.closeBoardBtn.click();
-
     await this.closeBtn.waitFor({ state: 'visible', timeout: 5000 });
     await this.closeBtn.click();
-
     await this.isClosed.waitFor({ state: 'visible', timeout: 10000 });
     logger.info('Tablero cerrado. Procediendo a eliminación definitiva...');
-
     await this.openMenu();
     await this.deleteBoardBtn.click();
     await this.confirmDeleteBtn.click();
