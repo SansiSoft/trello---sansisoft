@@ -1,7 +1,7 @@
 [
-  { "id": 1, "title": "Nombre normal", "newName": "FAKER:word" },
-  { "id": 2, "title": "Con caracteres especiales", "newName": "SPECIAL:mixed" },
-  { "id": 3, "title": "Nombre unicode", "newName": "SPECIAL:unicode" },
-  { "id": 4, "title": "Nombre largo", "newName": "REPEAT:A:50" },
-  { "id": 5, "title": "Nombre empresa", "newName": "FAKER:company" }
+  { "id": "CB-01", "title": "Nombre normal", "newName": "FAKER:word" },
+  { "id": "CB-02", "title": "Con caracteres especiales", "newName": "SPECIAL:mixed" },
+  { "id": "CB-03", "title": "Nombre unicode", "newName": "SPECIAL:unicode" },
+  { "id": "CB-04", "title": "Nombre largo", "newName": "REPEAT:A:50" },
+  { "id": "CB-05", "title": "Nombre empresa", "newName": "FAKER:company" }
 ]

@@ -1,8 +1,8 @@
-const { test, expect } = require('../../fixtures/login.js');
-const { TrelloHomePage } = require('../../pages/trello_home_page.js');
-const { BoardList } = require('../../pages/board_list.js');
+const { test, expect } =  require('../../../fixtures/td_board.js');
+const { TrelloHomePage } = require('../../../pages/trello_home_page.js');
+const { BoardList } = require('../../../pages/board_list.js');
 
-test('Verificar que se elimine el tablero', async ({ trelloPage }) => {
+test('EB-01: Verificar que se elimine el tablero', async ({ trelloPage }) => {
     const trelloHome = new TrelloHomePage(trelloPage);
     const boardName = 'Board to be deleted ' + Date.now();
     await trelloHome.createANewBoard(boardName);

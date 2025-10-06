@@ -1,11 +1,11 @@
-const { test, expect } = require('../../fixtures/td_board.js');
-const { TrelloHomePage } = require('../../pages/trello_home_page.js');
-const { BoardPage } = require('../../pages/board_page.js');
-const { BoardList } = require('../../pages/board_list.js');
+const { test, expect } = require('../../../fixtures/td_board.js');
+const { TrelloHomePage } = require('../../../pages/trello_home_page.js');
+const { BoardPage } = require('../../../pages/board_page.js');
+const { BoardList } = require('../../../pages/board_list.js');
 
 
 
-test('Buscar tablero en la lista y verificar que aparece', async ({ trelloPage, board,list }) => {
+test('BL-01:Buscar tablero en la lista y verificar que aparece', async ({ trelloPage, board,list }) => {
   const board_created_name = board.name;
   const trello_home_page = new TrelloHomePage(trelloPage);
   await trello_home_page.goToBoardList();
@@ -15,7 +15,8 @@ test('Buscar tablero en la lista y verificar que aparece', async ({ trelloPage, 
   await expect(boardLocator).toBeVisible();
 });
 
-test('Cambiar al segundo tablero desde el modal de boards', async ({ trelloPage }) => {
+test('BL-02:Cambiar al segundo tablero desde el modal de boards', async ({ trelloPage,board }) => {
+  // crear 3 tableros en este test
   const trello_home_page = new TrelloHomePage(trelloPage);
   await trello_home_page.goToBoardList();
   const board_list = new BoardList(trello_home_page.page);

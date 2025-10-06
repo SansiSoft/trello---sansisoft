@@ -154,67 +154,6 @@ async isCreateButtonEnabled(titleBoard) {
     await this.deleteBoard();
   }
 
-
- /**
- * Crea un tablero directamente mediante la API de Trello (sin UI)
- * @param {string} boardName - Nombre del tablero a crear
- * @returns {Promise<{ id: string, name: string }>} Datos del board creado
- */
-async createBoardAPI(boardName) {
-  const BASE_URL = 'https://api.trello.com/1';
-  const apiKey = process.env.TRELLO_KEY;
-  const apiToken = process.env.TRELLO_TOKEN;
-
-  if (!apiKey || !apiToken) {
-    logger.error('Faltan credenciales de API: TRELLO_KEY o TRELLO_TOKEN');
-    throw new Error('Credenciales faltantes');
-  }
-
-  logger.info(`Creando tablero mediante API: "${boardName}"...`);
-  const url = `${BASE_URL}/boards?key=${apiKey}&token=${apiToken}`;
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name: boardName }),
-  }).catch((err) => {
-    logger.error(`Error en la petición: ${err.message}`);
-    throw err;
-  });
-
-  if (!response.ok) {
-    const errorText = await response.text();
-    const text = await response.text().catch(() => '');
-    logger.error(`Falló la creación del tablero`);
-    throw new Error(`Fallo al crear tablero`);
-    
-    //throw new Error(`Falló la creación del tablero: ${response.status}`);
-  }
-
-  const data = await response.json();
-  logger.success(`Tablero creado exitosamente (API): "${data.name}" (${data.id})`);
-  return data;
-}
-  /**
-   * Elimina un tablero existente usando la API
-   * @param {string} boardId - ID del tablero a eliminar
-   */
-  async deleteBoardAPI(boardId) {
-    logger.info(`Eliminando tablero mediante API: ${boardId}...`);
-
-    const apiKey = process.env.TRELLO_KEY;
-    const apiToken = process.env.TRELLO_TOKEN;
-    const BASE_URL = 'https://api.trello.com/1';
-    const response = await fetch(`${BASE_URL}/boards/${boardId}?key=${apiKey}&token=${apiToken}`, {
-      method: 'DELETE',
-    });
-
-    if (!response.ok) {
-      logger.error(`No se pudo eliminar el tablero: ${response.status}`);
-    } else {
-      logger.success(`Tablero eliminado correctamente: ${boardId}`);
-    }
-    return response;
-  }
 }
 
 module.exports = { TrelloHomePage };

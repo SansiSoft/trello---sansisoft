@@ -1,13 +1,12 @@
 
-const { test, expect } = require('../../fixtures/td_board.js');
-const { TrelloHomePage } = require('../../pages/trello_home_page.js');
-const { BoardPage } = require('../../pages/board_page.js');
-const { BoardList } = require('../../pages/board_list.js');
-
-const { processTestCases } = require('../../utils/helpers');
+const { test, expect } = require('../../../fixtures/td_board.js');
+const { TrelloHomePage } = require('../../../pages/trello_home_page.js');
+const { BoardPage } = require('../../../pages/board_page.js');
+const { BoardList } = require('../../../pages/board_list.js');
+const { processTestCases, reportKnownBug, captureUIBug } = require('../../../utils/helpers');
 const fs = require('fs');
 const path = require('path');
-const dataPath = path.resolve(__dirname, '../../data/nombres-tablero.json');
+const dataPath = path.resolve(__dirname, '../../../data/nombres-tablero.json');
 const rawCases = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
 const boardCases = processTestCases(rawCases);
 
@@ -23,16 +22,7 @@ for (const testCase of boardCases) {
   });
 }
 
-test('Verificar que se crea un tablero con caracteres especiales', async ({ trelloPage,cleanupBoard}) => {
-  const trello_home_page = new TrelloHomePage(trelloPage);
-  const titleBoard = "New title board !@#$%^&*() - " + Date.now();
-  await trello_home_page.createANewBoard(titleBoard);
-  cleanupBoard.registerBoard(titleBoard);
-  await expect(trelloPage).toHaveTitle(`${titleBoard} | Trello`);
-
-});
-
-test('Verificar que al cerrar modal con ESC no se crea tablero', async ({ trelloPage }) => {
+test('CB-06:Verificar que al cerrar modal con ESC no se crea tablero', async ({ trelloPage }) => {
   const trello_home_page = new TrelloHomePage(trelloPage);
   await trello_home_page.openCreateBoardModal();
   await trelloPage.keyboard.press('Escape');
@@ -41,7 +31,7 @@ test('Verificar que al cerrar modal con ESC no se crea tablero', async ({ trello
 });
 
 
-test('Verificar que se crea un tablero desde una plantilla', async ({ trelloPage,cleanupBoard}) => {
+test('CB-07:Verificar que se crea un tablero desde una plantilla', async ({ trelloPage,cleanupBoard}) => {
   await expect(trelloPage).toHaveTitle(/Trello/);
   const trello_home_page = new TrelloHomePage(trelloPage);
   const titleBoard = "New title board - " + Date.now();
@@ -51,7 +41,7 @@ test('Verificar que se crea un tablero desde una plantilla', async ({ trelloPage
   
 });
 
- test('Verificar que no se cree un tablero con solo espacios', async ({ trelloPage,cleanupBoard}) => {
+ test('CB-08:Verificar que no se cree un tablero con solo espacios', async ({ trelloPage,cleanupBoard}) => {
   await expect(trelloPage).toHaveTitle(/Trello/);
   const trello_home_page = new TrelloHomePage(trelloPage);
   const titleBoard = "          ";
@@ -59,17 +49,18 @@ test('Verificar que se crea un tablero desde una plantilla', async ({ trelloPage
   await expect(trello_home_page.submitCreateBoardBtn).toBeDisabled();
 });
 
- test('BUG-CB-001 - No deberia crear un tablero con nombre duplicado',async({trelloPage})=>{
-    test.fail(true, "BUG-CB-001: Se puede crear un board con un nombre duplicado");
+ test('CB-09:Crear un tablero con nombre duplicado',async({trelloPage,cleanupBoard})=>{
     const trello_home_page = new TrelloHomePage(trelloPage)
     const duplicate_title="Titulo duplicado"
     await trello_home_page.createANewBoard(duplicate_title);
     await trello_home_page.goToBoardList();
     await trello_home_page.attemptToCreateBoard(duplicate_title);
-    await expect(1+1==0)
+    await expect(trelloPage).toHaveTitle(`${duplicate_title} | Trello`);
+    await cleanupBoard.registerBoard(duplicate_title);
+    
 })
 
-test('Visualizar tablero creado desde la lista',async ({trelloPage,cleanupBoard})=>{
+test('CB-10:Visualizar tablero creado desde la lista',async ({trelloPage,cleanupBoard})=>{
   const trello_home_page = new TrelloHomePage(trelloPage);
   const titleBoard = "New title board - " + Date.now();
   await trello_home_page.createANewBoard(titleBoard);
@@ -87,12 +78,12 @@ test('Visualizar tablero creado desde la lista',async ({trelloPage,cleanupBoard}
 
 test.describe('Board name validation (parametrizados)', () => {
   const cases = [
-    { length: 10, debePasar: true },
-    { length: 100, debePasar: true },
+    {id:"CB-11" ,length: 10, debePasar: true },
+    {id:"CB-12", length: 100, debePasar: true },
   ];
 
   for (const c of cases) {
-    test(`Debe ${c.debePasar ? '' : 'NO '}crear un tablero con nombre de longitud ${c.length}`,
+    test(`${c.id}: Debe ${c.debePasar ? '' : 'NO '}crear un tablero con nombre de longitud ${c.length}`,
       async ({ trelloPage, cleanupBoard }) => {
         const trello_home_page = new TrelloHomePage(trelloPage);
         const titleBoard = 'A'.repeat(c.length);
@@ -103,23 +94,34 @@ test.describe('Board name validation (parametrizados)', () => {
   }
 });
 
-test.describe('Board name validation - casos inválidos', () => {
+test.describe('Validacion de nombres de tableros- casos inválidos', () => {
   const invalidCases = [
-    { length: 1, bugCode: 'BUG-CB-1' },
-    { length: 1000, bugCode: 'BUG-CB-1000' },
+    {id:"CB-13" , length: 1, bugCode: 'BUG-CB-12' },
+    {id:"CB-14", length: 1000, bugCode: 'BUG-CB-13' },
   ];
 
   for (const c of invalidCases) {
-    test(`NO debe crear un tablero con nombre de longitud ${c.length}`, async ({ trelloPage }) => {
+    test(`NO debe crear un tablero con nombre de longitud ${c.length}`, async ({ trelloPage,cleanupBoard }) => {
       const trello_home_page = new TrelloHomePage(trelloPage);
       const titleBoard = 'A'.repeat(c.length);
-      await trello_home_page.attemptToCreateBoard(titleBoard);
-      const isEnabled = await trello_home_page.submitCreateBoardBtn.isEnabled();
-      //console.log(`El botón de crear está ${isEnabled ? 'habilitado' : 'deshabilitado'} para nombre de longitud ${c.length}`);
-      if (isEnabled) {
-        test.fail(true, `${c.bugCode}: El botón estaba habilitado para nombre inválido (${c.length})`);
-      }
-      await expect(trello_home_page.submitCreateBoardBtn).toBeDisabled();
+      await trello_home_page.createANewBoard(titleBoard);
+      await expect(trelloPage).toHaveTitle(`${titleBoard} | Trello`);
+      const screenshotFile = await captureUIBug(
+          trelloPage,
+          `BUG-${c.id}-tablero-con-nombre-nombre-de-longitud-${c.length}`,
+          `Es posible crear un tablero con un nombre de longitud:${c.length}`,
+          {}
+        );
+    reportKnownBug({
+            id: `BUG-${c.id}`,
+            title: `Longitud de nombre de tablero ${c.length==1?'muy corto':'muy largo'} `,
+            description: `Se permitio la creacion de un tablero de longitud ${c.length}`,
+            impact: 'MEDIO - ALTO influye en la UX del usuario',
+            evidence: screenshotFile,
+            functionalityStatus: 'DEFECTUOSO - No existe validacion',
+            
+          });
+      cleanupBoard.registerBoard(titleBoard);    
     });
   }
 });

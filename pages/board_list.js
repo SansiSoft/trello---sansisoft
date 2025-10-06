@@ -15,14 +15,19 @@ class BoardList {
 
 async loadMoreBoards() {
   const button = this.moreBoardsButton;
-  const count = await button.count();
-  logger.info(`Botones 'Load more boards' encontrados: ${count}`);
-  while (await button.count() > 0 && await button.isVisible()) {
+  logger.info(`Verificando si el boton de cargar mas Tableros esta habilitado`);
+  if(await button.isEnabled()){
+     logger.info(`Boton habilitado: existen varios tableros`);
+    while (await button.count() > 0 && await button.isVisible()) {
     logger.info("Haciendo click en 'Load more boards'");
     await button.click();
     await this.page.waitForTimeout(800);
+    logger.success("Ya no hay más tableros que cargar");
+
   }
-  logger.success("Ya no hay más tableros que cargar");
+  }else{
+    logger.success("Todos los tableros se ven en la pagina de tableros")
+  }
 }
 
  
