@@ -10,13 +10,13 @@ const cardList = test.extend({
         const titleBoard = "Board for Tests - " + Date.now();
         const board = await trello_home_page.createANewBoard(titleBoard);
         // await expect(trelloPage).toHaveTitle(`${titleBoard} | Trello`);
-        await trelloPage.waitForTimeout(7000);
+        await trelloPage.waitForTimeout(2000);
 
         // Crear nueva Card y abrirla
         const cardTitle = "Test Card - " + Date.now();
         const testList = await board.createAList("TESTS");
         await testList.addCard(cardTitle);
-        const card = await testList.openCard(cardTitle);
+        await testList.openCard(cardTitle);
         await trelloPage.waitForTimeout(3000);
 
         // Crear instancia de CardPage y pasarla al test

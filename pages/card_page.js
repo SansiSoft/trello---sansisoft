@@ -31,6 +31,15 @@ class CardPage {
         this.startDateBtn = page.locator('label[data-testid="clickable-checkbox"]');
         this.saveDateBtn = page.locator('button[data-testid="save-date-button"]');
 
+        //section checklists
+        this.checkListButton = page.locator('span[data-testid="ChecklistIcon"]');
+
+        //section attachments
+        this.attachmentButton = page.locator('button[data-testid="card-back-attachment-button"]');
+
+        //section de descripción
+        this.descriptionField = page.locator('button[data-testid="description-button"]');
+
         // Selectores para verificar elementos agregados
         this.addedLabels = page.locator('[data-testid="card-label"]');
 
@@ -129,7 +138,7 @@ class CardPage {
         }
     }
 
-    async selectDueDate(startDate = true, endDate = true, stepDelay = 1500) {
+    async selectDueDate(startDate = "", endDate = "", stepDelay = 1500) {
         try {
             console.log('Step 1: Abriendo modal de fechas...');
             await this.addButton.click();
@@ -169,25 +178,27 @@ class CardPage {
         ).first();
 
         const actualText = (await dueDateLocator.textContent()).trim();
-        console.log('rango de fechas actual', actualText);
-        return actualText.includes(expectedStartDate) && actualText.includes(expectedEndDate);
+        console.log('Rango de fechas actual en UI:', actualText);
+        console.log('rango de fechas actual two', `${expectedStartDate} - ${expectedEndDate}`);
+
+        return actualText.startsWith(`${expectedStartDate} - ${expectedEndDate}`);
     }
 
     async addMembers(members = [], stepDelay = 1500) {
         try {
             this.addButton.click();
             console.log('Step 1: Abriendo modal de miembros...');
-            await this.membersModal .click();
+            await this.membersModal.click();
             await this.page.waitForTimeout(stepDelay);
             // Espera a que aparezca la lista de miembros
             const modalMembers = this.page.locator('section[aria-labelledby="card-back-add-members"]');
-            await expect(modalMembers).toBeVisible({ timeout: 10000 });
+            await expect(modalMembers).toBeVisible({timeout: 10000});
             await this.page.waitForTimeout(stepDelay);
             const searchInput = this.page.locator('input[aria-placeholder="Search members"]');
-            await expect(searchInput).toBeVisible({ timeout: 10000 });
+            await expect(searchInput).toBeVisible({timeout: 10000});
             // Espera a que haya al menos un miembro renderizado
             const memberItem = modalMembers.locator('button[data-testid="choose-member-item-add-member-button"]');
-            await expect(memberItem.first()).toBeVisible({ timeout: 10000 });
+            await expect(memberItem.first()).toBeVisible({timeout: 10000});
             console.log('Modal abierto y miembros cargados');
 
             if (!Array.isArray(members)) {
@@ -202,7 +213,7 @@ class CardPage {
                     await this.addMemberSearchInput.fill(member);
                     const results = this.page.locator('button[data-testid="choose-member-item-add-member-button"]');
                     //Buscar coincidencia con el texto ingresado (insensible a mayúsculas/minúsculas)
-                    let itemToSelect = results.filter({ hasText: new RegExp(member, 'i') }).first();
+                    let itemToSelect = results.filter({hasText: new RegExp(member, 'i')}).first();
 
                     //Fallback: si no hay coincidencia, seleccionar el primer resultado
                     if (!(await itemToSelect.isVisible())) {
@@ -222,7 +233,7 @@ class CardPage {
 
         } catch (error) {
             console.error('Error seleccionando miembros:', error);
-            await this.page.screenshot({ path: `error-members-${Date.now()}.png` });
+            await this.page.screenshot({path: `error-members-${Date.now()}.png`});
             throw error;
         }
     }
@@ -241,5 +252,237 @@ class CardPage {
         }
         return true;
     }
+
+    async addCheckList(titlesChecklist = "Default Checklist", stepDelay = 1500) {
+        await this.checkListButton.click();
+        await this.page.waitForTimeout(stepDelay);
+        const modalChecklist = this.page.locator('section[aria-labelledby="add-checklist-popover"]');
+        await expect(modalChecklist).toBeVisible({timeout: stepDelay});
+        const inputChecklist = this.page.locator('input[id="id-checklist"]');
+        await expect(inputChecklist).toBeVisible({timeout: stepDelay});
+        await inputChecklist.fill(titlesChecklist);
+        await this.page.waitForTimeout(stepDelay);
+        const addButton = this.page.locator('button[data-testid="checklist-add-button"]');
+        await addButton.click();
+        await this.page.waitForTimeout(stepDelay);
+        console.log(`Creando checklist "${titlesChecklist}"...`);
+
+    }
+
+    async validateCheckListVisible(checklistTitle) {
+        const checklistSection = this.page.locator(`section[data-testid="checklist-section"]`);
+        await expect(checklistSection.filter({hasText: checklistTitle}).first()).toBeVisible();
+        console.log(`Checklist "${checklistTitle}" visible en la tarjeta`);
+    }
+
+    async deleteCheckList(title, stepDelay = 1500) {
+        console.log(`Eliminando checklist "${title}"...`);
+
+        // Localiza el checklist por título
+        const checklistSection = this.page.locator('section[data-testid="checklist-section"]')
+            .filter({hasText: title})
+            .first();
+
+        await expect(checklistSection).toBeVisible();
+
+        // Botón "Delete" dentro del checklist
+        const deleteButton = checklistSection.locator('button[data-testid="checklist-delete-button"]');
+        await deleteButton.click();
+        await this.page.waitForTimeout(stepDelay);
+
+        // Botón de confirmación (por texto)
+        const confirmDeleteBtn = this.page.getByRole('button', {name: 'Delete checklist'});
+        await expect(confirmDeleteBtn).toBeVisible();
+        await confirmDeleteBtn.click();
+
+        console.log(`Checklist "${title}" eliminado correctamente`);
+    }
+
+    async isCheckListDeleted(title) {
+        const checklistSection = this.page
+            .locator('section[data-testid="checklist-section"]')
+            .filter({hasText: title});
+
+        // Devuelve true si el count es 0
+        const count = await checklistSection.count();
+        return count === 0;
+    }
+
+    async addAttachment(filePath, stepDelay = 1500) {
+        try {
+            console.log('Step 1: Abriendo modal de adjuntos...');
+            await this.addButton.click();
+            await this.attachmentButton.click();
+            await this.page.waitForTimeout(stepDelay);
+
+            // Espera a que aparezca el modal de attachments
+            const modalAttachment = this.page.locator('section[aria-labelledby="card-back-add-attachment"]');
+            await expect(modalAttachment).toBeVisible({timeout: 10000});
+            await this.page.waitForTimeout(stepDelay);
+
+            // Seleccionar la opción de subir archivo
+            const fileInput = this.page.locator('input[type="file"][id="card-attachment-file-picker"], input[type="file"][name="card-attachment-file-picker"]');
+
+            if (await fileInput.count() > 0) {
+                await fileInput.setInputFiles(filePath);
+                console.log(`Archivo "${filePath}" subido`);
+            }
+            // Esperar a que se procese la subida
+            await this.page.waitForTimeout(stepDelay * 2);
+            await this.page.waitForTimeout(stepDelay);
+
+            console.log(`Attachment agregado: ${filePath}`);
+        } catch (error) {
+            console.error('Error al adjuntar archivo:', error);
+            await this.page.screenshot({path: `error-attach-${Date.now()}.png`});
+            throw error;
+        }
+    }
+
+    async isAttachmentVisible(fileName) {
+        const attachmentLocator = this.page.locator(
+            `span[data-testid="attachment-thumbnail-name"]`,
+        ).filter({hasText: fileName});
+
+        const count = await attachmentLocator.count();
+        console.log(`🔍 Se encontraron ${count} coincidencias para "${fileName}"`);
+
+        const isVisible = count > 0 && await attachmentLocator.first().isVisible();
+        console.log(`📎 Attachment "${fileName}" visible:`, isVisible);
+        return isVisible;
+    }
+
+    async removeAttachment(fileName, stepDelay = 1500) {
+
+        try {
+            console.log(`Iniciando eliminación del attachment: "${fileName}"`);
+            //Primero verificar que el attachment existe
+            const attachmentExists = await this.verifyAttachmentExists(fileName);
+            if (!attachmentExists) {
+                console.log(`Attachment "${fileName}" no encontrado. No se puede eliminar.`);
+                return false;
+            }
+
+            console.log(`Attachment "${fileName}" encontrado, procediendo a eliminar...`);
+
+            //Buscar el attachment específico y hacer hover para mostrar opciones
+            const attachmentItem = this.page.locator(`[data-testid*="attachment"]:has-text("${fileName}")`).first();
+            await attachmentItem.hover();
+            await this.page.waitForTimeout(500);
+
+            //Hacer clic en el botón de opciones
+            const optionsButton = this.page.locator('button[data-testid="link-attachment-actions"]').first();
+            await optionsButton.click();
+            await this.page.waitForTimeout(stepDelay);
+
+            //Verificar y hacer clic en el botón de eliminar
+            const removeButtonOption = this.page.locator('button[data-testid="delete-link-attachment"]');
+            await expect(removeButtonOption).toBeVisible({timeout: 5000});
+            await removeButtonOption.click();
+            await this.page.waitForTimeout(stepDelay);
+
+            //Confirmar eliminación
+            const confirmDeleteBtn = this.page.locator('button[data-testid="confirm-delete-link-attachment"]');
+            await expect(confirmDeleteBtn).toBeVisible({timeout: 5000});
+            await confirmDeleteBtn.click();
+
+            //Esperar a que se complete la eliminación
+            await this.page.waitForTimeout(stepDelay);
+        } catch (error) {
+            console.error(`Error eliminando attachment "${fileName}":`, error);
+            return false;
+        }
+    }
+
+    async verifyAttachmentExists(fileName) {
+        try {
+            const attachmentSelectors = [
+                `[data-testid*="attachment"]:has-text("${fileName}")`,
+                `.attachment-item:has-text("${fileName}")`,
+                `text="${fileName}"`
+            ];
+
+            for (const selector of attachmentSelectors) {
+                const element = this.page.locator(selector).first();
+                if (await element.count() > 0 && await element.isVisible()) {
+                    console.log(`Attachment "${fileName}" encontrado con selector: ${selector}`);
+                    return true;
+                }
+            }
+
+            console.log(`Attachment "${fileName}" no encontrado`);
+            return false;
+
+        } catch (error) {
+            console.error('Error en verifyAttachmentExists:', error);
+            return false;
+        }
+    }
+
+    async isAttachmentDeleted(fileName) {
+        try {
+            // Buscar el attachment por nombre
+            const attachmentItem = this.page
+                .locator('data-testid="attachment-thumbnail-name"')
+                .filter({hasText: fileName});
+
+            // También buscar por cualquier elemento que contenga el nombre del archivo
+            const anyAttachmentWithName = this.page
+                .locator(`text=${fileName}`)
+                .filter({has: this.page.locator('[data-testid="attachment-thumbnail-name"]')});
+
+            // Verificar que ambos selectores devuelven count 0
+            const count1 = await attachmentItem.count();
+            const count2 = await anyAttachmentWithName.count();
+
+            console.log(`Attachment "${fileName}" - Count1: ${count1}, Count2: ${count2}`);
+
+            return count1 === 0 && count2 === 0;
+
+        } catch (error) {
+            console.error('Error en isAttachmentDeleted:', error);
+            return false;
+        }
+    }
+
+    async addDescription(descriptionText, stepDelay = 1500) {
+        console.log('Step 1: Abriendo editor de descripción...');
+
+        const descriptionEditor = this.page.locator('button[data-testid="description-button"]');
+        const saveDescriptionBtn = this.page.locator('button[data-testid="description-save-button"]');
+        const textArea = this.page.locator('div[role="textbox"][contenteditable="true"][aria-label="Description"]');
+        // Esperar a que el editor esté visible y hacer click
+        await descriptionEditor.click();
+
+        console.log('Step 2: Ingresando descripción...');
+        // Limpiar el campo y escribir el texto
+        await textArea.fill(descriptionText);
+
+        console.log('Step 3: Guardando descripción...');
+        await saveDescriptionBtn.waitFor({ state: 'visible' });
+        await saveDescriptionBtn.click();
+
+        // Esperar un poco para asegurar que se guarde
+        await this.page.waitForTimeout(stepDelay);
+        console.log('Descripción agregada correctamente.');
+    }
+
+    async editDescription(newDescriptionText, stepDelay = 1500) {
+        const editButton = this.page.locator('button[data-testid="description-edit-button"]');
+        const saveDescriptionBtn = this.page.locator('button[data-testid="description-save-button"]');
+        await editButton.click();
+        await this.page.waitForTimeout(stepDelay);
+        const textArea = this.page.locator('div[role="textbox"][contenteditable="true"][aria-label="Description"]');
+        await textArea.fill(newDescriptionText);
+        await saveDescriptionBtn.click();
+    }
+
+    async verifyDescription(expectedText) {
+        const descriptionContent = this.page.locator('div[data-testid="description-content-area"]');
+        await expect(descriptionContent).toHaveText(expectedText, { timeout: 5000 });
+        console.log('Verificación exitosa: la descripción coincide con el texto esperado.');
+
+    }
 }
+
 module.exports = {CardPage};
