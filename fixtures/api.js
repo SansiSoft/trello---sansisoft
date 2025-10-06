@@ -6,7 +6,7 @@ require('dotenv').config();
 
 const API_KEY = process.env.TRELLO_KEY;
 const API_TOKEN = process.env.TRELLO_TOKEN;
-const TRELLO_API_BASE = 'https://api.trello.com/1';
+const TRELLO_API_BASE = process.env.TRELLO_API_URL;
 
 const test = base.extend({
   apiContext: async ({}, use) => {

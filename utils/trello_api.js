@@ -1,7 +1,8 @@
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+require('dotenv').config();
 
 class TrelloAPI {
-  constructor({ key, token, baseUrl = 'https://api.trello.com/1', logger = console, fetchImpl } = {}) {
+  constructor({ key, token, baseUrl = process.env.TRELLO_API_URL, logger = console, fetchImpl } = {}) {
     this.key = key;
     this.token = token;
     this.baseUrl = baseUrl;
