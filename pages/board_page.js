@@ -18,6 +18,8 @@ class BoardPage {
         this.listTitleInput = this.page.locator('textarea[data-testid="list-name-textarea"]'); 
         this.confirmTitleTitleButton = this.page.locator('button[data-testid="list-composer-add-list-button"]');
         this.switchBoardButton = this.page.locator('button[data-testid="panel-nav-board-switcher-button"]');
+        this.listTitlesCSS = 'h2[data-testid="list-name"]'
+        this.createNewListBtnCSS = 'button[data-testid="list-composer-button"]'
     }
 
     async changeBoardName(newName){
@@ -84,7 +86,13 @@ class BoardPage {
     }
 
     async createAList(titleList) {
-        await fillInput(this.listTitleInput, titleList);
+        try {
+            await fillInput(this.listTitleInput, titleList);
+        }catch{
+            const createNewListBtn = await this.page.locator(this.createNewListBtnCSS);
+            await clickButton(createNewListBtn);
+            await fillInput(this.listTitleInput,nth(-1), titleList);
+        }
         await clickButton(this.confirmTitleTitleButton);
 
         // Esperar a que la lista aparezca
@@ -96,6 +104,11 @@ class BoardPage {
         // Caso constrario, lanza error locator.click: Target page, context or browser has been closed en el siguiente paso
         await this.page.waitForTimeout(1000);
         return new ColumnListComponent(this.page, titleList);
+    }
+
+    async getListTitles(){
+        const listTitlesLocator = this.page.locator(this.listTitlesCSS);
+        return listTitlesLocator.allTextContents();
     }
 
 }
