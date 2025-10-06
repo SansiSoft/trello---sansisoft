@@ -1,5 +1,5 @@
-const { test } = require('../../fixtures/list');
-const { ListPage } = require('../../pages/list_page');
+const { test } = require('../../../fixtures/list');
+const { ListPage } = require('../../../pages/list_page');
 
 test.describe('Archivar listas', () => {
 

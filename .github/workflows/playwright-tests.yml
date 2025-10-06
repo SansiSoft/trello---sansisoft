@@ -36,10 +36,12 @@ jobs:
           echo "TRELLO_KEY=${{ secrets.TRELLO_KEY }}" >> .env
           echo "TRELLO_TOKEN=${{ secrets.TRELLO_TOKEN }}" >> .env
           echo "ORGANIZATION_ID=${{ secrets.ORGANIZATION_ID }}" >> .env
-          echo "TRELLO_API_URL=${{ secrets.TRELLO_API_URL }}" >> .env
           echo "SOURCELAB_USERNAME=${{ secrets.SOURCELAB_USERNAME }}" >> .env
           echo "SOURCELAB_ACCESS_KEY=${{ secrets.SOURCELAB_ACCESS_KEY }}" >> .env
-
+          echo "TRELLO_KEY_ALT=${{ secrets.TRELLO_KEY_ALT }}" >> .env
+          echo "TRELLO_TOKEN_ALT=${{ secrets.TRELLO_TOKEN_ALT }}" >> .env
+          echo "TRELLO_API_URL=${{ secrets.TRELLO_API_URL }}" >> .env
+    
       - name: Install dependencies
         run: npm install
 
