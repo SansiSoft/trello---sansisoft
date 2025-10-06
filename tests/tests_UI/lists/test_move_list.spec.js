@@ -1,6 +1,6 @@
-const { test } = require('../../fixtures/list');
-const { test: multiTest } = require('../../fixtures/list'); // Usar el mismo fixture consolidado
-const { ListPage } = require('../../pages/list_page');
+const { test } = require('../../../fixtures/list');
+const { test: multiTest } = require('../../../fixtures/list'); // Usar el mismo fixture consolidado
+const { ListPage } = require('../../../pages/list_page');
 
 test.describe('Mover listas - Tests simples', () => {
 

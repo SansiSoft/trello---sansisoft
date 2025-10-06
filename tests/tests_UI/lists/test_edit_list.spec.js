@@ -1,10 +1,10 @@
-const { test } = require('../../fixtures/list');
-const { ListPage } = require('../../pages/list_page');
-const { processTestCases, reportKnownBug, captureUIBug } = require('../../utils/helpers');
+const { test } = require('../../../fixtures/list');
+const { ListPage } = require('../../../pages/list_page');
+const { processTestCases, reportKnownBug, captureUIBug } = require('../../../utils/helpers');
 const path = require('path');
 const fs = require('fs');
 
-const dataPath = path.resolve(__dirname, '../../data/list-edit-cases.json');
+const dataPath = path.resolve(__dirname, '../../../data/list-edit-cases.json');
 const rawListCases = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
 
 const listCases = processTestCases(rawListCases);
