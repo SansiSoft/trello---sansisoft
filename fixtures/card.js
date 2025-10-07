@@ -2,7 +2,6 @@
 const { test, expect } = require('./login.js');
 const { TrelloHomePage } = require('../pages/trello_home_page.js');
 const { CardPage } = require('../pages/card_page.js');
-const {BoardAPI} = require("../trello_api/modules/board_api");
 
 // Fixture para testing de cards
 const cardList = test.extend({
@@ -10,7 +9,6 @@ const cardList = test.extend({
         const trello_home_page = new TrelloHomePage(trelloPage);
         const titleBoard = "Board for Tests - " + Date.now();
         const board = await trello_home_page.createANewBoard(titleBoard);
-        // await expect(trelloPage).toHaveTitle(`${titleBoard} | Trello`);
         await trelloPage.waitForTimeout(2000);
 
         // Crear nueva Card y abrirla
