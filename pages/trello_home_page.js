@@ -145,9 +145,12 @@ async isCreateButtonEnabled(titleBoard) {
     await this.closeBtn.click();
     await this.isClosed.waitFor({ state: 'visible', timeout: 10000 });
     logger.info('Tablero cerrado. Procediendo a eliminación definitiva...');
+    await this.page.waitForTimeout(1500);
     await this.openMenu();
     await this.deleteBoardBtn.click();
+    await this.page.waitForTimeout(1500);
     await this.confirmDeleteBtn.click();
+    await this.page.waitForTimeout(1500);
     logger.success('Tablero eliminado permanentemente.');
   }
 

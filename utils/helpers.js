@@ -1,5 +1,5 @@
 const { faker } = require('@faker-js/faker');
-
+faker.locale = 'es';
 /**
  * Genera nombres para tableros de Trello
  * @returns {string} - Nombre de tablero generado
@@ -209,13 +209,33 @@ async function captureUIBug(page, testName, description, options = {}, testInfo 
   }
 }
 
+function generateCardDescription(type) {
+    switch (type) {
+        case 'long':
+            return faker.lorem.sentence(1000);
+        case 'specialChars':
+            // Combina una frase aleatoria en español con caracteres especiales
+            return `${faker.lorem.sentence()} con ñ, acentos áéíóú, y símbolos ${faker.string.symbol()}${faker.string.symbol()}`;
+        case 'emojis':
+            // Añade emojis aleatorios a una frase en español
+            return `${faker.lorem.sentence()} ${faker.internet.emoji()} ${faker.internet.emoji()}`;
+        case 'urls':
+            // Crea una frase en español con un email y una URL aleatorios
+            return `Contacto: ${faker.internet.email()} y sitio web ${faker.internet.url()}`;
+        case 'random':
+        default:
+            // Genera una oración en español de aproximadamente 10 palabras por defecto.
+            return faker.lorem.sentence(10);
+    }
+}
 
 module.exports = {
-  processTestCaseData,
-  processTestCases,
-  reportKnownBug,
-  captureUIBug,
-  generateBoardName,
-  generateListName,
-  generateCardName,
+    processTestCaseData,
+    processTestCases,
+    reportKnownBug,
+    captureUIBug,
+    generateBoardName,
+    generateListName,
+    generateCardName,
+    generateCardDescription
 };
