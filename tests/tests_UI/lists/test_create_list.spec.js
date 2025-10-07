@@ -1,4 +1,4 @@
-const { test } = require('../../../fixtures/list');
+const { test, expect } = require('../../../fixtures/list');
 const { ListPage } = require('../../../pages/list_page');
 const { processTestCases, reportKnownBug, captureUIBug } = require('../../../utils/helpers');
 const path = require('path');
