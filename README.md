@@ -20,7 +20,7 @@ El framework está diseñado bajo los principios de:
 |--------------|-------------|
 | **NodeJS** | Entorno de ejecución JavaScript. |
 | **Playwright** | Framework para pruebas E2E y UI multi-navegador. |
-| **HTML Reports** | Generación de reportes visuales. |
+| **Playwright Reporter** | Reporte de Playwright que se genera automáticamente tras la ejecución, mostrando resultados, capturas. |
 | **dotenv** | Manejo de variables de entorno. |
 | **Faker.js** | Generación de datos aleatorios para pruebas (DDT). |
 
@@ -62,11 +62,11 @@ Estructura del framework de automatización construido con **NodeJS + Playwright
 │ ├── login_page.js 
 │ └── trello_home_page.js 
 │
-├── 📁 setup 
-│ └── auth.setup.js 
 │
-├── 📁 tests 
-│ ├── 📁 tests_API 
+├── 📁 tests
+│ ├──📁 setup
+│ │ │── auth.setup.js   
+│ ├─ 📁 tests_API 
 │ │ ├── 📁 boards 
 │ │ ├── 📁 cards 
 │ │ └── 📁 lists 
@@ -80,10 +80,13 @@ Estructura del framework de automatización construido con **NodeJS + Playwright
 ├── 📁 uploads 
 │ └── test.txt
 │
-├── 📁 utils 
-│ ├── apiUtils.js
-│ ├── logger.js
-│ └── fakerUtils.js
+├── 📁 utils
+│ ├──📁 scripts 
+│ ├── helpers.js
+│ ├── helpers_ui.js
+│ │── logger.js
+│ ├── routes.js
+│ └── trello_api.js
 │
 ├── .env 
 ├── .env.example 
