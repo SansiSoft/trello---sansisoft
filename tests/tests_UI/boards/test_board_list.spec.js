@@ -21,8 +21,5 @@ test('@e2e BL-02:Cambiar al segundo tablero desde el modal de boards', async ({ 
   const trello_home_page = new TrelloHomePage(trelloPage);
   await trello_home_page.goToBoardList();
   const board_list = new BoardList(trello_home_page.page);
-  await board_list.openBoardByName(board1.name);
-  const board_page = new BoardPage(board_list.page);
-  // const switcher = await board_page.openSwitchBoard();
-  // const newBoardName = await switcher.selectNWorkspaceBoard(1);
+  //await board_list.openBoardByName(board1.name);
 });

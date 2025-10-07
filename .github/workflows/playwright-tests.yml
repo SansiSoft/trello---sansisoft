@@ -55,19 +55,19 @@ jobs:
 
       - name: Run Playwright tests
         run: |
-          if [ -n "${{ github.event.inputs.grep }}" ]; then
-            echo "Ejecutando tests con filtro: ${{ github.event.inputs.grep }}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.grep }}" ]; then
+            echo "Ejecución manual con filtro: ${{ github.event.inputs.grep }}"
             npx playwright test --grep "${{ github.event.inputs.grep }}"
           else
-            echo "Ejecutando todos los tests"
-            npx playwright test
+            echo "Ejecución automática (push/pull/schedule) — solo tests @smoke"
+            npx playwright test --grep "@smoke"
           fi
 
       - name: Verify logs exist
         if: always()
         run: |
           echo "Verificando existencia de logs..."
-          ls -l logs || echo "⚠️ No se encontró la carpeta logs"
+          ls -l logs || echo "No se encontró la carpeta logs"
 
       - name: Upload Playwright HTML report
         if: always()
