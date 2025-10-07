@@ -31,9 +31,17 @@ class TrelloHomePage {
     this.confirmDeleteBtn = this.page.locator('button[data-testid="close-board-delete-board-confirm-button"]');
 
     // Board background change
-  this.changeBackgroundBtn = this.page.getByRole('button', { name: /Change background|Cambiar fondo/i });
-  this.colorsTab = this.page.getByRole('button', { name: /Colors|Colores/i });
-  this.colorOptions = this.page.locator('button[style*="background-color"]');
+    this.changeBackgroundBtn = this.page.getByRole('button', { name: /Change background|Cambiar fondo/i });
+    this.colorsTab = this.page.getByRole('button', { name: /Colors|Colores/i });
+    this.colorOptions = this.page.locator('button[style*="background-color"]');
+    this.photosTab = this.page.getByRole('button', { name: /Photos|Fotos/i });
+    this.photoOptions = this.page.locator('button[data-testid^="board-background-select-photo"]');
+    this.boardCanvas = this.page.locator('div[data-testid="board-canvas"]');
+    this.boardView = this.page.locator('div[data-testid="board-view"]');
+    this.closePhotoPanelBtn = this.page.locator('button[aria-label="Close popover"], butto[aria-label="Cerrar"]');
+    this.photosPanelTitle = this.page.getByText(/photos|fotos/i);
+
+
 
 
   }
@@ -162,8 +170,11 @@ async isCreateButtonEnabled(titleBoard) {
     await boardLink.click();
     await this.deleteBoard();
   }
+  /**
+   * Cambia el fondo de un tablero existente con un color aleatorio
+   */
 
-  async changeBoardBackground() {
+  async changeBoardBackgroundColor() {
     logger.info('Cambiando fondo del tablero');
     await this.page.waitForLoadState();
 
@@ -173,16 +184,59 @@ async isCreateButtonEnabled(titleBoard) {
 
     await this.colorsTab.waitFor({ state: 'visible', timeout: 5000 });
     await this.colorsTab.click();
+    logger.info('Selecciona la opcion  "Colors"');
 
     await this.colorOptions.first().waitFor({ state: 'visible', timeout: 5000 });
-    const totalColors = await this.colorOptions.count();
 
+    const totalColors = await this.colorOptions.count();
     const randomIndex = Math.floor(Math.random() * totalColors);
     const selectedColor = this.colorOptions.nth(randomIndex);
     await selectedColor.click();
 
+   
+
     await this.page.waitForTimeout(3000);
   }  
-}
 
+  /**
+   * Cambia el fondo de un tablero existente con una foto aleatoria
+   */
+  
+  async changeBoardBackgroundPhoto() {
+    logger.info('Cambio de fondo del tablero desde la opción Photos');
+    await this.page.waitForLoadState('domcontentloaded');
+
+    await this.openMenu();
+    await this.changeBackgroundBtn.waitFor({ state: 'visible', timeout: 5000 });
+    await this.changeBackgroundBtn.click();
+
+    await this.photosTab.waitFor({ state: 'visible', timeout: 5000 });
+    await this.photosTab.click();
+
+    await this.photoOptions.first().waitFor({ state: 'visible', timeout: 8000 });
+    const totalPhotos = await this.photoOptions.count();
+
+    const randomIndex = Math.floor(Math.random() * totalPhotos);
+    const selectedPhoto = this.photoOptions.nth(randomIndex);
+    await selectedPhoto.scrollIntoViewIfNeeded();
+    await selectedPhoto.click();
+
+    await this.boardCanvas.waitFor({ state: 'visible', timeout: 5000 });
+    await this.page.waitForTimeout(1500);
+    logger.success('Fondo del tablero actualizado correctamente desde Photos.');
+
+    const closeVisible = await this.closePhotoPanelBtn.isVisible();
+    if (closeVisible) {
+    await this.closePhotoPanelBtn.click();
+    logger.info('Popup de Photos cerrado.');
+    } 
+
+    await this.page.waitForTimeout(1000);
+    const isPanelClosed = await this.photosPanelTitle.count() === 0;
+    if (isPanelClosed) {
+    logger.success('Cambio de fondo realizado y popup cerrado correctamente.');
+    } 
+    
+  }  
+}
 module.exports = { TrelloHomePage };
