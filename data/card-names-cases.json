@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1",
+    "title": "Crear card con nombre válido",
+    "priority": "Alta",
+    "description": "Verificar que un usuario pueda crear un tablero con un nombre válido y que se muestre correctamente en la página principal.",
+    "newName": "FAKER:boardName"
+  },
+  {
+    "id": "2",
+    "title": "Crear card con caracteres especiales",
+    "priority": "Media",
+    "description": "Validar que el sistema acepte nombres de card con caracteres especiales (ej: !@#$% Board ^&*()) y se muestre correctamente en la UI.",
+    "newName": "SPECIAL:symbols"
+  },
+  {
+    "id": "3",
+    "title": "Crear card con nombre muy largo",
+    "priority": "Media",
+    "description": "Verificar que al ingresar un nombre mayor a 512 caracteres, el sistema lo trunque o bloquee la entrada.",
+    "newName": "REPEAT:B:600"
+  },
+  {
+    "id": "4",
+    "title": "Crear card con nombre duplicado",
+    "priority": "Media",
+    "description": "Comprobar que el sistema permita crear cards con el mismo nombre y que ambos aparezcan en la lista de cards.",
+    "newName": "DUPLICATE:ProjectBoard"
+  },
+  {
+    "id": "5",
+    "title": "Crear card con un solo carácter",
+    "priority": "Baja",
+    "description": "Validar que el sistema acepte un nombre de card de un solo carácter (ej: X).",
+    "newName": "SINGLE:X"
+  },
+  {
+    "id": "6",
+    "title": "Crear card con espacios iniciales y finales",
+    "priority": "Baja",
+    "description": "Verificar que los espacios innecesarios al inicio o al final del nombre sean eliminados o normalizados.",
+    "newName": "   Espacios   "
+  },
+  {
+    "id": "7",
+    "title": "Crear card con combinación de mayúsculas y minúsculas",
+    "priority": "Baja",
+    "description": "Verificar que el sistema muestre correctamente cards con nombres que alternen mayúsculas y minúsculas.",
+    "newName": "TestBoardCamelCase"
+  },
+  {
+    "id": "8",
+    "title": "Crear card con nombre en otro idioma",
+    "priority": "Baja",
+    "description": "Validar que se acepten nombres con caracteres de otros idiomas (ej: 日本語ボード, cardEspañol, Доска).",
+    "newName": "INTERNATIONAL:日本語ボード"
+  },
+  {
+    "id": "9",
+    "title": "Crear card con nombre numérico",
+    "priority": "Baja",
+    "description": "Verificar que el sistema acepte cards cuyo nombre sea solo un número (ej: 2025).",
+    "newName": "NUMERIC:2025"
+  }
+]

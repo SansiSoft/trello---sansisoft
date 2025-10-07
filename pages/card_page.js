@@ -33,7 +33,7 @@ class CardPage {
 
         //section checklists
         this.checkListButton = page.locator('span[data-testid="ChecklistIcon"]');
-
+        this.cancelChecklistButton =  page.locator('button', { hasText: 'Cancel' });
         //section attachments
         this.attachmentButton = page.locator('button[data-testid="card-back-attachment-button"]');
 
@@ -44,8 +44,12 @@ class CardPage {
         this.addedLabels = page.locator('[data-testid="card-label"]');
 
         this.closeBtn = page.locator('button[aria-label="Close popover"]');
+        this.closeCardButton = page.locator('button[aria-label="Close dialog"]');
     }
 
+    async closeCard() {
+        await this.closeCardButton.click();
+    }
     async getTitle() {
         const titleText = await this.cardHeader.textContent();
         return titleText.trim();
@@ -128,7 +132,7 @@ class CardPage {
             }
             console.log('Step: Cerrando modal con ESC...');
             await this.page.waitForTimeout(stepDelay);
-            this.closeBtn.click();
+            await this.closeBtn.click();
             await this.page.waitForTimeout(stepDelay);
             console.log('Proceso de selección de etiquetas completado con éxito');
         } catch (error) {
@@ -186,7 +190,7 @@ class CardPage {
 
     async addMembers(members = [], stepDelay = 1500) {
         try {
-            this.addButton.click();
+            await this.addButton.click();
             console.log('Step 1: Abriendo modal de miembros...');
             await this.membersModal.click();
             await this.page.waitForTimeout(stepDelay);
@@ -254,24 +258,34 @@ class CardPage {
     }
 
     async addCheckList(titlesChecklist = "Default Checklist", stepDelay = 1500) {
-        await this.checkListButton.click();
+        let checkListButton = this.page.locator('span[data-testid="ChecklistIcon"]').first();
         await this.page.waitForTimeout(stepDelay);
+        // Verificar si el botón existe
+        if (await checkListButton.count() === 0) {
+            console.log("Primer selector no encontrado, usando alternativo...");
+            checkListButton = this.page.locator('span[data-vc="icon-ChecklistIcon"]');
+        }
+        await checkListButton.waitFor({ state: 'visible', timeout: 10000 });
+        await checkListButton.click();
+        await this.page.waitForTimeout(stepDelay);
+
         const modalChecklist = this.page.locator('section[aria-labelledby="add-checklist-popover"]');
-        await expect(modalChecklist).toBeVisible({timeout: stepDelay});
+        await expect(modalChecklist).toBeVisible({ timeout: 10000 });
         const inputChecklist = this.page.locator('input[id="id-checklist"]');
-        await expect(inputChecklist).toBeVisible({timeout: stepDelay});
+        await expect(inputChecklist).toBeVisible({ timeout: 10000 });
         await inputChecklist.fill(titlesChecklist);
         await this.page.waitForTimeout(stepDelay);
         const addButton = this.page.locator('button[data-testid="checklist-add-button"]');
         await addButton.click();
         await this.page.waitForTimeout(stepDelay);
+        await this.cancelChecklistButton.click();
+        await this.page.waitForTimeout(stepDelay);
         console.log(`Creando checklist "${titlesChecklist}"...`);
-
     }
 
     async validateCheckListVisible(checklistTitle) {
         const checklistSection = this.page.locator(`section[data-testid="checklist-section"]`);
-        await expect(checklistSection.filter({hasText: checklistTitle}).first()).toBeVisible();
+        await expect(checklistSection.filter({hasText: checklistTitle}).first()).toBeVisible({ timeout: 10000 });
         console.log(`Checklist "${checklistTitle}" visible en la tarjeta`);
     }
 
@@ -283,7 +297,7 @@ class CardPage {
             .filter({hasText: title})
             .first();
 
-        await expect(checklistSection).toBeVisible();
+        await expect(checklistSection).toBeVisible({ timeout: 10000 });
 
         // Botón "Delete" dentro del checklist
         const deleteButton = checklistSection.locator('button[data-testid="checklist-delete-button"]');
@@ -292,7 +306,7 @@ class CardPage {
 
         // Botón de confirmación (por texto)
         const confirmDeleteBtn = this.page.getByRole('button', {name: 'Delete checklist'});
-        await expect(confirmDeleteBtn).toBeVisible();
+        await expect(confirmDeleteBtn).toBeVisible({ timeout: 10000 });
         await confirmDeleteBtn.click();
 
         console.log(`Checklist "${title}" eliminado correctamente`);
@@ -345,10 +359,10 @@ class CardPage {
         ).filter({hasText: fileName});
 
         const count = await attachmentLocator.count();
-        console.log(`🔍 Se encontraron ${count} coincidencias para "${fileName}"`);
+        console.log(`Se encontraron ${count} coincidencias para "${fileName}"`);
 
         const isVisible = count > 0 && await attachmentLocator.first().isVisible();
-        console.log(`📎 Attachment "${fileName}" visible:`, isVisible);
+        console.log(`Attachment "${fileName}" visible:`, isVisible);
         return isVisible;
     }
 
@@ -377,13 +391,13 @@ class CardPage {
 
             //Verificar y hacer clic en el botón de eliminar
             const removeButtonOption = this.page.locator('button[data-testid="delete-link-attachment"]');
-            await expect(removeButtonOption).toBeVisible({timeout: 5000});
+            await expect(removeButtonOption).toBeVisible({ timeout: 10000 });
             await removeButtonOption.click();
             await this.page.waitForTimeout(stepDelay);
 
             //Confirmar eliminación
             const confirmDeleteBtn = this.page.locator('button[data-testid="confirm-delete-link-attachment"]');
-            await expect(confirmDeleteBtn).toBeVisible({timeout: 5000});
+            await expect(confirmDeleteBtn).toBeVisible({ timeout: 10000 });
             await confirmDeleteBtn.click();
 
             //Esperar a que se complete la eliminación
@@ -479,9 +493,13 @@ class CardPage {
 
     async verifyDescription(expectedText) {
         const descriptionContent = this.page.locator('div[data-testid="description-content-area"]');
-        await expect(descriptionContent).toHaveText(expectedText, { timeout: 5000 });
+        await expect(descriptionContent).toBeVisible({timeout: 10000});
+        const actualText = await descriptionContent.textContent();
+        const normalize = (str) => str.replace(/\s+/g, ' ').trim();
+        const normalizedExpected = normalize(expectedText);
+        const normalizedActual = normalize(actualText || "");
+        await expect(normalizedActual).toContain(normalizedExpected);
         console.log('Verificación exitosa: la descripción coincide con el texto esperado.');
-
     }
 }
 

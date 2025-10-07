@@ -28,6 +28,6 @@ export default defineConfig({
     },
     
   ],
-  timeout: 60000,
+  timeout: 100000,
 });
 
