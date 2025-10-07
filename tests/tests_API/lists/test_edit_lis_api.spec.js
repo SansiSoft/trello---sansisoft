@@ -13,7 +13,7 @@ const TrelloAPI = require('../../../utils/trello_api');
 test.describe('API - Editar nombres de listas', () => {
 
   for (const testCase of listCases) {
-    test(`${testCase.id} - ${testCase.title}`, async ({ apiContext, apiBoard, apiList }) => {
+    test(`@regression ${testCase.id} - ${testCase.title}`, async ({ apiContext, apiBoard, apiList }) => {
       const originalName = apiList.name;
       
       logger.info(`\n API Test Case ${testCase.id}: "${testCase.title}"`);
@@ -81,7 +81,7 @@ test.describe('API - Editar nombres de listas', () => {
       logger.info(`API Test Case ${testCase.id} completado\n`);
     });
   }
-  test('NEG-01 - Editar lista con ID inexistente', async ({ apiContext }) => {
+  test('@negativo - Editar lista con ID inexistente', async ({ apiContext }) => {
     const fakeId = '650000000000000000000000';
     logger.info(`Intentando actualizar lista con ID inexistente: ${fakeId}`);
 
@@ -94,7 +94,7 @@ test.describe('API - Editar nombres de listas', () => {
     }
   });
 
-  test('NEG-02 - Editar lista con ID inválido', async ({ apiContext }) => {
+  test('@negativo - Editar lista con ID inválido', async ({ apiContext }) => {
     const invalidId = 'abc123';
     logger.info(`Intentando actualizar lista con ID inválido: ${invalidId}`);
 
@@ -107,7 +107,7 @@ test.describe('API - Editar nombres de listas', () => {
     }
   });
 
-  test('NEG-03 - Editar lista sin ID en la ruta', async ({ apiContext }) => {
+  test('@negativo - Editar lista sin ID en la ruta', async ({ apiContext }) => {
     logger.info('Intentando actualizar lista sin ID en la ruta');
 
     try {
@@ -119,7 +119,7 @@ test.describe('API - Editar nombres de listas', () => {
     }
   });
 
-  test('NEG-04 - Editar lista con payload vacío', async ({ apiContext, apiList }) => {
+  test('@negativo - Editar lista con payload vacío', async ({ apiContext, apiList }) => {
         logger.info('Intentando actualizar lista con payload vacío (sin body)');
 
         const originalName = apiList.name;
@@ -138,7 +138,7 @@ test.describe('API - Editar nombres de listas', () => {
         }
   });
 
-  test('NEG-05 - Editar lista con payload mal formado (JSON inválido)', async ({ apiContext, apiList }) => {
+  test('@negativo - Editar lista con payload mal formado (JSON inválido)', async ({ apiContext, apiList }) => {
       logger.info('Intentando actualizar lista con JSON mal formado');
 
       try {
@@ -150,7 +150,7 @@ test.describe('API - Editar nombres de listas', () => {
       }
   });
 
-  test('NEG-06 - Editar lista con campo no permitido en el payload', async ({ apiContext, apiList }) => {
+  test('@negativo - Editar lista con campo no permitido en el payload', async ({ apiContext, apiList }) => {
       logger.info('Intentando actualizar lista con campo no permitido en payload');
 
       try {
@@ -164,7 +164,7 @@ test.describe('API - Editar nombres de listas', () => {
       }
   });
 
-  test('NEG-07 - Editar lista sin autenticación (token inválido)', async ({ apiList }) => {
+  test('@negativo - Editar lista sin autenticación (token inválido)', async ({ apiList }) => {
       logger.info('Intentando actualizar lista usando token inválido');
 
       const validKey = process.env.TRELLO_KEY;
@@ -181,7 +181,7 @@ test.describe('API - Editar nombres de listas', () => {
       }
     });
 
-  test('NEG-08 - Editar lista con permisos insuficientes', async ({ apiList }) => {
+  test('@negativo - Editar lista con permisos insuficientes', async ({ apiList }) => {
       logger.info('Intentando actualizar lista usando credenciales de otro usuario (permisos insuficientes)');
 
       const altKey = process.env.TRELLO_KEY_ALT;

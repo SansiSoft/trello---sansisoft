@@ -4,7 +4,7 @@ const { ListPage } = require('../../../pages/list_page');
 
 test.describe('Mover listas - Tests simples', () => {
 
-  test('1 - Mover lista dentro del mismo tablero a otra posición válida', async ({ trelloPage, board, list }) => {
+  test('@positivo - Mover lista dentro del mismo tablero a otra posición válida', async ({ trelloPage, board, list }) => {
     const listPage = new ListPage(trelloPage);
     
     await trelloPage.goto(board.url);
@@ -15,7 +15,7 @@ test.describe('Mover listas - Tests simples', () => {
     await listPage.expectListPosition(list.name, 2); // posición 3 = índice 2
   });
 
-  test('2 - Cancelar la acción de mover lista desde el modal', async ({ trelloPage, board, list }) => {
+  test('@positivo - Cancelar la acción de mover lista desde el modal', async ({ trelloPage, board, list }) => {
     const listPage = new ListPage(trelloPage);
     
     await trelloPage.goto(board.url);
@@ -30,7 +30,7 @@ test.describe('Mover listas - Tests simples', () => {
 
 multiTest.describe('Mover listas - Tests con múltiples tableros', () => {
 
-  multiTest('3 - Mover lista a otro tablero con listas existentes', async ({ trelloPage, board, targetBoard, list, targetList }) => {
+  multiTest('@positivo - Mover lista a otro tablero con listas existentes', async ({ trelloPage, board, targetBoard, list, targetList }) => {
     const listPage = new ListPage(trelloPage);
     await trelloPage.goto(board.url);
     await trelloPage.waitForLoadState('networkidle');
@@ -49,7 +49,7 @@ multiTest.describe('Mover listas - Tests con múltiples tableros', () => {
     await listPage.expectListPosition(list.name, 1); // posición 2 = índice 1
   });
 
-  multiTest('4 - Mover lista a un tablero vacío (posición 1)', async ({ trelloPage, board, targetBoard, list }) => {
+  multiTest('@positivo - Mover lista a un tablero vacío (posición 1)', async ({ trelloPage, board, targetBoard, list }) => {
     const listPage = new ListPage(trelloPage);
     
     // Ir al tablero origen 
@@ -67,7 +67,7 @@ multiTest.describe('Mover listas - Tests con múltiples tableros', () => {
     await listPage.expectListPosition(list.name, 0);
   });
 
-  multiTest('5 - Verificar que las tarjetas se mueven junto con la lista', async ({ trelloPage, board, targetBoard, list, card }) => {
+  multiTest('@positivo - Verificar que las tarjetas se mueven junto con la lista', async ({ trelloPage, board, targetBoard, list, card }) => {
     const listPage = new ListPage(trelloPage);
     // Ir al tablero origen
     await trelloPage.goto(board.url);
