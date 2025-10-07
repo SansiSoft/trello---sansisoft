@@ -172,6 +172,18 @@ class TrelloAPI {
     logger.info(`Board Found: ${board}`)
     return board
   } 
+
+  async createCard(listId, cardTitle){
+    const response = await this.post(`/cards`, { params: { idList: listId, name: cardTitle} });
+    logger.info(`Method > createCard: ${response}`)
+    return response
+  } 
+
+  async getCard(cardId){
+    const response = await this.get(`/cards/${cardId}`);
+    logger.info(`Method > getCard: ${response}`)
+    return response
+  } 
 }
 
 module.exports = TrelloAPI;
