@@ -1,12 +1,6 @@
-<<<<<<< HEAD:tests/lists/test_create_list.spec.js
-const { test, expect } = require('../../fixtures/list');
-const { ListPage } = require('../../pages/list_page');
-const { processTestCases, reportKnownBug, captureUIBug } = require('../../utils/helpers');
-=======
 const { test } = require('../../../fixtures/list');
 const { ListPage } = require('../../../pages/list_page');
 const { processTestCases, reportKnownBug, captureUIBug } = require('../../../utils/helpers');
->>>>>>> 537e9795deb4a224c7c1801355841b42215a3ea6:tests/tests_UI/lists/test_create_list.spec.js
 const path = require('path');
 const fs = require('fs');
 

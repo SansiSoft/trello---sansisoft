@@ -1,4 +1,4 @@
-const { test, expect } = require('../../fixtures/list');
+const { test, expect } = require('../../../fixtures/list');
 const { ListPage } = require('../../pages/list_page');
 const { logger } = require('../../utils/logger');
 
