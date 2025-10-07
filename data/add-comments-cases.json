@@ -22,7 +22,7 @@
   },
   {
     "id": 4,
-    "title": "Añadir un comentario muy largo",
+    "title": "Añadir un comentario muy largo de 200 caracteres",
     "priority": "Media",
     "description": "Verificar que el sistema maneje comentarios de más de 1024 caracteres correctamente, truncando o bloqueando la entrada.",
     "comment": "REPEAT:C:1200"

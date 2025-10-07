@@ -164,6 +164,14 @@ class TrelloAPI {
   async getBoardLists(boardId) {
     return this.get(`/boards/${boardId}/lists`);
   }
+
+  async getBoardsByName(organizationId, boardName){
+    const response = await this.get(`/organizations/${organizationId}/boards`, { params: { fields: 'id,name'} });
+    logger.info(`Method > getBoardsByNameresponse: ${response}`)
+    const board = response.find(b => b.name === boardName);
+    logger.info(`Board Found: ${board}`)
+    return board
+  } 
 }
 
 module.exports = TrelloAPI;

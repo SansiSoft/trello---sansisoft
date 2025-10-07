@@ -91,7 +91,7 @@ class BoardPage {
         }catch{
             const createNewListBtn = await this.page.locator(this.createNewListBtnCSS);
             await clickButton(createNewListBtn);
-            await fillInput(this.listTitleInput,nth(-1), titleList);
+            await fillInput(this.listTitleInput.nth(-1), titleList);
         }
         await clickButton(this.confirmTitleTitleButton);
 

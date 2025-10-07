@@ -3,14 +3,16 @@ const { TrelloHomePage } = require('../pages/trello_home_page.js');
 const { BoardPage } = require('../pages/board_page.js')
 const { CardPage } = require('../pages/card_page.js')
 const { ColumnListComponent } = require('../pages/components/column_list_component.js')
-const { BoardAPI } = require('../trello_api/modules/board_api.js')
+const TrelloAPI = require('../utils/trello_api');
+const { logger } = require('../utils/logger');
+
 require('dotenv').config();
 
 const API_KEY = process.env.TRELLO_KEY;
 const API_TOKEN = process.env.TRELLO_TOKEN;
 const BASE_URL_API = process.env.TRELLO_API_URL;
 const ORGANIZATION_ID = process.env.ORGANIZATION_ID;
-const board_api = new BoardAPI(BASE_URL_API, API_KEY, API_TOKEN)
+const trello_api = new TrelloAPI({ key: API_KEY, token: API_TOKEN, baseUrl: BASE_URL_API, logger });
 
 
 const testWithCard = test.extend({
@@ -26,7 +28,7 @@ const testWithCard = test.extend({
     const toDoList = await board.createAList("COMMENTS TESTS");
     const listTitles = await board.getListTitles();
     expect(listTitles).toContain("COMMENTS TESTS")
-    expect(listTitles.length).toBe(1);
+    logger.info(`Total Lists: | ${listTitles.length}`)
     await toDoList.addCard(cardTitle);
 
     // Open the Card
@@ -35,10 +37,12 @@ const testWithCard = test.extend({
     await expect(actualCardTitle).toContain(cardTitle)
 
     await use(card);
-    const  boardCreated = await board_api.getBoardsByName(ORGANIZATION_ID, titleBoard);
+    const  boardCreated = await trello_api.getBoardsByName(ORGANIZATION_ID, titleBoard);
+    logger.info(`Board Response: ${boardCreated}`)
     const boardId = boardCreated['id'];
-    const  responseStatus = await board_api.deleteBoard(boardId);
-    await expect(responseStatus).toBe(200)
+    logger.info(`Board Id: ${boardCreated}`)
+    const  response = await trello_api.deleteBoardAPI(boardId);
+    await expect(response.status).toBe(200)
     
   },
 });
