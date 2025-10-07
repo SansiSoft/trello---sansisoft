@@ -8,7 +8,7 @@ const listTestCases = JSON.parse(fs.readFileSync(testCasesPath, 'utf-8') );
 const testToRun = listTestCases.find(tc => tc.id == 1);
 
 for (const testCase of listTestCases) {
-  test(`CM-${testCase.id} - ${testCase.title} @regression @positivo`, async ({ card }) => {
+  test(`CC-${testCase.id} - ${testCase.title} @positivo`, async ({ card }) => {
     await card.addComment(testCase.comment);
     const actualComments = await card.getCommentsTextOnly();
     const actualText = actualComments.join('\n'); 
