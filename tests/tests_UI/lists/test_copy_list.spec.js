@@ -1,6 +1,6 @@
 const { test, expect } = require('../../../fixtures/list');
-const { ListPage } = require('../../pages/list_page');
-const { logger } = require('../../utils/logger');
+const { ListPage } = require('../../../pages/list_page');
+const { logger } = require('../../../utils/logger');
 
 test.describe('Copiar listas de tablero', () => {
 

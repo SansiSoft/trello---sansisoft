@@ -1,8 +1,7 @@
-const { test, expect } = require('../../fixtures/list');
-const { generateListName, generateBoardName } = require('../../utils/helpers');
+const { test, expect } = require('../../../fixtures/list');
+const { generateListName, reportKnownBug } = require('../../../utils/helpers');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-const { logger } = require('../../utils/logger');
-const { reportKnownBug } = require('../../utils/helpers');
+const { logger } = require('../../../utils/logger');
 const { faker } = require('@faker-js/faker');
 
 const fakeId = faker.string.uuid();
