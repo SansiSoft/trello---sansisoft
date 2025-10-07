@@ -40,7 +40,6 @@ test.describe('API - Crear listas (POST /lists)', () => {
                 description: `Se creó una lista con nombre vacío: "${response.name}"`,
                 evidence: JSON.stringify(response).slice(0, 500)
                 });
-                test.fail("bug conocido: Deberia dar error con nombre vacio");
             }
         }
 
@@ -54,7 +53,6 @@ test.describe('API - Crear listas (POST /lists)', () => {
                 description: `Se creó una lista con ${actualLength} caracteres`,
                 evidence: JSON.stringify(response).slice(0, 500)
                 });
-                test.fail("bug conocido: Se creo con mas de 512 caracteres");
             }
         }
 
@@ -67,7 +65,6 @@ test.describe('API - Crear listas (POST /lists)', () => {
                 description: `Se esperaba error 4xx pero se devolvio status 200`,
                 evidence: JSON.stringify(response).slice(0, 500)
             });
-            test.fail("bug conocido: API permitió crear varias listas (id invalido)");
         }
 
         // Casos “positivos” siguen usando expect

@@ -51,7 +51,6 @@ for (const testCase of createCases) {
           uiStatus: 'DEFECTUOSO'
         });
       }
-      test.fail("bug conocido: Se creo con mas de 512 caracteres");
     } else if (testCase.id === 13) {
       // Caso cancelar → no debería aparecer la lista
       const listLocator = listPage.listByName(testCase.newName === 'CANCEL:createList' ? '' : testCase.newName);
