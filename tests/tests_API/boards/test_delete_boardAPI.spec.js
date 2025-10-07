@@ -3,7 +3,7 @@ const TrelloAPI = require('../../../utils/trello_api');
 
 
 
-test('Eliminar un tablero via API',async ({}) => {
+test('@smoke Eliminar un tablero via API',async ({}) => {
     const trelloAPI = new TrelloAPI();
     const nombreTablero = `Tablero para eliminar- ${Date.now()}`;
     const boardData = await trelloAPI.createBoardAPI(nombreTablero);

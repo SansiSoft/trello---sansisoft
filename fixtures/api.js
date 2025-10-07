@@ -80,6 +80,33 @@ const test = base.extend({
 
     await use(list);
   },
+
+  cleanupBoard: async ({}, use) => {
+      let boardName;
+  
+      await use({  registerBoard: (name) => {boardName = name;    }});
+      if (boardName) {
+        try {
+          const searchResp = await fetch(
+            `https://api.trello.com/1/members/me/boards?key=${API_KEY}&token=${API_TOKEN}`
+          );
+          const boards = await searchResp.json();
+          const found = boards.find((b) => b.name === boardName);
+  
+          if (found) {
+            await fetch(
+              `https://api.trello.com/1/boards/${found.id}?key=${API_KEY}&token=${API_TOKEN}`,
+              { method: 'DELETE' }
+            );
+            logger.success(`Board eliminado en teardown - ID: ${found.id}, Nombre: ${boardName}`);
+          } else {
+            logger.warn(`No se encontró el board para eliminar: ${boardName}`);
+          }
+        } catch (err) {
+          logger.error(`Error en teardown de board: ${err.message}`);
+        }
+      }
+    }
 });
 
 module.exports = { test, expect };

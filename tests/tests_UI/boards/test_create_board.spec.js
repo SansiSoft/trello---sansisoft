@@ -22,7 +22,7 @@ for (const testCase of boardCases) {
   });
 }
 
-test('CB-06:Verificar que al cerrar modal con ESC no se crea tablero', async ({ trelloPage }) => {
+test('CB-05:Verificar que al cerrar modal con ESC no se crea tablero', async ({ trelloPage }) => {
   const trello_home_page = new TrelloHomePage(trelloPage);
   await trello_home_page.openCreateBoardModal();
   await trelloPage.keyboard.press('Escape');
@@ -31,7 +31,7 @@ test('CB-06:Verificar que al cerrar modal con ESC no se crea tablero', async ({ 
 });
 
 
-test('CB-07:Verificar que se crea un tablero desde una plantilla', async ({ trelloPage,cleanupBoard}) => {
+test('CB-06:Verificar que se crea un tablero desde una plantilla', async ({ trelloPage,cleanupBoard}) => {
   await expect(trelloPage).toHaveTitle(/Trello/);
   const trello_home_page = new TrelloHomePage(trelloPage);
   const titleBoard = "New title board - " + Date.now();
@@ -41,7 +41,7 @@ test('CB-07:Verificar que se crea un tablero desde una plantilla', async ({ trel
   
 });
 
- test('CB-08:Verificar que no se cree un tablero con solo espacios', async ({ trelloPage,cleanupBoard}) => {
+ test('CB-07:Verificar que no se cree un tablero con solo espacios', async ({ trelloPage,cleanupBoard}) => {
   await expect(trelloPage).toHaveTitle(/Trello/);
   const trello_home_page = new TrelloHomePage(trelloPage);
   const titleBoard = "          ";
@@ -49,7 +49,7 @@ test('CB-07:Verificar que se crea un tablero desde una plantilla', async ({ trel
   await expect(trello_home_page.submitCreateBoardBtn).toBeDisabled();
 });
 
- test('CB-09:Crear un tablero con nombre duplicado',async({trelloPage,cleanupBoard})=>{
+ test('CB-08:Crear un tablero con nombre duplicado',async({trelloPage,cleanupBoard})=>{
     const trello_home_page = new TrelloHomePage(trelloPage)
     const duplicate_title="Titulo duplicado"
     await trello_home_page.createANewBoard(duplicate_title);
@@ -60,7 +60,7 @@ test('CB-07:Verificar que se crea un tablero desde una plantilla', async ({ trel
     
 })
 
-test('CB-10:Visualizar tablero creado desde la lista',async ({trelloPage,cleanupBoard})=>{
+test('CB-09:Visualizar tablero creado desde la lista',async ({trelloPage,cleanupBoard})=>{
   const trello_home_page = new TrelloHomePage(trelloPage);
   const titleBoard = "New title board - " + Date.now();
   await trello_home_page.createANewBoard(titleBoard);
@@ -76,14 +76,14 @@ test('CB-10:Visualizar tablero creado desde la lista',async ({trelloPage,cleanup
   cleanupBoard.registerBoard(titleBoard);
 });
 
-test.describe('Board name validation (parametrizados)', () => {
+test.describe('Validacion de nombre de tableros (parametrizados)', () => {
   const cases = [
-    {id:"CB-11" ,length: 10, debePasar: true },
-    {id:"CB-12", length: 100, debePasar: true },
+    {id:"CB-10" ,length: 10, debePasar: true },
+    {id:"CB-11", length: 100, debePasar: true },
   ];
 
   for (const c of cases) {
-    test(`${c.id}: Debe ${c.debePasar ? '' : 'NO '}crear un tablero con nombre de longitud ${c.length}`,
+    test(`@positivo ${c.id}: Debe ${c.debePasar ? '' : 'NO '}crear un tablero con nombre de longitud ${c.length}`,
       async ({ trelloPage, cleanupBoard }) => {
         const trello_home_page = new TrelloHomePage(trelloPage);
         const titleBoard = 'A'.repeat(c.length);
@@ -96,12 +96,12 @@ test.describe('Board name validation (parametrizados)', () => {
 
 test.describe('Validacion de nombres de tableros- casos inválidos', () => {
   const invalidCases = [
-    {id:"CB-13" , length: 1, bugCode: 'BUG-CB-12' },
-    {id:"CB-14", length: 1000, bugCode: 'BUG-CB-13' },
+    {id:"CB-12" , length: 1, bugCode: 'BUG-CB-12' },
+    {id:"CB-13", length: 1000, bugCode: 'BUG-CB-13' },
   ];
 
   for (const c of invalidCases) {
-    test(`NO debe crear un tablero con nombre de longitud ${c.length}`, async ({ trelloPage,cleanupBoard }) => {
+    test(`@negativo NO debe crear un tablero con nombre de longitud ${c.length}`, async ({ trelloPage,cleanupBoard }) => {
       const trello_home_page = new TrelloHomePage(trelloPage);
       const titleBoard = 'A'.repeat(c.length);
       await trello_home_page.createANewBoard(titleBoard);
