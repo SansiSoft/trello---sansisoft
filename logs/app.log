@@ -1,0 +1,799 @@
+[SUCCESS] 2025-10-03T03:08:49.812Z - Tablero creado exitosamente - ID: 68df3e42f69926d3258e3860, Nombre: Board_Test_1759460928842
+[INFO] 2025-10-03T03:08:49.817Z - Navegando a la lista de tableros...
+[SUCCESS] 2025-10-03T03:08:50.184Z - Navegación a lista de tableros completada.
+[SUCCESS] 2025-10-03T03:08:52.936Z - Tablero eliminado exitosamente - ID: 68df3e42f69926d3258e3860
+[INFO] 2025-10-03T03:08:57.819Z - Creando un nuevo tablero: "zoology - 1759460937819"
+[INFO] 2025-10-03T03:08:57.825Z - Abriendo modal para crear un tablero...
+[SUCCESS] 2025-10-03T03:08:58.137Z - Modal de creación abierto.
+[SUCCESS] 2025-10-03T03:08:58.902Z - Tablero creado exitosamente: "zoology - 1759460937819"
+[SUCCESS] 2025-10-03T03:09:02.673Z - Board eliminado en teardown - ID: 68df3e4b0555c721973b8709, Nombre: zoology - 1759460937819
+[INFO] 2025-10-03T03:09:07.924Z - Creando un nuevo tablero: "Board to be deleted 1759460947924"
+[INFO] 2025-10-03T03:09:07.929Z - Abriendo modal para crear un tablero...
+[SUCCESS] 2025-10-03T03:09:08.379Z - Modal de creación abierto.
+[SUCCESS] 2025-10-03T03:09:09.546Z - Tablero creado exitosamente: "Board to be deleted 1759460947924"
+[INFO] 2025-10-03T03:09:09.549Z - Eliminando tablero actual...
+[INFO] 2025-10-03T03:09:09.557Z - Abriendo menú del tablero...
+[SUCCESS] 2025-10-03T03:09:12.997Z - Menú del tablero abierto.
+[INFO] 2025-10-03T03:09:13.179Z - Creando un nuevo tablero: "simvastatin !@# 51 $%^ - 1759460953179"
+[INFO] 2025-10-03T03:09:13.180Z - Abriendo modal para crear un tablero...
+[SUCCESS] 2025-10-03T03:09:13.495Z - Modal de creación abierto.
+[SUCCESS] 2025-10-03T03:09:14.734Z - Tablero creado exitosamente: "simvastatin !@# 51 $%^ - 1759460953179"
+[INFO] 2025-10-03T03:09:16.145Z - Tablero cerrado. Procediendo a eliminación definitiva...
+[INFO] 2025-10-03T03:09:16.146Z - Abriendo menú del tablero...
+[SUCCESS] 2025-10-03T03:09:16.422Z - Menú del tablero abierto.
+[SUCCESS] 2025-10-03T03:09:16.829Z - Tablero eliminado permanentemente.
+[SUCCESS] 2025-10-03T03:09:18.216Z - Board eliminado en teardown - ID: 68df3e5bb0fa9fdb090dce84, Nombre: simvastatin !@# 51 $%^ - 1759460953179
+[INFO] 2025-10-03T03:09:19.130Z - Navegando a la lista de tableros...
+[SUCCESS] 2025-10-03T03:09:19.583Z - Navegación a lista de tableros completada.
+[SUCCESS] 2025-10-03T03:09:49.349Z - Tablero creado exitosamente - ID: 68df3e7dd92df66221ecc0de, Nombre: Board_Test_1759460988480
+[INFO] 2025-10-03T03:09:49.354Z - Navegando a la lista de tableros...
+[SUCCESS] 2025-10-03T03:09:49.730Z - Navegación a lista de tableros completada.
+[SUCCESS] 2025-10-03T03:09:53.479Z - Tablero eliminado exitosamente - ID: 68df3e7dd92df66221ecc0de
+[SUCCESS]  2025-10-07T18:19:06.286Z - Board 1 creado - ID: 68e559995abbacef1d2d030e, Nombre: Board_Test_1759861145171
+[SUCCESS]  2025-10-07T18:19:06.710Z - Board 2 creado - ID: 68e5599a8f64339c45323213, Nombre: Board_Test_1759861146294
+[SUCCESS]  2025-10-07T18:19:07.189Z - Board 3 creado - ID: 68e5599b35563aa90d6475a4, Nombre: Board_Test_1759861146715
+[INFO]     2025-10-07T18:19:07.193Z - Navegando a la lista de tableros...
+[SUCCESS]  2025-10-07T18:19:07.490Z - Navegación a lista de tableros completada.
+[INFO]     2025-10-07T18:19:09.387Z - Iniciando proceso de cambio de tablero desde la lista del workspace...
+[INFO]     2025-10-07T18:19:09.483Z - Abriendo la sección de tableros del workspace...
+[INFO]     2025-10-07T18:19:10.197Z - Tablero actual: "Board_Test_1759861145171"
+[INFO]     2025-10-07T18:19:10.210Z - Se encontraron 8 tableros en el workspace.
+[INFO]     2025-10-07T18:19:10.225Z - Analizando tablero #1: "Board_Test_1759861145171"
+[INFO]     2025-10-07T18:19:10.253Z - Analizando tablero #2: "1"
+[INFO]     2025-10-07T18:19:10.254Z - Cambiando al tablero "1"...
+[SUCCESS]  2025-10-07T18:19:11.066Z - Cambio de tablero exitoso: ahora en "1"
+[SUCCESS]  2025-10-07T18:19:11.803Z - 🧹 Board eliminado - ID: 68e559995abbacef1d2d030e, Nombre: Board_Test_1759861145171
+[SUCCESS]  2025-10-07T18:19:12.408Z - 🧹 Board eliminado - ID: 68e5599a8f64339c45323213, Nombre: Board_Test_1759861146294
+[SUCCESS]  2025-10-07T18:19:12.970Z - 🧹 Board eliminado - ID: 68e5599b35563aa90d6475a4, Nombre: Board_Test_1759861146715
+[SUCCESS]  2025-10-07T18:20:44.099Z - Board 1 creado - ID: 68e559fb1a53047e75d81b47, Nombre: Board_Test_1759861243167
+[SUCCESS]  2025-10-07T18:20:44.595Z - Board 2 creado - ID: 68e559fcffeeeb51d57ae6d9, Nombre: Board_Test_1759861244105
+[SUCCESS]  2025-10-07T18:20:45.051Z - Board 3 creado - ID: 68e559fc46aa1f8c5a7384ef, Nombre: Board_Test_1759861244600
+[INFO]     2025-10-07T18:20:45.062Z - Navegando a la lista de tableros...
+[SUCCESS]  2025-10-07T18:20:45.341Z - Navegación a lista de tableros completada.
+[INFO]     2025-10-07T18:20:46.915Z - Iniciando proceso de cambio de tablero desde la lista del workspace...
+[INFO]     2025-10-07T18:20:47.066Z - Abriendo la sección de tableros del workspace...
+[INFO]     2025-10-07T18:20:48.049Z - Tablero actual: "Board_Test_1759861243167"
+[INFO]     2025-10-07T18:20:48.069Z - Se encontraron 2 tableros en el workspace.
+[INFO]     2025-10-07T18:20:48.095Z - Analizando tablero #1: "Board_Test_1759861243167"
+[INFO]     2025-10-07T18:20:48.122Z - Analizando tablero #2: "Board_Test_1759861243167"
+[ERROR]    2025-10-07T18:20:48.124Z - No se encontraron otros tableros distintos al actual en el workspace.
+[SUCCESS]  2025-10-07T18:20:48.901Z - 🧹 Board eliminado - ID: 68e559fb1a53047e75d81b47, Nombre: Board_Test_1759861243167
+[SUCCESS]  2025-10-07T18:20:49.513Z - 🧹 Board eliminado - ID: 68e559fcffeeeb51d57ae6d9, Nombre: Board_Test_1759861244105
+[SUCCESS]  2025-10-07T18:20:50.151Z - 🧹 Board eliminado - ID: 68e559fc46aa1f8c5a7384ef, Nombre: Board_Test_1759861244600
+[SUCCESS]  2025-10-07T18:21:22.629Z - Board 1 creado - ID: 68e55a2281e0ca6962e376bd, Nombre: Board_Test_1759861281943
+[SUCCESS]  2025-10-07T18:21:23.107Z - Board 2 creado - ID: 68e55a2206834e0c29cb158e, Nombre: Board_Test_1759861282636
+[SUCCESS]  2025-10-07T18:21:23.549Z - Board 3 creado - ID: 68e55a23db5c73025c5c2ffc, Nombre: Board_Test_1759861283111
+[INFO]     2025-10-07T18:21:23.553Z - Navegando a la lista de tableros...
+[SUCCESS]  2025-10-07T18:21:23.818Z - Navegación a lista de tableros completada.
+[INFO]     2025-10-07T18:21:25.336Z - Iniciando proceso de cambio de tablero desde la lista del workspace...
+[INFO]     2025-10-07T18:21:25.499Z - Abriendo la sección de tableros del workspace...
+[INFO]     2025-10-07T18:21:26.561Z - Tablero actual: "Board_Test_1759861281943"
+[INFO]     2025-10-07T18:21:26.581Z - Se encontraron 2 tableros en el workspace.
+[INFO]     2025-10-07T18:21:26.652Z - Analizando tablero #1: "Board_Test_1759861281943"
+[INFO]     2025-10-07T18:21:26.666Z - Analizando tablero #2: "Board_Test_1759861281943"
+[ERROR]    2025-10-07T18:21:26.667Z - No se encontraron otros tableros distintos al actual en el workspace.
+[SUCCESS]  2025-10-07T18:21:27.446Z - 🧹 Board eliminado - ID: 68e55a2281e0ca6962e376bd, Nombre: Board_Test_1759861281943
+[SUCCESS]  2025-10-07T18:21:28.051Z - 🧹 Board eliminado - ID: 68e55a2206834e0c29cb158e, Nombre: Board_Test_1759861282636
+[SUCCESS]  2025-10-07T18:21:28.645Z - 🧹 Board eliminado - ID: 68e55a23db5c73025c5c2ffc, Nombre: Board_Test_1759861283111
+[SUCCESS]  2025-10-07T18:23:06.822Z - Board 1 creado - ID: 68e55a8a2dc99194458d7896, Nombre: Board_Test_1759861385899
+[SUCCESS]  2025-10-07T18:23:07.280Z - Board 2 creado - ID: 68e55a8b499a346832718f8f, Nombre: Board_Test_1759861386837
+[SUCCESS]  2025-10-07T18:23:08.282Z - Board 3 creado - ID: 68e55a8c64f0ce595f4db699, Nombre: Board_Test_1759861387284
+[INFO]     2025-10-07T18:23:08.290Z - Navegando a la lista de tableros...
+[SUCCESS]  2025-10-07T18:23:08.581Z - Navegación a lista de tableros completada.
+[INFO]     2025-10-07T18:23:10.226Z - Iniciando proceso de cambio de tablero desde la lista del workspace...
+[INFO]     2025-10-07T18:23:10.471Z - Abriendo la sección de tableros del workspace...
+[INFO]     2025-10-07T18:23:10.844Z - Tablero actual: "Trello"
+[INFO]     2025-10-07T18:23:11.077Z - Se encontraron 3 tableros en el workspace.
+[INFO]     2025-10-07T18:23:11.130Z - Analizando tablero #1: "Board_Test_1759861385899"
+[INFO]     2025-10-07T18:23:11.131Z - Cambiando al tablero "Board_Test_1759861385899"...
+[SUCCESS]  2025-10-07T18:23:11.594Z - Cambio de tablero exitoso: ahora en "Board_Test_1759861385899"
+[SUCCESS]  2025-10-07T18:23:12.289Z - 🧹 Board eliminado - ID: 68e55a8a2dc99194458d7896, Nombre: Board_Test_1759861385899
+[SUCCESS]  2025-10-07T18:23:12.894Z - 🧹 Board eliminado - ID: 68e55a8b499a346832718f8f, Nombre: Board_Test_1759861386837
+[SUCCESS]  2025-10-07T18:23:13.507Z - 🧹 Board eliminado - ID: 68e55a8c64f0ce595f4db699, Nombre: Board_Test_1759861387284
+[SUCCESS]  2025-10-07T18:25:23.607Z - Tablero creado exitosamente - ID: 68e55b13d74763f3881ba996, Nombre: Board_Test_1759861522722
+[INFO]     2025-10-07T18:25:28.878Z - Cambiando fondo del tablero
+[INFO]     2025-10-07T18:25:28.893Z - Abriendo menú del tablero...
+[SUCCESS]  2025-10-07T18:25:29.202Z - Menú del tablero abierto.
+[SUCCESS]  2025-10-07T18:25:36.378Z - Tablero eliminado exitosamente - ID: 68e55b13d74763f3881ba996
+[INFO]     2025-10-07T18:25:36.922Z - 
+API Test: CB-API01: "Crear tablero con nombre válido"
+[INFO]     2025-10-07T18:25:36.924Z - Descripción: Verificar que un usuario pueda crear un tablero con un nombre válido y que se muestre correctamente en la página principal.
+[INFO]     2025-10-07T18:25:36.927Z - Nombre a crear: "leek"
+[INFO]     2025-10-07T18:25:36.928Z - Creando tablero mediante API: "leek"...
+[SUCCESS]  2025-10-07T18:25:37.367Z - Tablero creado exitosamente (API): "leek" (68e55b214892c741bd4d24b1)
+[SUCCESS]  2025-10-07T18:25:37.371Z -  Tablero creado correctamente: "leek"
+[INFO]     2025-10-07T18:25:37.372Z - Test Case CB-API01 completado.
+
+[SUCCESS]  2025-10-07T18:25:38.600Z - Board eliminado en teardown - ID: 68e55b214892c741bd4d24b1, Nombre: leek
+[INFO]     2025-10-07T18:25:38.671Z - 
+API Test: CB-API02: "Crear tablero con caracteres especiales"
+[INFO]     2025-10-07T18:25:38.679Z - Descripción: Validar que el sistema acepte nombres de tablero con caracteres especiales (ej: !@#$% Board ^&*()) y se muestre correctamente en la UI.
+[INFO]     2025-10-07T18:25:38.680Z - Nombre a crear: "!@#$% Lista ^&*()"
+[INFO]     2025-10-07T18:25:38.681Z - Creando tablero mediante API: "!@#$% Lista ^&*()"...
+[SUCCESS]  2025-10-07T18:25:39.112Z - Tablero creado exitosamente (API): "!@#$% Lista ^&*()" (68e55b222ddbf2dc85565189)
+[SUCCESS]  2025-10-07T18:25:39.121Z -  Tablero creado correctamente: "!@#$% Lista ^&*()"
+[INFO]     2025-10-07T18:25:39.122Z - Test Case CB-API02 completado.
+
+[SUCCESS]  2025-10-07T18:25:39.966Z - Board eliminado en teardown - ID: 68e55b222ddbf2dc85565189, Nombre: !@#$% Lista ^&*()
+[INFO]     2025-10-07T18:25:40.016Z - 
+API Test: CB-API03: "Crear tablero con nombre muy largo"
+[INFO]     2025-10-07T18:25:40.017Z - Descripción: Verificar que al ingresar un nombre mayor a 512 caracteres, el sistema lo trunque o bloquee la entrada.
+[INFO]     2025-10-07T18:25:40.018Z - Nombre a crear: "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+[INFO]     2025-10-07T18:25:40.019Z - Creando tablero mediante API: "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"...
+[SUCCESS]  2025-10-07T18:25:40.460Z - Tablero creado exitosamente (API): "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" (68e55b24b854d0152230be87)
+[SUCCESS]  2025-10-07T18:25:40.464Z -  Tablero creado correctamente: "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+[INFO]     2025-10-07T18:25:40.465Z - Test Case CB-API03 completado.
+
+[SUCCESS]  2025-10-07T18:25:41.841Z - Board eliminado en teardown - ID: 68e55b24b854d0152230be87, Nombre: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+[INFO]     2025-10-07T18:25:41.899Z - 
+API Test: CB-API04: "Crear múltiples tableros consecutivamente"
+[INFO]     2025-10-07T18:25:41.900Z - Descripción: Comprobar que un usuario pueda crear varios tableros de forma consecutiva y todos se muestren correctamente.
+[INFO]     2025-10-07T18:25:41.901Z - Nombre a crear: "c-clamp"
+[INFO]     2025-10-07T18:25:41.901Z - Creando tablero mediante API: "c-clamp"...
+[SUCCESS]  2025-10-07T18:25:42.728Z - Tablero creado exitosamente (API): "c-clamp" (68e55b26eca1559ba45cad23)
+[SUCCESS]  2025-10-07T18:25:42.733Z -  Tablero creado correctamente: "c-clamp"
+[INFO]     2025-10-07T18:25:42.734Z - Test Case CB-API04 completado.
+
+[SUCCESS]  2025-10-07T18:25:43.868Z - Board eliminado en teardown - ID: 68e55b26eca1559ba45cad23, Nombre: c-clamp
+[INFO]     2025-10-07T18:25:43.917Z - 
+API Test: CB-API05: "Crear tablero y refrescar la página"
+[INFO]     2025-10-07T18:25:43.918Z - Descripción: Verificar que el tablero creado se mantenga visible después de refrescar la página.
+[INFO]     2025-10-07T18:25:43.919Z - Nombre a crear: "ikebana"
+[INFO]     2025-10-07T18:25:43.920Z - Creando tablero mediante API: "ikebana"...
+[SUCCESS]  2025-10-07T18:25:44.341Z - Tablero creado exitosamente (API): "ikebana" (68e55b28b64bfd5b93281e20)
+[SUCCESS]  2025-10-07T18:25:44.345Z -  Tablero creado correctamente: "ikebana"
+[INFO]     2025-10-07T18:25:44.346Z - Test Case CB-API05 completado.
+
+[SUCCESS]  2025-10-07T18:25:45.247Z - Board eliminado en teardown - ID: 68e55b28b64bfd5b93281e20, Nombre: ikebana
+[INFO]     2025-10-07T18:25:45.309Z - 
+API Test: CB-API06: "Crear tablero con nombre duplicado"
+[INFO]     2025-10-07T18:25:45.310Z - Descripción: Comprobar que el sistema permita crear tableros con el mismo nombre y que ambos aparezcan en la lista de tableros.
+[INFO]     2025-10-07T18:25:45.310Z - Nombre a crear: "DUPLICATE:ProjectBoard"
+[INFO]     2025-10-07T18:25:45.311Z - Creando tablero mediante API: "DUPLICATE:ProjectBoard"...
+[SUCCESS]  2025-10-07T18:25:45.766Z - Tablero creado exitosamente (API): "DUPLICATE:ProjectBoard" (68e55b296e9f1ddbc40117e2)
+[SUCCESS]  2025-10-07T18:25:45.772Z -  Tablero creado correctamente: "DUPLICATE:ProjectBoard"
+[INFO]     2025-10-07T18:25:45.774Z - Test Case CB-API06 completado.
+
+[SUCCESS]  2025-10-07T18:25:46.636Z - Board eliminado en teardown - ID: 68e55b296e9f1ddbc40117e2, Nombre: DUPLICATE:ProjectBoard
+[INFO]     2025-10-07T18:25:46.690Z - 
+API Test: CB-API07: "Crear tablero con un solo carácter"
+[INFO]     2025-10-07T18:25:46.691Z - Descripción: Validar que el sistema acepte un nombre de tablero de un solo carácter (ej: X).
+[INFO]     2025-10-07T18:25:46.692Z - Nombre a crear: "SINGLE:X"
+[INFO]     2025-10-07T18:25:46.693Z - Creando tablero mediante API: "SINGLE:X"...
+[SUCCESS]  2025-10-07T18:25:47.131Z - Tablero creado exitosamente (API): "SINGLE:X" (68e55b2af54ed51fc1c60a01)
+[SUCCESS]  2025-10-07T18:25:47.136Z -  Tablero creado correctamente: "SINGLE:X"
+[INFO]     2025-10-07T18:25:47.137Z - Test Case CB-API07 completado.
+
+[SUCCESS]  2025-10-07T18:25:48.421Z - Board eliminado en teardown - ID: 68e55b2af54ed51fc1c60a01, Nombre: SINGLE:X
+[INFO]     2025-10-07T18:25:48.480Z - 
+API Test: CB-API08: "Crear tablero con espacios iniciales y finales"
+[INFO]     2025-10-07T18:25:48.481Z - Descripción: Verificar que los espacios innecesarios al inicio o al final del nombre sean eliminados o normalizados.
+[INFO]     2025-10-07T18:25:48.485Z - Nombre a crear: "   Espacios   "
+[INFO]     2025-10-07T18:25:48.486Z - Creando tablero mediante API: "   Espacios   "...
+[SUCCESS]  2025-10-07T18:25:48.978Z - Tablero creado exitosamente (API): "   Espacios   " (68e55b2c0b8805b8fcfa4d8a)
+[SUCCESS]  2025-10-07T18:25:48.982Z -  Tablero creado correctamente: "   Espacios   "
+[INFO]     2025-10-07T18:25:48.983Z - Test Case CB-API08 completado.
+
+[SUCCESS]  2025-10-07T18:25:50.560Z - Board eliminado en teardown - ID: 68e55b2c0b8805b8fcfa4d8a, Nombre:    Espacios   
+[INFO]     2025-10-07T18:25:50.619Z - 
+API Test: CB-API09: "Crear tablero con combinación de mayúsculas y minúsculas"
+[INFO]     2025-10-07T18:25:50.619Z - Descripción: Verificar que el sistema muestre correctamente tableros con nombres que alternen mayúsculas y minúsculas.
+[INFO]     2025-10-07T18:25:50.620Z - Nombre a crear: "TestBoardCamelCase"
+[INFO]     2025-10-07T18:25:50.621Z - Creando tablero mediante API: "TestBoardCamelCase"...
+[SUCCESS]  2025-10-07T18:25:51.216Z - Tablero creado exitosamente (API): "TestBoardCamelCase" (68e55b2fcb6075b92c93cfaa)
+[SUCCESS]  2025-10-07T18:25:51.224Z -  Tablero creado correctamente: "TestBoardCamelCase"
+[INFO]     2025-10-07T18:25:51.225Z - Test Case CB-API09 completado.
+
+[SUCCESS]  2025-10-07T18:25:52.335Z - Board eliminado en teardown - ID: 68e55b2fcb6075b92c93cfaa, Nombre: TestBoardCamelCase
+[INFO]     2025-10-07T18:25:52.393Z - 
+API Test: CB-API10: "Crear tablero con nombre en otro idioma"
+[INFO]     2025-10-07T18:25:52.394Z - Descripción: Validar que se acepten nombres con caracteres de otros idiomas (ej: 日本語ボード, TableroEspañol, Доска).
+[INFO]     2025-10-07T18:25:52.395Z - Nombre a crear: "INTERNATIONAL:日本語ボード"
+[INFO]     2025-10-07T18:25:52.396Z - Creando tablero mediante API: "INTERNATIONAL:日本語ボード"...
+[SUCCESS]  2025-10-07T18:25:52.847Z - Tablero creado exitosamente (API): "INTERNATIONAL:日本語ボード" (68e55b30ab66470d754a138f)
+[SUCCESS]  2025-10-07T18:25:52.851Z -  Tablero creado correctamente: "INTERNATIONAL:日本語ボード"
+[INFO]     2025-10-07T18:25:52.852Z - Test Case CB-API10 completado.
+
+[SUCCESS]  2025-10-07T18:25:54.080Z - Board eliminado en teardown - ID: 68e55b30ab66470d754a138f, Nombre: INTERNATIONAL:日本語ボード
+[INFO]     2025-10-07T18:25:54.141Z - 
+API Test: CB-API11: "Cancelar creación de tablero"
+[INFO]     2025-10-07T18:25:54.141Z - Descripción: Comprobar que al cancelar la acción de creación no aparezca ningún tablero nuevo en la página.
+[INFO]     2025-10-07T18:25:54.142Z - Nombre a crear: "CANCEL:createBoard"
+[INFO]     2025-10-07T18:25:54.143Z - Creando tablero mediante API: "CANCEL:createBoard"...
+[SUCCESS]  2025-10-07T18:25:54.608Z - Tablero creado exitosamente (API): "CANCEL:createBoard" (68e55b3294132a8ad428d831)
+[SUCCESS]  2025-10-07T18:25:54.612Z -  Tablero creado correctamente: "CANCEL:createBoard"
+[INFO]     2025-10-07T18:25:54.612Z - Test Case CB-API11 completado.
+
+[SUCCESS]  2025-10-07T18:25:55.695Z - Board eliminado en teardown - ID: 68e55b3294132a8ad428d831, Nombre: CANCEL:createBoard
+[INFO]     2025-10-07T18:25:55.752Z - 
+API Test: CB-API12: "Crear tablero con nombre numérico"
+[INFO]     2025-10-07T18:25:55.752Z - Descripción: Verificar que el sistema acepte tableros cuyo nombre sea solo un número (ej: 2025).
+[INFO]     2025-10-07T18:25:55.753Z - Nombre a crear: "NUMERIC:2025"
+[INFO]     2025-10-07T18:25:55.754Z - Creando tablero mediante API: "NUMERIC:2025"...
+[SUCCESS]  2025-10-07T18:25:56.194Z - Tablero creado exitosamente (API): "NUMERIC:2025" (68e55b34bd96dd8e1e2c6cc7)
+[SUCCESS]  2025-10-07T18:25:56.198Z -  Tablero creado correctamente: "NUMERIC:2025"
+[INFO]     2025-10-07T18:25:56.199Z - Test Case CB-API12 completado.
+
+[SUCCESS]  2025-10-07T18:25:57.378Z - Board eliminado en teardown - ID: 68e55b34bd96dd8e1e2c6cc7, Nombre: NUMERIC:2025
+[INFO]     2025-10-07T18:25:57.412Z - 
+API Test: CB-API13: "Crear tablero y verificar persistencia entre sesiones"
+[INFO]     2025-10-07T18:25:57.413Z - Descripción: Comprobar que el tablero creado se mantenga disponible al cerrar sesión y volver a iniciar.
+[INFO]     2025-10-07T18:25:57.413Z - Nombre a crear: "ladder"
+[INFO]     2025-10-07T18:25:57.417Z - Creando tablero mediante API: "ladder"...
+[SUCCESS]  2025-10-07T18:25:57.811Z - Tablero creado exitosamente (API): "ladder" (68e55b359486689c19aa7e6a)
+[SUCCESS]  2025-10-07T18:25:57.815Z -  Tablero creado correctamente: "ladder"
+[INFO]     2025-10-07T18:25:57.815Z - Test Case CB-API13 completado.
+
+[SUCCESS]  2025-10-07T18:25:59.108Z - Board eliminado en teardown - ID: 68e55b359486689c19aa7e6a, Nombre: ladder
+[INFO]     2025-10-07T18:25:59.161Z - Creando tablero mediante API: "Tablero para eliminar- 1759861559161"...
+[SUCCESS]  2025-10-07T18:25:59.860Z - Tablero creado exitosamente (API): "Tablero para eliminar- 1759861559161" (68e55b37dd6ff19a5cbbd3b9)
+[INFO]     2025-10-07T18:25:59.862Z - Eliminando tablero mediante API: 68e55b37dd6ff19a5cbbd3b9...
+[SUCCESS]  2025-10-07T18:26:00.638Z - Tablero eliminado correctamente: 68e55b37dd6ff19a5cbbd3b9
+[SUCCESS]  2025-10-07T18:26:01.366Z - API: Tablero creado - ID: 68e55b394221f9e30cbd2477, Nombre: card Dashboard
+[SUCCESS]  2025-10-07T18:26:01.679Z - API: Lista creada - ID: 68e55b390f64bfd1a39b3970, Nombre: thrash & husk, Board: card Dashboard
+[INFO]     2025-10-07T18:26:01.681Z - 
+ API Test Case 1: "Editar el nombre de una lista exitosamente"
+[INFO]     2025-10-07T18:26:01.682Z - Nombre original: "thrash & husk"
+[INFO]     2025-10-07T18:26:01.683Z - Nuevo nombre: "Lista adorable 978"
+[SUCCESS]  2025-10-07T18:26:02.269Z - API actualizó correctamente: "Lista adorable 978"
+[INFO]     2025-10-07T18:26:02.270Z - API Test Case 1 completado
+
+[SUCCESS]  2025-10-07T18:26:02.936Z - API: Tablero eliminado - ID: 68e55b394221f9e30cbd2477
+[SUCCESS]  2025-10-07T18:26:03.943Z - API: Tablero creado - ID: 68e55b3b4892c741bd4d5acd, Nombre: Team jumbo rib
+[SUCCESS]  2025-10-07T18:26:04.274Z - API: Lista creada - ID: 68e55b3c6dba434cb1e220fb, Nombre: exhilarate & swelter, Board: Team jumbo rib
+[INFO]     2025-10-07T18:26:04.275Z - 
+ API Test Case 2: "Editar el nombre de una lista con texto vacío"
+[INFO]     2025-10-07T18:26:04.276Z - Nombre original: "exhilarate & swelter"
+[INFO]     2025-10-07T18:26:04.277Z - Nuevo nombre: ""
+[INFO]     2025-10-07T18:26:04.470Z - API rechazó texto vacío (como se esperaba): Trello API Error 400: invalid value for name
+[INFO]     2025-10-07T18:26:04.471Z - API Test Case 2 completado
+
+[SUCCESS]  2025-10-07T18:26:05.103Z - API: Tablero eliminado - ID: 68e55b3b4892c741bd4d5acd
+[SUCCESS]  2025-10-07T18:26:05.863Z - API: Tablero creado - ID: 68e55b3d9a1c740ba9b482ae, Nombre: Team productive decade
+[SUCCESS]  2025-10-07T18:26:06.487Z - API: Lista creada - ID: 68e55b3e709cbfb553045c67, Nombre: December Goals, Board: Team productive decade
+[INFO]     2025-10-07T18:26:06.489Z - 
+ API Test Case 3: "Editar el nombre de una lista con caracteres especiales"
+[INFO]     2025-10-07T18:26:06.490Z - Nombre original: "December Goals"
+[INFO]     2025-10-07T18:26:06.492Z - Nuevo nombre: "!@#$% Lista ^&*()"
+[SUCCESS]  2025-10-07T18:26:06.752Z - API actualizó correctamente: "!@#$% Lista ^&*()"
+[INFO]     2025-10-07T18:26:06.752Z - API Test Case 3 completado
+
+[SUCCESS]  2025-10-07T18:26:07.355Z - API: Tablero eliminado - ID: 68e55b3d9a1c740ba9b482ae
+[SUCCESS]  2025-10-07T18:26:08.702Z - API: Tablero creado - ID: 68e55b40eb13d85457c0fc9e, Nombre: microchip Dashboard
+[SUCCESS]  2025-10-07T18:26:09.354Z - API: Lista creada - ID: 68e55b415f5ebcc96bb8d036, Nombre: compressing bus, Board: microchip Dashboard
+[INFO]     2025-10-07T18:26:09.356Z - 
+ API Test Case 4: "Editar el nombre de una lista con nombre muy largo"
+[INFO]     2025-10-07T18:26:09.358Z - Nombre original: "compressing bus"
+[INFO]     2025-10-07T18:26:09.360Z - Nuevo nombre: "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
+[INFO]     2025-10-07T18:26:09.361Z - Probando nombre largo (600 caracteres)...
+[INFO]     2025-10-07T18:26:09.956Z - Longitud esperada: ≤512, Longitud actual: 600
+[ERROR]    2025-10-07T18:26:09.958Z - API permitió nombre mayor a 512 caracteres (600 chars)
+[INFO]     2025-10-07T18:26:10.203Z - Nombre final: "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL" (600 chars)
+[INFO]     2025-10-07T18:26:10.205Z - API Test Case 4 completado
+
+[SUCCESS]  2025-10-07T18:26:10.990Z - API: Tablero eliminado - ID: 68e55b40eb13d85457c0fc9e
+[INFO]     2025-10-07T18:26:11.262Z - Intentando actualizar lista con ID inexistente: 650000000000000000000000
+[SUCCESS]  2025-10-07T18:26:11.464Z - API devolvió 404 Not Found como se esperaba
+[INFO]     2025-10-07T18:26:12.033Z - Intentando actualizar lista con ID inválido: abc123
+[SUCCESS]  2025-10-07T18:26:12.222Z - API devolvió error esperado para ID inválido: Trello API Error 400: invalid id
+[INFO]     2025-10-07T18:26:12.482Z - Intentando actualizar lista sin ID en la ruta
+[SUCCESS]  2025-10-07T18:26:12.680Z - API devolvió 404 como se esperaba
+[SUCCESS]  2025-10-07T18:26:13.612Z - API: Tablero creado - ID: 68e55b459486689c19aab977, Nombre: aggregate real-time synergies
+[SUCCESS]  2025-10-07T18:26:13.937Z - API: Lista creada - ID: 68e55b458433af24bf010777, Nombre: Lista gargantuan, Board: aggregate real-time synergies
+[INFO]     2025-10-07T18:26:13.940Z - Intentando actualizar lista con payload vacío (sin body)
+[SUCCESS]  2025-10-07T18:26:14.398Z - API aceptó PUT sin payload pero no modificó el recurso (comportamiento aceptable)
+[SUCCESS]  2025-10-07T18:26:15.369Z - API: Tablero eliminado - ID: 68e55b459486689c19aab977
+[SUCCESS]  2025-10-07T18:26:16.351Z - API: Tablero creado - ID: 68e55b483ddf3766b988bc12, Nombre: Team impassioned ray
+[SUCCESS]  2025-10-07T18:26:16.674Z - API: Lista creada - ID: 68e55b48b6696d731f9ccef7, Nombre: connecting port, Board: Team impassioned ray
+[INFO]     2025-10-07T18:26:16.675Z - Intentando actualizar lista con JSON mal formado
+[SUCCESS]  2025-10-07T18:26:16.843Z - API devolvió 400 como se esperaba para JSON inválido
+[SUCCESS]  2025-10-07T18:26:17.843Z - API: Tablero eliminado - ID: 68e55b483ddf3766b988bc12
+[SUCCESS]  2025-10-07T18:26:18.892Z - API: Tablero creado - ID: 68e55b4aa69fb29dd5e81fa7, Nombre: Proyecto e-commerce
+[SUCCESS]  2025-10-07T18:26:19.210Z - API: Lista creada - ID: 68e55b4be7a5669c4ff579d6, Nombre: February Goals, Board: Proyecto e-commerce
+[INFO]     2025-10-07T18:26:19.212Z - Intentando actualizar lista con campo no permitido en payload
+[SUCCESS]  2025-10-07T18:26:19.484Z - API ignoró campos no permitidos y actualizó el nombre correctamente
+[SUCCESS]  2025-10-07T18:26:20.439Z - API: Tablero eliminado - ID: 68e55b4aa69fb29dd5e81fa7
+[SUCCESS]  2025-10-07T18:26:21.192Z - API: Tablero creado - ID: 68e55b4dfbdb39b8913254f6, Nombre: Proyecto channels
+[SUCCESS]  2025-10-07T18:26:21.639Z - API: Lista creada - ID: 68e55b4db329e5eac1839d2b, Nombre: August Goals, Board: Proyecto channels
+[INFO]     2025-10-07T18:26:21.642Z - Intentando actualizar lista usando token inválido
+[SUCCESS]  2025-10-07T18:26:21.818Z - API devolvió 401 Unauthorized para token inválido como se esperaba
+[SUCCESS]  2025-10-07T18:26:22.818Z - API: Tablero eliminado - ID: 68e55b4dfbdb39b8913254f6
+[SUCCESS]  2025-10-07T18:26:23.494Z - API: Tablero creado - ID: 68e55b4fd787389cb678896f, Nombre: matrix Dashboard
+[SUCCESS]  2025-10-07T18:26:23.794Z - API: Lista creada - ID: 68e55b4fb7123d0c5a6a8d85, Nombre: prove & snowball, Board: matrix Dashboard
+[INFO]     2025-10-07T18:26:23.797Z - Intentando actualizar lista usando credenciales de otro usuario (permisos insuficientes)
+[SUCCESS]  2025-10-07T18:26:23.998Z - API devolvió 401 Unauthorized por permisos insuficientes como se esperaba
+[SUCCESS]  2025-10-07T18:26:24.614Z - API: Tablero eliminado - ID: 68e55b4fd787389cb678896f
+[SUCCESS]  2025-10-07T18:26:25.168Z - Tablero principal creado - ID: 68e55b51c526d1e50334b23d, Nombre: Games Board
+[SUCCESS]  2025-10-07T18:26:25.446Z - Lista API creada con ID: 68e55b5191f7a0f742206467 y nombre: September Goals
+[SUCCESS]  2025-10-07T18:26:26.144Z - Tablero principal eliminado - ID: 68e55b51c526d1e50334b23d
+[SUCCESS]  2025-10-07T18:26:26.615Z - Tablero principal creado - ID: 68e55b52b12d7a80c15f602b, Nombre: Jewelery Board
+[ERROR]    2025-10-07T18:26:26.814Z - Respuesta esperada (400) al crear lista vacía: invalid value for name
+[SUCCESS]  2025-10-07T18:26:27.572Z - Tablero principal eliminado - ID: 68e55b52b12d7a80c15f602b
+[SUCCESS]  2025-10-07T18:26:28.084Z - Tablero principal creado - ID: 68e55b535914a162c2533177, Nombre: Proyecto systems
+[SUCCESS]  2025-10-07T18:26:28.374Z - Primera lista creada: digitize & galvanize
+[SUCCESS]  2025-10-07T18:26:28.670Z - Lista duplicada creada: digitize & galvanize
+[SUCCESS]  2025-10-07T18:26:29.315Z - Tablero principal eliminado - ID: 68e55b535914a162c2533177
+[SUCCESS]  2025-10-07T18:26:29.803Z - Tablero principal creado - ID: 68e55b559230b0d2b9551654, Nombre: Proyecto portals
+[INFO]     2025-10-07T18:26:35.386Z - BUG CONOCIDO: la API permite nombres > 512 chars
+[INFO]     2025-10-07T18:26:35.895Z - Longitud del nombre enviado: 600
+[SUCCESS]  2025-10-07T18:26:36.824Z - Tablero principal eliminado - ID: 68e55b559230b0d2b9551654
+[INFO]     2025-10-07T18:26:37.087Z - Respuesta al usar boardId inválido: "invalid value for idBoard"
+[SUCCESS]  2025-10-07T18:26:43.593Z - Tablero creado exitosamente - ID: 68e55b63ee538480c7cb068e, Nombre: Board_Test_1759861603017
+[SUCCESS]  2025-10-07T18:26:43.886Z - Lista creada - ID: 68e55b6361d7d39d6d655641, Nombre: camp , Board: Board_Test_1759861603017
+[INFO]     2025-10-07T18:26:43.890Z - Navegando a la lista de tableros...
+[SUCCESS]  2025-10-07T18:26:44.118Z - Navegación a lista de tableros completada.
+[SUCCESS]  2025-10-07T18:26:46.211Z - Tablero eliminado exitosamente - ID: 68e55b63ee538480c7cb068e
+[SUCCESS]  2025-10-07T18:27:03.652Z - Board 1 creado - ID: 68e55b75ddb41f69d3c49aa0, Nombre: Board_Test_1759861621313
+[SUCCESS]  2025-10-07T18:27:04.084Z - Board 2 creado - ID: 68e55b7754afaf7a05a87d0f, Nombre: Board_Test_1759861623655
+[SUCCESS]  2025-10-07T18:27:04.548Z - Board 3 creado - ID: 68e55b78ec1da41bdaea4aed, Nombre: Board_Test_1759861624089
+[INFO]     2025-10-07T18:27:04.550Z - Navegando a la lista de tableros...
+[SUCCESS]  2025-10-07T18:27:04.820Z - Navegación a lista de tableros completada.
+[SUCCESS]  2025-10-07T18:27:06.547Z - 🧹 Board eliminado - ID: 68e55b75ddb41f69d3c49aa0, Nombre: Board_Test_1759861621313
+[SUCCESS]  2025-10-07T18:27:07.133Z - 🧹 Board eliminado - ID: 68e55b7754afaf7a05a87d0f, Nombre: Board_Test_1759861623655
+[SUCCESS]  2025-10-07T18:27:07.804Z - 🧹 Board eliminado - ID: 68e55b78ec1da41bdaea4aed, Nombre: Board_Test_1759861624089
+[INFO]     2025-10-07T18:27:13.724Z - Creando un nuevo tablero: "spaghetti - 1759861633724"
+[INFO]     2025-10-07T18:27:13.727Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:27:13.902Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:27:14.784Z - Tablero creado exitosamente: "spaghetti - 1759861633724"
+[SUCCESS]  2025-10-07T18:27:17.813Z - Board eliminado en teardown - ID: 68e55b8312fe9651d2a100a3, Nombre: spaghetti - 1759861633724
+[INFO]     2025-10-07T18:27:24.028Z - Creando un nuevo tablero: "disclosure !@# 27 $%^ - 1759861644028"
+[INFO]     2025-10-07T18:27:24.031Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:27:24.221Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:27:24.984Z - Tablero creado exitosamente: "disclosure !@# 27 $%^ - 1759861644028"
+[SUCCESS]  2025-10-07T18:27:27.941Z - Board eliminado en teardown - ID: 68e55b8d2e2cdd43a353e787, Nombre: disclosure !@# 27 $%^ - 1759861644028
+[INFO]     2025-10-07T18:27:33.804Z - Creando un nuevo tablero: "Lista ñáéíóú ¡¿ - 1759861653804"
+[INFO]     2025-10-07T18:27:33.806Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:27:33.987Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:27:34.642Z - Tablero creado exitosamente: "Lista ñáéíóú ¡¿ - 1759861653804"
+[SUCCESS]  2025-10-07T18:27:38.158Z - Board eliminado en teardown - ID: 68e55b963a1d78c12fde1d7b, Nombre: Lista ñáéíóú ¡¿ - 1759861653804
+[INFO]     2025-10-07T18:27:44.065Z - Creando un nuevo tablero: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA - 1759861664065"
+[INFO]     2025-10-07T18:27:44.068Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:27:44.237Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:27:45.000Z - Tablero creado exitosamente: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA - 1759861664065"
+[SUCCESS]  2025-10-07T18:27:48.325Z - Board eliminado en teardown - ID: 68e55ba137e2423dbb41029e, Nombre: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA - 1759861664065
+[INFO]     2025-10-07T18:27:54.363Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:27:54.544Z - Modal de creación abierto.
+[INFO]     2025-10-07T18:28:00.223Z - Creando tablero desde plantilla: "1-on-1 Meeting Agenda" → "New title board - 1759861680223"
+[INFO]     2025-10-07T18:28:00.224Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:28:00.357Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:28:01.708Z - Tablero creado desde plantilla: "New title board - 1759861680223"
+[SUCCESS]  2025-10-07T18:28:05.742Z - Board eliminado en teardown - ID: 68e55bb1cf52fcec31417527, Nombre: New title board - 1759861680223
+[INFO]     2025-10-07T18:28:11.695Z - Intentando crear tablero con título: "          "
+[INFO]     2025-10-07T18:28:11.696Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:28:11.830Z - Modal de creación abierto.
+[WARN]     2025-10-07T18:28:12.193Z - Tablero no enviado aún (submit pendiente).
+[INFO]     2025-10-07T18:28:17.846Z - Creando un nuevo tablero: "Titulo duplicado"
+[INFO]     2025-10-07T18:28:17.847Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:28:17.999Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:28:18.710Z - Tablero creado exitosamente: "Titulo duplicado"
+[INFO]     2025-10-07T18:28:18.711Z - Navegando a la lista de tableros...
+[SUCCESS]  2025-10-07T18:28:18.974Z - Navegación a lista de tableros completada.
+[INFO]     2025-10-07T18:28:18.975Z - Intentando crear tablero con título: "Titulo duplicado"
+[INFO]     2025-10-07T18:28:18.975Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:28:19.762Z - Modal de creación abierto.
+[WARN]     2025-10-07T18:28:20.556Z - Tablero no enviado aún (submit pendiente).
+[SUCCESS]  2025-10-07T18:28:21.580Z - Board eliminado en teardown - ID: 68e55bc270fee8f17729c8f2, Nombre: Titulo duplicado
+[INFO]     2025-10-07T18:28:27.995Z - Creando un nuevo tablero: "New title board - 1759861707995"
+[INFO]     2025-10-07T18:28:27.997Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:28:28.183Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:28:28.992Z - Tablero creado exitosamente: "New title board - 1759861707995"
+[INFO]     2025-10-07T18:28:30.993Z - Regresando a la página principal...
+[SUCCESS]  2025-10-07T18:28:31.039Z - Regreso a la página principal completado.
+[INFO]     2025-10-07T18:28:31.039Z - Navegando a la lista de tableros...
+[SUCCESS]  2025-10-07T18:28:31.399Z - Navegación a lista de tableros completada.
+[INFO]     2025-10-07T18:28:32.503Z - Verificando si el boton de cargar mas Tableros esta habilitado
+[SUCCESS]  2025-10-07T18:28:32.524Z - Todos los tableros se ven en la pagina de tableros
+[SUCCESS]  2025-10-07T18:28:33.792Z - Board eliminado en teardown - ID: 68e55bcd62fcd4703653d279, Nombre: New title board - 1759861707995
+[INFO]     2025-10-07T18:28:38.976Z - Creando un nuevo tablero: "AAAAAAAAAA"
+[INFO]     2025-10-07T18:28:38.979Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:28:39.150Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:28:39.847Z - Tablero creado exitosamente: "AAAAAAAAAA"
+[SUCCESS]  2025-10-07T18:28:43.145Z - Board eliminado en teardown - ID: 68e55bd8cff72f5b19a8d53f, Nombre: AAAAAAAAAA
+[INFO]     2025-10-07T18:28:49.288Z - Creando un nuevo tablero: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+[INFO]     2025-10-07T18:28:49.290Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:28:49.475Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:28:50.092Z - Tablero creado exitosamente: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+[SUCCESS]  2025-10-07T18:28:53.116Z - Board eliminado en teardown - ID: 68e55be2b94a9c57e40f72a3, Nombre: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[INFO]     2025-10-07T18:28:58.657Z - Creando un nuevo tablero: "A"
+[INFO]     2025-10-07T18:28:58.660Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:28:58.833Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:28:59.426Z - Tablero creado exitosamente: "A"
+[WARN]     2025-10-07T18:29:01.610Z - Screenshot capturado: ui-bug-BUG-CB-12-tablero-con-nombre-nombre-de-longitud-1-2025-10-07T18-29-01-391Z.png
+[WARN]     2025-10-07T18:29:01.610Z -    Descripción: Es posible crear un tablero con un nombre de longitud:1
+[INFO]     2025-10-07T18:29:01.611Z -    Ubicación: test-results/ui-bug-BUG-CB-12-tablero-con-nombre-nombre-de-longitud-1-2025-10-07T18-29-01-391Z.png
+[SUCCESS]  2025-10-07T18:29:02.694Z - Board eliminado en teardown - ID: 68e55beb97e5400da4a3c2a2, Nombre: A
+[INFO]     2025-10-07T18:29:08.218Z - Creando un nuevo tablero: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+[INFO]     2025-10-07T18:29:08.219Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:29:08.410Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:29:09.097Z - Tablero creado exitosamente: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+[WARN]     2025-10-07T18:29:11.210Z - Screenshot capturado: ui-bug-BUG-CB-13-tablero-con-nombre-nombre-de-longitud-1000-2025-10-07T18-29-11-041Z.png
+[WARN]     2025-10-07T18:29:11.211Z -    Descripción: Es posible crear un tablero con un nombre de longitud:1000
+[INFO]     2025-10-07T18:29:11.212Z -    Ubicación: test-results/ui-bug-BUG-CB-13-tablero-con-nombre-nombre-de-longitud-1000-2025-10-07T18-29-11-041Z.png
+[SUCCESS]  2025-10-07T18:29:12.189Z - Board eliminado en teardown - ID: 68e55bf5be253258bf8c7541, Nombre: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[INFO]     2025-10-07T18:29:17.390Z - Creando un nuevo tablero: "Board to be deleted 1759861757390"
+[INFO]     2025-10-07T18:29:17.392Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:29:17.566Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:29:18.178Z - Tablero creado exitosamente: "Board to be deleted 1759861757390"
+[INFO]     2025-10-07T18:29:18.179Z - Eliminando tablero actual...
+[INFO]     2025-10-07T18:29:18.184Z - Abriendo menú del tablero...
+[SUCCESS]  2025-10-07T18:29:19.889Z - Menú del tablero abierto.
+[INFO]     2025-10-07T18:29:21.308Z - Tablero cerrado. Procediendo a eliminación definitiva...
+[INFO]     2025-10-07T18:29:21.310Z - Abriendo menú del tablero...
+[SUCCESS]  2025-10-07T18:29:21.435Z - Menú del tablero abierto.
+[SUCCESS]  2025-10-07T18:29:21.575Z - Tablero eliminado permanentemente.
+[INFO]     2025-10-07T18:29:22.499Z - Navegando a la lista de tableros...
+[SUCCESS]  2025-10-07T18:29:22.737Z - Navegación a lista de tableros completada.
+[INFO]     2025-10-07T18:29:27.959Z - Navegando a la lista de tableros...
+[SUCCESS]  2025-10-07T18:29:28.186Z - Navegación a lista de tableros completada.
+[INFO]     2025-10-07T18:29:31.558Z - Cambiando la visibilidad del tablero a: Privado
+[INFO]     2025-10-07T18:29:31.571Z - Cambiando a visibilidad Privada...
+[SUCCESS]  2025-10-07T18:29:31.779Z - Cambio de visibilidad completado.
+[INFO]     2025-10-07T18:29:32.190Z - Cambiando la visibilidad del tablero a: Público
+[INFO]     2025-10-07T18:29:32.199Z - Cambiando a visibilidad Pública...
+[SUCCESS]  2025-10-07T18:29:32.443Z - Cambio de visibilidad completado.
+[INFO]     2025-10-07T18:29:38.170Z - Navegando a la lista de tableros...
+[SUCCESS]  2025-10-07T18:29:38.389Z - Navegación a lista de tableros completada.
+[INFO]     2025-10-07T18:29:41.691Z - Cambiando la visibilidad del tablero a: Privado
+[INFO]     2025-10-07T18:29:41.722Z - Cambiando a visibilidad Privada...
+[SUCCESS]  2025-10-07T18:29:41.965Z - Cambio de visibilidad completado.
+[INFO]     2025-10-07T18:29:42.293Z - Cambiando la visibilidad del tablero a: Workspace
+[INFO]     2025-10-07T18:29:42.308Z - Cambiando a visibilidad Workspace...
+[SUCCESS]  2025-10-07T18:29:42.546Z - Cambio de visibilidad completado.
+[INFO]     2025-10-07T18:29:48.847Z - Navegando a la lista de tableros...
+[SUCCESS]  2025-10-07T18:29:49.060Z - Navegación a lista de tableros completada.
+[INFO]     2025-10-07T18:29:52.659Z - Cambiando la visibilidad del tablero a: Privado
+[INFO]     2025-10-07T18:29:52.680Z - Cambiando a visibilidad Privada...
+[SUCCESS]  2025-10-07T18:29:52.810Z - Cambio de visibilidad completado.
+[INFO]     2025-10-07T18:29:59.465Z - Navegando a la lista de tableros...
+[SUCCESS]  2025-10-07T18:29:59.782Z - Navegación a lista de tableros completada.
+[INFO]     2025-10-07T18:30:05.004Z - Cambiando la visibilidad del tablero a: Privado
+[SUCCESS]  2025-10-07T18:30:05.017Z - Cambio de visibilidad completado.
+[INFO]     2025-10-07T18:30:05.240Z - Regresando a la página principal...
+[SUCCESS]  2025-10-07T18:30:05.248Z - Regreso a la página principal completado.
+[INFO]     2025-10-07T18:30:05.249Z - Navegando a la lista de tableros...
+[SUCCESS]  2025-10-07T18:30:05.435Z - Navegación a lista de tableros completada.
+[SUCCESS]  2025-10-07T18:30:06.933Z - Board eliminado en teardown - ID: 68e55a53256a8678c977d0fb, Nombre: Edited Board Name 1759861805108
+[INFO]     2025-10-07T18:30:12.494Z - Creando un nuevo tablero: "Board to test card comments - 1759861812494"
+[INFO]     2025-10-07T18:30:12.496Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:30:12.664Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:30:13.326Z - Tablero creado exitosamente: "Board to test card comments - 1759861812494"
+[INFO]     2025-10-07T18:30:16.855Z - Total Lists: | 4
+[INFO]     2025-10-07T18:30:29.823Z - Creando un nuevo tablero: "Board to test card comments - 1759861829822"
+[INFO]     2025-10-07T18:30:29.826Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:30:30.032Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:30:30.742Z - Tablero creado exitosamente: "Board to test card comments - 1759861829822"
+[INFO]     2025-10-07T18:30:33.978Z - Total Lists: | 1
+[INFO]     2025-10-07T18:30:47.438Z - Creando un nuevo tablero: "Board to test card comments - 1759861847438"
+[INFO]     2025-10-07T18:30:47.447Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:30:47.649Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:30:48.352Z - Tablero creado exitosamente: "Board to test card comments - 1759861847438"
+[INFO]     2025-10-07T18:30:51.517Z - Total Lists: | 1
+[INFO]     2025-10-07T18:31:04.782Z - Creando un nuevo tablero: "Board to test card comments - 1759861864782"
+[INFO]     2025-10-07T18:31:04.786Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:31:04.996Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:31:05.701Z - Tablero creado exitosamente: "Board to test card comments - 1759861864782"
+[INFO]     2025-10-07T18:31:08.912Z - Total Lists: | 1
+[INFO]     2025-10-07T18:31:22.257Z - Creando un nuevo tablero: "Board to test card comments - 1759861882256"
+[INFO]     2025-10-07T18:31:22.263Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:31:22.485Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:31:23.198Z - Tablero creado exitosamente: "Board to test card comments - 1759861882256"
+[INFO]     2025-10-07T18:31:26.452Z - Total Lists: | 1
+[INFO]     2025-10-07T18:31:39.486Z - Creando un nuevo tablero: "Board to test card comments - 1759861899486"
+[INFO]     2025-10-07T18:31:39.490Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:31:39.722Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:31:40.744Z - Tablero creado exitosamente: "Board to test card comments - 1759861899486"
+[INFO]     2025-10-07T18:31:44.084Z - Total Lists: | 1
+[INFO]     2025-10-07T18:32:02.758Z - Creando un nuevo tablero: "Board for Tests - 1759861922757"
+[INFO]     2025-10-07T18:32:02.767Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:32:02.966Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:32:03.712Z - Tablero creado exitosamente: "Board for Tests - 1759861922757"
+[INFO]     2025-10-07T18:32:26.119Z - Creando un nuevo tablero: "Board for Tests - 1759861946119"
+[INFO]     2025-10-07T18:32:26.122Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:32:26.292Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:32:26.902Z - Tablero creado exitosamente: "Board for Tests - 1759861946119"
+[INFO]     2025-10-07T18:32:48.707Z - Creando un nuevo tablero: "Board for Tests - 1759861968707"
+[INFO]     2025-10-07T18:32:48.710Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:32:48.891Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:32:49.523Z - Tablero creado exitosamente: "Board for Tests - 1759861968707"
+[INFO]     2025-10-07T18:33:14.538Z - Creando un nuevo tablero: "Board for Tests - 1759861994538"
+[INFO]     2025-10-07T18:33:14.549Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:33:14.771Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:33:15.462Z - Tablero creado exitosamente: "Board for Tests - 1759861994538"
+[INFO]     2025-10-07T18:33:33.409Z - Creando un nuevo tablero: "Board for Tests - 1759862013409"
+[INFO]     2025-10-07T18:33:33.411Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:33:33.613Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:33:34.239Z - Tablero creado exitosamente: "Board for Tests - 1759862013409"
+[INFO]     2025-10-07T18:33:54.126Z - Creando un nuevo tablero: "Board for Tests - 1759862034126"
+[INFO]     2025-10-07T18:33:54.129Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:33:54.304Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:33:55.212Z - Tablero creado exitosamente: "Board for Tests - 1759862034126"
+[INFO]     2025-10-07T18:34:15.575Z - Creando un nuevo tablero: "Board for Tests - 1759862055575"
+[INFO]     2025-10-07T18:34:15.578Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:34:15.759Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:34:16.444Z - Tablero creado exitosamente: "Board for Tests - 1759862055575"
+[INFO]     2025-10-07T18:34:42.979Z - Creando un nuevo tablero: "Board for Tests - 1759862082979"
+[INFO]     2025-10-07T18:34:42.980Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:34:43.202Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:34:43.940Z - Tablero creado exitosamente: "Board for Tests - 1759862082979"
+[INFO]     2025-10-07T18:35:00.580Z - Creando un nuevo tablero: "Board for Tests - 1759862100580"
+[INFO]     2025-10-07T18:35:00.593Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:35:00.832Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:35:01.713Z - Tablero creado exitosamente: "Board for Tests - 1759862100580"
+[SUCCESS]  2025-10-07T18:35:20.322Z - Tablero principal creado - ID: 68e55d687d894dd6d48ea5e1, Nombre: incentivize collaborative niches
+[SUCCESS]  2025-10-07T18:35:20.645Z - Lista creada - ID: 68e55d68ce4a0285e64972ba, Nombre: stymie , Board: incentivize collaborative niches
+[INFO]     2025-10-07T18:35:26.179Z - Verificando que la lista "stymie " está visible en el tablero
+[SUCCESS]  2025-10-07T18:35:28.269Z - Lista "stymie " está visible en el tablero
+[INFO]     2025-10-07T18:35:28.270Z - Abriendo modal de archivar lista para la lista en posición 0
+[INFO]     2025-10-07T18:35:29.437Z - Haciendo clic en "Archive list"
+[SUCCESS]  2025-10-07T18:35:29.666Z - Lista archivada exitosamente
+[INFO]     2025-10-07T18:35:29.666Z - Verificando que la lista "stymie " fue archivada (no visible)
+[SUCCESS]  2025-10-07T18:35:31.707Z - Lista "stymie " archivada correctamente - No visible en el tablero
+[SUCCESS]  2025-10-07T18:35:32.497Z - Tablero principal eliminado - ID: 68e55d687d894dd6d48ea5e1
+[SUCCESS]  2025-10-07T18:35:38.941Z - Tablero principal creado - ID: 68e55d7acc9487045a91b82d, Nombre: Sports Board
+[SUCCESS]  2025-10-07T18:35:39.243Z - Lista creada - ID: 68e55d7b126576a6ac60ddbf, Nombre: Lista gleeful, Board: Sports Board
+[INFO]     2025-10-07T18:35:46.743Z - Verificando que la lista "Lista gleeful" está en la posición 0
+[INFO]     2025-10-07T18:35:48.842Z - Número de listas encontradas: 4
+[SUCCESS]  2025-10-07T18:35:48.857Z - Lista "Lista gleeful" encontrada en posición 0
+[INFO]     2025-10-07T18:35:48.858Z - Abriendo modal de archivar lista para la lista en posición 0
+[INFO]     2025-10-07T18:35:49.997Z - Haciendo clic en "Archive list"
+[SUCCESS]  2025-10-07T18:35:50.312Z - Lista archivada exitosamente
+[INFO]     2025-10-07T18:35:50.313Z - Verificando que la lista "Lista gleeful" fue archivada (no visible)
+[SUCCESS]  2025-10-07T18:35:52.352Z - Lista "Lista gleeful" archivada correctamente - No visible en el tablero
+[INFO]     2025-10-07T18:35:52.353Z - Intentando deshacer el archivado de la lista
+[SUCCESS]  2025-10-07T18:35:54.453Z - Archivado deshecho exitosamente - Lista restaurada
+[INFO]     2025-10-07T18:35:54.455Z - Verificando que la lista "Lista gleeful" está visible en el tablero
+[SUCCESS]  2025-10-07T18:35:56.497Z - Lista "Lista gleeful" está visible en el tablero
+[INFO]     2025-10-07T18:35:56.498Z - Verificando que la lista "Lista gleeful" está en la posición 0
+[INFO]     2025-10-07T18:35:58.530Z - Número de listas encontradas: 4
+[SUCCESS]  2025-10-07T18:35:58.544Z - Lista "Lista gleeful" encontrada en posición 0
+[SUCCESS]  2025-10-07T18:35:59.235Z - Tablero principal eliminado - ID: 68e55d7acc9487045a91b82d
+[SUCCESS]  2025-10-07T18:36:10.714Z - Tablero principal creado - ID: 68e55d9a2e1f6d5e33e1bf6c, Nombre: Proyecto platforms
+[SUCCESS]  2025-10-07T18:36:11.001Z - Lista creada - ID: 68e55d9b13e4b5aa413109a8, Nombre: glower , Board: Proyecto platforms
+[SUCCESS]  2025-10-07T18:36:11.820Z - Tarjeta creada - ID: 68e55d9ba1438274651177ae, Nombre: Fix IB corporation, Lista: glower 
+[INFO]     2025-10-07T18:36:19.695Z - Verificando que la lista "glower " está visible en el tablero
+[SUCCESS]  2025-10-07T18:36:21.799Z - Lista "glower " está visible en el tablero
+[INFO]     2025-10-07T18:36:21.801Z - Verificando que la tarjeta "Fix IB corporation" existe en la lista "glower "
+[SUCCESS]  2025-10-07T18:36:21.814Z - Tarjeta "Fix IB corporation" encontrada en la lista "glower "
+[INFO]     2025-10-07T18:36:21.815Z - Abriendo modal de archivar lista para la lista en posición 0
+[INFO]     2025-10-07T18:36:23.051Z - Haciendo clic en "Archive list"
+[SUCCESS]  2025-10-07T18:36:23.353Z - Lista archivada exitosamente
+[INFO]     2025-10-07T18:36:23.354Z - Verificando que la lista "glower " fue archivada (no visible)
+[SUCCESS]  2025-10-07T18:36:25.414Z - Lista "glower " archivada correctamente - No visible en el tablero
+[INFO]     2025-10-07T18:36:25.415Z - Intentando deshacer el archivado de la lista
+[SUCCESS]  2025-10-07T18:36:27.505Z - Archivado deshecho exitosamente - Lista restaurada
+[INFO]     2025-10-07T18:36:27.508Z - Verificando que la lista "glower " está visible en el tablero
+[SUCCESS]  2025-10-07T18:36:29.565Z - Lista "glower " está visible en el tablero
+[INFO]     2025-10-07T18:36:29.567Z - Verificando que la lista "glower " está en la posición 0
+[INFO]     2025-10-07T18:36:31.599Z - Número de listas encontradas: 4
+[SUCCESS]  2025-10-07T18:36:31.615Z - Lista "glower " encontrada en posición 0
+[INFO]     2025-10-07T18:36:31.617Z - Verificando que la tarjeta "Fix IB corporation" existe en la lista "glower "
+[SUCCESS]  2025-10-07T18:36:31.632Z - Tarjeta "Fix IB corporation" encontrada en la lista "glower "
+[SUCCESS]  2025-10-07T18:36:32.482Z - Tablero principal eliminado - ID: 68e55d9a2e1f6d5e33e1bf6c
+[SUCCESS]  2025-10-07T18:36:38.681Z - Tablero principal creado - ID: 68e55db6c2fe58d3d169fe09, Nombre: Baby Board
+[SUCCESS]  2025-10-07T18:36:38.983Z - Lista creada - ID: 68e55db72cdf072753d9a5fb, Nombre: note , Board: Baby Board
+[INFO]     2025-10-07T18:36:44.697Z - Abriendo modal de mover lista para la lista en posición 0
+[INFO]     2025-10-07T18:36:45.922Z - Haciendo clic en "Copy list"
+[SUCCESS]  2025-10-07T18:36:46.197Z - Modal de copiar lista abierto exitosamente
+[INFO]     2025-10-07T18:36:46.198Z - Copiando lista con otro nombre: "note " → "note _copy"
+[SUCCESS]  2025-10-07T18:36:47.271Z - Copia exitosa - Nombre de Lista copiada: "note _copy"
+[SUCCESS]  2025-10-07T18:36:47.965Z - Tablero principal eliminado - ID: 68e55db6c2fe58d3d169fe09
+[SUCCESS]  2025-10-07T18:36:54.396Z - Tablero principal creado - ID: 68e55dc6bb18b936bc530103, Nombre: protocol Dashboard
+[SUCCESS]  2025-10-07T18:36:54.671Z - Lista creada - ID: 68e55dc6b40a7bf9aa0789c1, Nombre: reorder , Board: protocol Dashboard
+[INFO]     2025-10-07T18:37:00.907Z - Abriendo modal de mover lista para la lista en posición 0
+[INFO]     2025-10-07T18:37:02.222Z - Haciendo clic en "Copy list"
+[SUCCESS]  2025-10-07T18:37:02.534Z - Modal de copiar lista abierto exitosamente
+[INFO]     2025-10-07T18:37:02.535Z - Copiando lista sin cambiar nombre: "reorder "
+[SUCCESS]  2025-10-07T18:37:03.580Z - Copia exitosa - Nombre de Lista copiada: ""
+[SUCCESS]  2025-10-07T18:37:04.458Z - Tablero principal eliminado - ID: 68e55dc6bb18b936bc530103
+[SUCCESS]  2025-10-07T18:37:12.127Z - Tablero principal creado - ID: 68e55dd79c60b1ef1201fdf5, Nombre: monitor Dashboard
+[SUCCESS]  2025-10-07T18:37:12.437Z - Lista creada - ID: 68e55dd8a3735d9101954157, Nombre: overriding bus, Board: monitor Dashboard
+[SUCCESS]  2025-10-07T18:37:12.886Z - Tarjeta creada - ID: 68e55dd81b5f47853cb03049, Nombre: Verus in carmen delicate, Lista: overriding bus
+[INFO]     2025-10-07T18:37:18.993Z - Abriendo modal de mover lista para la lista en posición 0
+[INFO]     2025-10-07T18:37:20.259Z - Haciendo clic en "Copy list"
+[SUCCESS]  2025-10-07T18:37:20.897Z - Modal de copiar lista abierto exitosamente
+[INFO]     2025-10-07T18:37:20.897Z - Copiando lista con otro nombre: "overriding bus" → "overriding bus_copy"
+[INFO]     2025-10-07T18:37:21.249Z - Verificando que la tarjeta "Verus in carmen delicate" existe en la lista "overriding bus_copy"
+[SUCCESS]  2025-10-07T18:37:22.687Z - Tarjeta "Verus in carmen delicate" encontrada en la lista "overriding bus_copy"
+[SUCCESS]  2025-10-07T18:37:22.725Z - Copia exitosa - Nombre de Lista copiada: "overriding bus_copy"
+[SUCCESS]  2025-10-07T18:37:23.473Z - Tablero principal eliminado - ID: 68e55dd79c60b1ef1201fdf5
+[SUCCESS]  2025-10-07T18:37:30.032Z - Tablero principal creado - ID: 68e55de9135c85bcea5c0f81, Nombre: application Dashboard
+[SUCCESS]  2025-10-07T18:37:30.429Z - Lista creada - ID: 68e55deafe9dcfd00ff222ca, Nombre: September Goals, Board: application Dashboard
+[INFO]     2025-10-07T18:37:35.658Z - Abriendo modal de mover lista para la lista en posición 0
+[INFO]     2025-10-07T18:37:36.871Z - Haciendo clic en "Copy list"
+[SUCCESS]  2025-10-07T18:37:37.118Z - Modal de copiar lista abierto exitosamente
+[INFO]     2025-10-07T18:37:37.119Z - Copiando lista sin cambiar nombre: "September Goals"
+[SUCCESS]  2025-10-07T18:37:37.215Z - Copia exitosa - Nombre de Lista copiada: ""
+[SUCCESS]  2025-10-07T18:37:38.092Z - Tablero principal eliminado - ID: 68e55de9135c85bcea5c0f81
+[SUCCESS]  2025-10-07T18:37:44.206Z - Tablero principal creado - ID: 68e55df83c17946276fe149d, Nombre: Health Board
+[INFO]     2025-10-07T18:37:45.360Z - Creando lista con nombre: "Lista insistent 48"
+[SUCCESS]  2025-10-07T18:37:48.710Z - Tablero principal eliminado - ID: 68e55df83c17946276fe149d
+[SUCCESS]  2025-10-07T18:37:55.348Z - Tablero principal creado - ID: 68e55e0342ae011d3b959622, Nombre: matrix clicks-and-mortar eyeballs
+[INFO]     2025-10-07T18:37:56.525Z - Creando lista con nombre: ""
+[SUCCESS]  2025-10-07T18:38:00.208Z - Tablero principal eliminado - ID: 68e55e0342ae011d3b959622
+[SUCCESS]  2025-10-07T18:38:07.669Z - Tablero principal creado - ID: 68e55e0fdfd6aa372a38aeab, Nombre: empower global supply-chains
+[INFO]     2025-10-07T18:38:08.753Z - Creando lista con nombre: "!@#$% Lista ^&*()"
+[SUCCESS]  2025-10-07T18:38:12.473Z - Tablero principal eliminado - ID: 68e55e0fdfd6aa372a38aeab
+[SUCCESS]  2025-10-07T18:38:20.132Z - Tablero principal creado - ID: 68e55e1c08b648f8b543e5f2, Nombre: Outdoors Board
+[INFO]     2025-10-07T18:38:21.316Z - Creando lista con nombre: "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
+[INFO]     2025-10-07T18:38:24.361Z -    container: y=190, height=88
+[INFO]     2025-10-07T18:38:24.362Z -    nameSpan: y=204, height=420
+[INFO]     2025-10-07T18:38:24.363Z -    addCardButton: y=238, height=32
+[INFO]     2025-10-07T18:38:24.364Z -    Resultado vertical: DESBORDA
+[WARN]     2025-10-07T18:38:24.609Z - Screenshot capturado: ui-bug-case-4-long-text-overflow-2025-10-07T18-38-24-366Z.png
+[WARN]     2025-10-07T18:38:24.610Z -    Descripción: Texto largo (512 chars) causa desbordamiento visual
+[INFO]     2025-10-07T18:38:24.610Z -    Ubicación: test-results/ui-bug-case-4-long-text-overflow-2025-10-07T18-38-24-366Z.png
+[SUCCESS]  2025-10-07T18:38:25.199Z - Tablero principal eliminado - ID: 68e55e1c08b648f8b543e5f2
+[SUCCESS]  2025-10-07T18:38:31.372Z - Tablero principal creado - ID: 68e55e278164fe5d80140292, Nombre: Proyecto convergence
+[INFO]     2025-10-07T18:38:32.471Z - Creando lista con nombre: "venture"
+[SUCCESS]  2025-10-07T18:38:35.654Z - Tablero principal eliminado - ID: 68e55e278164fe5d80140292
+[SUCCESS]  2025-10-07T18:38:42.171Z - Tablero principal creado - ID: 68e55e32b26866da5b330839, Nombre: capacitor Dashboard
+[INFO]     2025-10-07T18:38:43.274Z - Creando lista con nombre: "oak"
+[SUCCESS]  2025-10-07T18:38:46.408Z - Tablero principal eliminado - ID: 68e55e32b26866da5b330839
+[SUCCESS]  2025-10-07T18:38:53.942Z - Tablero principal creado - ID: 68e55e3d058b0a583268d383, Nombre: Music Board
+[INFO]     2025-10-07T18:38:55.016Z - Creando lista con nombre: "DUPLICATE:TaskList"
+[SUCCESS]  2025-10-07T18:38:58.412Z - Tablero principal eliminado - ID: 68e55e3d058b0a583268d383
+[SUCCESS]  2025-10-07T18:39:05.229Z - Tablero principal creado - ID: 68e55e49f3ab1e538b538029, Nombre: Team narrow eaglet
+[INFO]     2025-10-07T18:39:06.412Z - Creando lista con nombre: "SINGLE:A"
+[SUCCESS]  2025-10-07T18:39:10.496Z - Tablero principal eliminado - ID: 68e55e49f3ab1e538b538029
+[SUCCESS]  2025-10-07T18:39:16.472Z - Tablero principal creado - ID: 68e55e5473c89cc1a2ed3e26, Nombre: Team wet eviction
+[INFO]     2025-10-07T18:39:17.504Z - Creando lista con nombre: "   Espacios   "
+[SUCCESS]  2025-10-07T18:39:20.765Z - Tablero principal eliminado - ID: 68e55e5473c89cc1a2ed3e26
+[SUCCESS]  2025-10-07T18:39:28.160Z - Tablero principal creado - ID: 68e55e60573eb04ed9ae7f3d, Nombre: bus Dashboard
+[INFO]     2025-10-07T18:39:29.183Z - Creando lista con nombre: "fawn"
+[SUCCESS]  2025-10-07T18:39:33.106Z - Tablero principal eliminado - ID: 68e55e60573eb04ed9ae7f3d
+[SUCCESS]  2025-10-07T18:39:40.302Z - Tablero principal creado - ID: 68e55e6c55cbaf0dd2490a2f, Nombre: maximize viral applications
+[INFO]     2025-10-07T18:39:41.427Z - Creando lista con nombre: "TestListCamelCase"
+[SUCCESS]  2025-10-07T18:39:44.495Z - Tablero principal eliminado - ID: 68e55e6c55cbaf0dd2490a2f
+[SUCCESS]  2025-10-07T18:39:51.300Z - Tablero principal creado - ID: 68e55e77a01243409e378252, Nombre: Proyecto synergies
+[INFO]     2025-10-07T18:39:52.544Z - Creando lista con nombre: "INTERNATIONAL:日本語リスト"
+[SUCCESS]  2025-10-07T18:39:55.993Z - Tablero principal eliminado - ID: 68e55e77a01243409e378252
+[SUCCESS]  2025-10-07T18:40:03.126Z - Tablero principal creado - ID: 68e55e8263798e587cec0dfe, Nombre: Team forked standardization
+[INFO]     2025-10-07T18:40:04.328Z - Creando lista con nombre: "CANCEL:createList"
+[SUCCESS]  2025-10-07T18:40:07.919Z - Tablero principal eliminado - ID: 68e55e8263798e587cec0dfe
+[SUCCESS]  2025-10-07T18:40:15.142Z - Tablero principal creado - ID: 68e55e8f5be4cb92f4ffee01, Nombre: transmitter Dashboard
+[INFO]     2025-10-07T18:40:16.544Z - Creando lista con nombre: "NUMERIC:12345"
+[SUCCESS]  2025-10-07T18:40:19.921Z - Tablero principal eliminado - ID: 68e55e8f5be4cb92f4ffee01
+[SUCCESS]  2025-10-07T18:40:26.814Z - Tablero principal creado - ID: 68e55e9a8a655d0aa9acc455, Nombre: Industrial Board
+[INFO]     2025-10-07T18:40:27.857Z - Creando lista con nombre: "ore"
+[SUCCESS]  2025-10-07T18:40:31.919Z - Tablero principal eliminado - ID: 68e55e9a8a655d0aa9acc455
+[SUCCESS]  2025-10-07T18:40:39.632Z - Tablero principal creado - ID: 68e55ea7dffc716624e6ec79, Nombre: array Dashboard
+[SUCCESS]  2025-10-07T18:40:39.973Z - Lista creada - ID: 68e55ea70c0294e9f9f38eb1, Nombre: indexing matrix, Board: array Dashboard
+[INFO]     2025-10-07T18:40:41.215Z - Iniciando edición de lista: "indexing matrix" → "Lista constant 710"
+[INFO]     2025-10-07T18:40:44.076Z - Escribiendo el nuevo nombre...
+[SUCCESS]  2025-10-07T18:40:44.724Z - Edición de lista completada: "indexing matrix" → "Lista constant 710"
+[INFO]     2025-10-07T18:40:44.725Z - Verificando lista creada: "Lista constant 710"
+[SUCCESS]  2025-10-07T18:40:45.327Z - Tablero principal eliminado - ID: 68e55ea7dffc716624e6ec79
+[SUCCESS]  2025-10-07T18:40:52.704Z - Tablero principal creado - ID: 68e55eb410bedad47d287a7e, Nombre: Baby Board
+[SUCCESS]  2025-10-07T18:40:53.010Z - Lista creada - ID: 68e55eb5b9fb9912f69d21c2, Nombre: calculating driver, Board: Baby Board
+[INFO]     2025-10-07T18:40:54.077Z - Iniciando edición de lista: "calculating driver" → ""
+[INFO]     2025-10-07T18:40:56.543Z - Escribiendo el nuevo nombre...
+[SUCCESS]  2025-10-07T18:40:57.177Z - Edición de lista completada: "calculating driver" → ""
+[INFO]     2025-10-07T18:40:57.178Z - Verificando lista creada: "calculating driver"
+[SUCCESS]  2025-10-07T18:40:58.039Z - Tablero principal eliminado - ID: 68e55eb410bedad47d287a7e
+[SUCCESS]  2025-10-07T18:41:04.742Z - Tablero principal creado - ID: 68e55ec065c11fd8542ea0f5, Nombre: evolve scalable markets
+[SUCCESS]  2025-10-07T18:41:05.025Z - Lista creada - ID: 68e55ec19d6bd6886a944d3e, Nombre: Lista squiggly, Board: evolve scalable markets
+[INFO]     2025-10-07T18:41:06.056Z - Iniciando edición de lista: "Lista squiggly" → "!@#$% Lista ^&*()"
+[INFO]     2025-10-07T18:41:08.928Z - Escribiendo el nuevo nombre...
+[SUCCESS]  2025-10-07T18:41:09.684Z - Edición de lista completada: "Lista squiggly" → "!@#$% Lista ^&*()"
+[INFO]     2025-10-07T18:41:09.685Z - Verificando lista creada: "!@#$% Lista ^&*()"
+[SUCCESS]  2025-10-07T18:41:10.381Z - Tablero principal eliminado - ID: 68e55ec065c11fd8542ea0f5
+[SUCCESS]  2025-10-07T18:41:16.776Z - Tablero principal creado - ID: 68e55ecc908621ff1b288ddc, Nombre: Kids Board
+[SUCCESS]  2025-10-07T18:41:17.054Z - Lista creada - ID: 68e55ecdd7d51752e235fdf2, Nombre: Lista unimportant, Board: Kids Board
+[INFO]     2025-10-07T18:41:18.141Z - Iniciando edición de lista: "Lista unimportant" → "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
+[INFO]     2025-10-07T18:41:20.700Z - Escribiendo el nuevo nombre...
+[SUCCESS]  2025-10-07T18:41:21.477Z - Edición de lista completada: "Lista unimportant" → "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
+[INFO]     2025-10-07T18:41:21.478Z - Verificando lista creada: "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
+[INFO]     2025-10-07T18:41:21.780Z -    container: y=190, height=458
+[INFO]     2025-10-07T18:41:21.781Z -    nameSpan: y=204, height=420
+[INFO]     2025-10-07T18:41:21.782Z -    addCardButton: y=638, height=32
+[INFO]     2025-10-07T18:41:21.783Z -    Resultado vertical: DESBORDA
+[WARN]     2025-10-07T18:41:22.020Z - Screenshot capturado: ui-bug-case-4-long-text-overflow-2025-10-07T18-41-21-784Z.png
+[WARN]     2025-10-07T18:41:22.021Z -    Descripción: Texto largo (512 chars) causa desbordamiento visual
+[INFO]     2025-10-07T18:41:22.022Z -    Ubicación: test-results/ui-bug-case-4-long-text-overflow-2025-10-07T18-41-21-784Z.png
+[SUCCESS]  2025-10-07T18:41:22.626Z - Tablero principal eliminado - ID: 68e55ecc908621ff1b288ddc
+[SUCCESS]  2025-10-07T18:41:28.778Z - Tablero principal creado - ID: 68e55ed8449071c65b9fe13b, Nombre: monitor Dashboard
+[SUCCESS]  2025-10-07T18:41:29.083Z - Lista creada - ID: 68e55ed9072838592802b30a, Nombre: navigating alarm, Board: monitor Dashboard
+[INFO]     2025-10-07T18:41:34.369Z - Abriendo modal de mover lista para la lista en posición 0
+[INFO]     2025-10-07T18:41:35.571Z - Haciendo clic en "Move list"
+[SUCCESS]  2025-10-07T18:41:35.961Z - Modal de mover lista abierto exitosamente
+[INFO]     2025-10-07T18:41:35.962Z - Moviendo lista - Tablero: mismo, Posición: 3
+[INFO]     2025-10-07T18:41:37.083Z - Posición seleccionada: 3
+[SUCCESS]  2025-10-07T18:41:39.751Z - Lista movida exitosamente
+[INFO]     2025-10-07T18:41:39.752Z - Verificando que la lista "navigating alarm" está en la posición 2
+[INFO]     2025-10-07T18:41:41.799Z - Número de listas encontradas: 4
+[SUCCESS]  2025-10-07T18:41:41.822Z - Lista "navigating alarm" encontrada en posición 2
+[SUCCESS]  2025-10-07T18:41:42.525Z - Tablero principal eliminado - ID: 68e55ed8449071c65b9fe13b
+[SUCCESS]  2025-10-07T18:41:49.096Z - Tablero principal creado - ID: 68e55eec64d4339af495b9e1, Nombre: deliver interactive systems
+[SUCCESS]  2025-10-07T18:41:49.472Z - Lista creada - ID: 68e55eed470f070465e1c223, Nombre: May Goals, Board: deliver interactive systems
+[INFO]     2025-10-07T18:41:54.687Z - Abriendo modal de mover lista para la lista en posición 0
+[INFO]     2025-10-07T18:41:55.868Z - Haciendo clic en "Move list"
+[SUCCESS]  2025-10-07T18:41:56.385Z - Modal de mover lista abierto exitosamente
+[INFO]     2025-10-07T18:41:56.415Z - Verificando que la lista "May Goals" está en la posición 0
+[INFO]     2025-10-07T18:41:58.455Z - Número de listas encontradas: 4
+[SUCCESS]  2025-10-07T18:41:58.471Z - Lista "May Goals" encontrada en posición 0
+[SUCCESS]  2025-10-07T18:41:59.314Z - Tablero principal eliminado - ID: 68e55eec64d4339af495b9e1
+[SUCCESS]  2025-10-07T18:42:05.332Z - Tablero principal creado - ID: 68e55efd6ebb911e0c4f847a, Nombre: Proyecto experiences
+[SUCCESS]  2025-10-07T18:42:05.792Z - Tablero destino creado - ID: 68e55efdeb13d85457c5dfbc, Nombre: hard drive Dashboard
+[SUCCESS]  2025-10-07T18:42:06.072Z - Lista creada - ID: 68e55efe4caf295f5986192c, Nombre: Lista wry, Board: Proyecto experiences
+[SUCCESS]  2025-10-07T18:42:06.386Z - Lista destino creada - ID: 68e55efeeccb6ad14017eb10, Nombre: compressing pixel, Board: hard drive Dashboard
+[INFO]     2025-10-07T18:42:13.540Z - Verificando que la lista "Lista wry" está en la posición 0
+[INFO]     2025-10-07T18:42:15.633Z - Número de listas encontradas: 4
+[SUCCESS]  2025-10-07T18:42:15.649Z - Lista "Lista wry" encontrada en posición 0
+[INFO]     2025-10-07T18:42:15.650Z - Abriendo modal de mover lista para la lista en posición 0
+[INFO]     2025-10-07T18:42:16.828Z - Haciendo clic en "Move list"
+[SUCCESS]  2025-10-07T18:42:17.204Z - Modal de mover lista abierto exitosamente
+[INFO]     2025-10-07T18:42:17.205Z - Moviendo lista - Tablero: hard drive Dashboard, Posición: 2
+[INFO]     2025-10-07T18:42:18.857Z - Tablero seleccionado: hard drive Dashboard
+[INFO]     2025-10-07T18:42:20.282Z - Posición seleccionada: 2
+[SUCCESS]  2025-10-07T18:42:22.953Z - Lista movida exitosamente
+[INFO]     2025-10-07T18:42:31.445Z - Verificando que la lista "Lista wry" está en la posición 1
+[INFO]     2025-10-07T18:42:33.525Z - Número de listas encontradas: 5
+[SUCCESS]  2025-10-07T18:42:33.548Z - Lista "Lista wry" encontrada en posición 1
+[SUCCESS]  2025-10-07T18:42:34.478Z - Tablero destino eliminado - ID: 68e55efdeb13d85457c5dfbc
+[SUCCESS]  2025-10-07T18:42:35.126Z - Tablero principal eliminado - ID: 68e55efd6ebb911e0c4f847a
+[SUCCESS]  2025-10-07T18:42:41.130Z - Tablero principal creado - ID: 68e55f2019ce9bfd817a356d, Nombre: Team happy-go-lucky jet
+[SUCCESS]  2025-10-07T18:42:41.585Z - Tablero destino creado - ID: 68e55f2161f9a59a5add4fdc, Nombre: Team lumbering perspective
+[SUCCESS]  2025-10-07T18:42:42.189Z - Lista creada - ID: 68e55f2258a8a933ef06cb18, Nombre: action-items Tasks, Board: Team happy-go-lucky jet
+[INFO]     2025-10-07T18:42:49.274Z - Abriendo modal de mover lista para la lista en posición 0
+[INFO]     2025-10-07T18:42:50.512Z - Haciendo clic en "Move list"
+[SUCCESS]  2025-10-07T18:42:50.998Z - Modal de mover lista abierto exitosamente
+[INFO]     2025-10-07T18:42:50.999Z - Moviendo lista - Tablero: Team lumbering perspective, Posición: por defecto
+[INFO]     2025-10-07T18:42:52.690Z - Tablero seleccionado: Team lumbering perspective
+[SUCCESS]  2025-10-07T18:42:55.414Z - Lista movida exitosamente
+[INFO]     2025-10-07T18:43:03.162Z - Verificando que la lista "action-items Tasks" está en la posición 0
+[INFO]     2025-10-07T18:43:05.237Z - Número de listas encontradas: 4
+[SUCCESS]  2025-10-07T18:43:05.253Z - Lista "action-items Tasks" encontrada en posición 0
+[SUCCESS]  2025-10-07T18:43:06.053Z - Tablero destino eliminado - ID: 68e55f2161f9a59a5add4fdc
+[SUCCESS]  2025-10-07T18:43:06.689Z - Tablero principal eliminado - ID: 68e55f2019ce9bfd817a356d
+[SUCCESS]  2025-10-07T18:43:14.691Z - Tablero principal creado - ID: 68e55f42bd72678684297933, Nombre: architect scalable schemas
+[SUCCESS]  2025-10-07T18:43:15.520Z - Tablero destino creado - ID: 68e55f4385c2e0e615fd1e62, Nombre: card Dashboard
+[SUCCESS]  2025-10-07T18:43:15.801Z - Lista creada - ID: 68e55f430ce8bc90a15dedcb, Nombre: Lista brave, Board: architect scalable schemas
+[SUCCESS]  2025-10-07T18:43:16.192Z - Tarjeta creada - ID: 68e55f44836c866936526cd9, Nombre: Abbas crur traho venustas, Lista: Lista brave
+[INFO]     2025-10-07T18:43:23.620Z - Verificando que la tarjeta "Abbas crur traho venustas" existe en la lista "Lista brave"
+[SUCCESS]  2025-10-07T18:43:23.686Z - Tarjeta "Abbas crur traho venustas" encontrada en la lista "Lista brave"
+[INFO]     2025-10-07T18:43:23.687Z - Abriendo modal de mover lista para la lista en posición 0
+[INFO]     2025-10-07T18:43:24.838Z - Haciendo clic en "Move list"
+[SUCCESS]  2025-10-07T18:43:25.290Z - Modal de mover lista abierto exitosamente
+[INFO]     2025-10-07T18:43:25.291Z - Moviendo lista - Tablero: card Dashboard, Posición: por defecto
+[INFO]     2025-10-07T18:43:26.924Z - Tablero seleccionado: card Dashboard
+[SUCCESS]  2025-10-07T18:43:29.571Z - Lista movida exitosamente
+[INFO]     2025-10-07T18:43:36.935Z - Verificando que la tarjeta "Abbas crur traho venustas" existe en la lista "Lista brave"
+[SUCCESS]  2025-10-07T18:43:36.992Z - Tarjeta "Abbas crur traho venustas" encontrada en la lista "Lista brave"
+[SUCCESS]  2025-10-07T18:43:37.688Z - Tablero destino eliminado - ID: 68e55f4385c2e0e615fd1e62
+[SUCCESS]  2025-10-07T18:43:38.344Z - Tablero principal eliminado - ID: 68e55f42bd72678684297933
+[INFO]     2025-10-07T18:48:23.855Z - Creando un nuevo tablero: "Board for Tests - 1759862903855"
+[INFO]     2025-10-07T18:48:23.867Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:48:24.075Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:48:24.793Z - Tablero creado exitosamente: "Board for Tests - 1759862903855"
+[INFO]     2025-10-07T18:48:47.983Z - Creando un nuevo tablero: "Board for Tests - 1759862927983"
+[INFO]     2025-10-07T18:48:47.986Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:48:48.173Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:48:48.817Z - Tablero creado exitosamente: "Board for Tests - 1759862927983"
+[INFO]     2025-10-07T18:49:12.409Z - Creando un nuevo tablero: "Board for Tests - 1759862952409"
+[INFO]     2025-10-07T18:49:12.412Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:49:12.632Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:49:13.850Z - Tablero creado exitosamente: "Board for Tests - 1759862952409"
+[INFO]     2025-10-07T18:49:39.550Z - Creando un nuevo tablero: "Board for Tests - 1759862979550"
+[INFO]     2025-10-07T18:49:39.561Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:49:39.846Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:49:40.483Z - Tablero creado exitosamente: "Board for Tests - 1759862979550"
+[INFO]     2025-10-07T18:49:57.987Z - Creando un nuevo tablero: "Board for Tests - 1759862997987"
+[INFO]     2025-10-07T18:49:57.989Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:49:58.191Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:49:58.892Z - Tablero creado exitosamente: "Board for Tests - 1759862997987"
+[INFO]     2025-10-07T18:50:20.751Z - Creando un nuevo tablero: "Board for Tests - 1759863020751"
+[INFO]     2025-10-07T18:50:20.753Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:50:21.030Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:50:21.767Z - Tablero creado exitosamente: "Board for Tests - 1759863020751"
+[INFO]     2025-10-07T18:50:44.908Z - Creando un nuevo tablero: "Board for Tests - 1759863044908"
+[INFO]     2025-10-07T18:50:44.910Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:50:45.098Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:50:45.946Z - Tablero creado exitosamente: "Board for Tests - 1759863044908"
+[INFO]     2025-10-07T18:51:12.675Z - Creando un nuevo tablero: "Board for Tests - 1759863072675"
+[INFO]     2025-10-07T18:51:12.677Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:51:12.863Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:51:13.622Z - Tablero creado exitosamente: "Board for Tests - 1759863072675"
+[INFO]     2025-10-07T18:51:28.683Z - Creando un nuevo tablero: "Board for Tests - 1759863088683"
+[INFO]     2025-10-07T18:51:28.684Z - Abriendo modal para crear un tablero...
+[SUCCESS]  2025-10-07T18:51:28.858Z - Modal de creación abierto.
+[SUCCESS]  2025-10-07T18:51:29.555Z - Tablero creado exitosamente: "Board for Tests - 1759863088683"

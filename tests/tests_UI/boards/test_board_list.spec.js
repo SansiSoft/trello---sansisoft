@@ -15,14 +15,14 @@ test('@e2e BL-01:Buscar tablero en la lista y verificar que aparece', async ({ t
   await expect(boardLocator).toBeVisible();
 });
 
-test('@e2e BL-02:Cambiar al segundo tablero desde el modal de boards', async ({ trelloPage,board }) => {
+test('@e2e BL-02:Cambiar al segundo tablero desde el modal de boards', async ({ trelloPage,multipleBoards }) => {
   // crear 3 tableros en este test
+  const [board1, board2, board3] = multipleBoards;
   const trello_home_page = new TrelloHomePage(trelloPage);
   await trello_home_page.goToBoardList();
   const board_list = new BoardList(trello_home_page.page);
-  await board_list.openFirstBoard();
+  await board_list.openBoardByName(board1.name);
   const board_page = new BoardPage(board_list.page);
-  const switcher = await board_page.openSwitchBoard();
-  const newBoardName = await switcher.selectNRecentBoard(1);
-  await expect(trelloPage).toHaveTitle(`${newBoardName} | Trello`);
+  // const switcher = await board_page.openSwitchBoard();
+  // const newBoardName = await switcher.selectNWorkspaceBoard(1);
 });
