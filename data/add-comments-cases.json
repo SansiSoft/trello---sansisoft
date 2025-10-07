@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Añadir un comentario exitosamente",
+    "priority": "Alta",
+    "description": "Verificar que un usuario pueda añadir un comentario a una tarjeta y que aparezca en la lista de comentarios.",
+    "comment": "Mi primer comentario"
+  },
+  {
+    "id": 2,
+    "title": "Añadir un comentario vacío",
+    "priority": "Alta",
+    "description": "Comprobar que el sistema no permita enviar un comentario vacío y muestre un error o deshabilite el botón de enviar.",
+    "comment": "EMPTY"
+  },
+  {
+    "id": 3,
+    "title": "Añadir un comentario con caracteres especiales",
+    "priority": "Media",
+    "description": "Validar que el sistema acepte comentarios con caracteres especiales y se muestren correctamente en la interfaz.",
+    "comment": "SPECIAL:!@#$%^&*()_+{}[]"
+  },
+  {
+    "id": 4,
+    "title": "Añadir un comentario muy largo",
+    "priority": "Media",
+    "description": "Verificar que el sistema maneje comentarios de más de 1024 caracteres correctamente, truncando o bloqueando la entrada.",
+    "comment": "REPEAT:C:1200"
+  },
+  {
+    "id": 5,
+    "title": "Añadir un comentario con emojis",
+    "priority": "Baja",
+    "description": "Verificar que el sistema soporte emojis en los comentarios y se muestren correctamente en la UI.",
+    "comment": "Me gusta este 🎉🚀"
+  },
+  {
+    "id": 6,
+    "title": "Añadir un comentario con saltos de línea",
+    "priority": "Baja",
+    "description": "Comprobar que los comentarios multilinea se guarden y visualicen con el formato correcto.",
+    "comment": "Primera línea\nSegunda línea\nTercera línea"
+  }
+]

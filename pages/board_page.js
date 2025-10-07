@@ -1,6 +1,7 @@
 const { ColumnListComponent } = require('./components/column_list_component.js'); 
 const { clickButton, fillInput } = require('../utils/helpers_ui.js');
 const { logger } = require('../utils/logger.js');
+const { BoardSwitcher } = require('./components/board_switcher.js');
 
 class BoardPage {
     constructor(page) {
@@ -16,12 +17,22 @@ class BoardPage {
         this.isPublicButtonConfirm = this.page.getByText('Yes, make board public');
         this.listTitleInput = this.page.locator('textarea[data-testid="list-name-textarea"]'); 
         this.confirmTitleTitleButton = this.page.locator('button[data-testid="list-composer-add-list-button"]');
+        this.switchBoardButton = this.page.locator('button[data-testid="panel-nav-board-switcher-button"]');
+        this.listTitlesCSS = 'h2[data-testid="list-name"]'
+        this.createNewListBtnCSS = 'button[data-testid="list-composer-button"]'
     }
 
     async changeBoardName(newName){
         await this.nameBoard.click();
         await this.editBoardInput.fill(newName);
         await this.editBoardInput.press('Enter');
+    }
+
+   async openSwitchBoard() {
+        await this.page.keyboard.press('b');
+        const board_switcher = new BoardSwitcher(this.page);
+        await board_switcher.waitForOpen();
+        return board_switcher;
     }
 
     async goBack(){
@@ -75,7 +86,13 @@ class BoardPage {
     }
 
     async createAList(titleList) {
-        await fillInput(this.listTitleInput, titleList);
+        try {
+            await fillInput(this.listTitleInput, titleList);
+        }catch{
+            const createNewListBtn = await this.page.locator(this.createNewListBtnCSS);
+            await clickButton(createNewListBtn);
+            await fillInput(this.listTitleInput,nth(-1), titleList);
+        }
         await clickButton(this.confirmTitleTitleButton);
 
         // Esperar a que la lista aparezca
@@ -87,6 +104,11 @@ class BoardPage {
         // Caso constrario, lanza error locator.click: Target page, context or browser has been closed en el siguiente paso
         await this.page.waitForTimeout(1000);
         return new ColumnListComponent(this.page, titleList);
+    }
+
+    async getListTitles(){
+        const listTitlesLocator = this.page.locator(this.listTitlesCSS);
+        return listTitlesLocator.allTextContents();
     }
 
 }
