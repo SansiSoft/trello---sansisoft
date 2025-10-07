@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
     inputs:
       grep:
-        description: 'Etiqueta o patrón de tests a ejecutar (ej: @smoke, @regression, o vacío para todos)'
+        description: 'Etiqueta o patrón de tests a ejecutar (ej: @smoke, @positivo, o vacío para todos)'
         required: false
         default: ''
 
