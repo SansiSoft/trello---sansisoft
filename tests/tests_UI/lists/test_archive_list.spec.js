@@ -3,7 +3,7 @@ const { ListPage } = require('../../../pages/list_page');
 
 test.describe('Archivar listas', () => {
 
-  test('@smoke - Archivar lista exitosamente', async ({ trelloPage, board, list }) => {
+  test('@smoke @positivo - Archivar lista exitosamente', async ({ trelloPage, board, list }) => {
     const listPage = new ListPage(trelloPage);
     
     await trelloPage.goto(board.url);
@@ -15,7 +15,7 @@ test.describe('Archivar listas', () => {
     await listPage.expectListArchived(list.name);
   });
 
-  test('@smoke - Deshacer archivo de lista desde el modal', async ({ trelloPage, board, list }) => {
+  test('@smoke @positivo - Deshacer archivo de lista desde el modal', async ({ trelloPage, board, list }) => {
     const listPage = new ListPage(trelloPage);
     
     await trelloPage.goto(board.url);
