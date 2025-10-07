@@ -10,7 +10,8 @@ const rawListCases = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
 const createCases = processTestCases(rawListCases);
 
 for (const testCase of createCases) {
-  test(`${testCase.id} - ${testCase.title}`, async ({ trelloPage, board }, testInfo) => {
+  const marksString = testCase.marksUI?.map(mark => `@${mark}`).join(' ') || '';
+  test(`${marksString} ${testCase.id} - ${testCase.title}`, async ({ trelloPage, board }, testInfo) => {
     const listPage = new ListPage(trelloPage);
 
     // Ir al tablero creado en el fixture

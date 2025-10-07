@@ -30,19 +30,19 @@ test.describe('Copiar listas de tablero', () => {
     }
   };
   
-  test('Copiar lista dentro del mismo tablero con nuevo nombre', async ({ trelloPage, board, list }) => {
+  test('@smoke @postivo Copiar lista dentro del mismo tablero con nuevo nombre', async ({ trelloPage, board, list }) => {
     await copyAndValidateList({ trelloPage, board, list, newListName: list.name + '_copy', confirm: true });
   });
 
-  test('Copiar lista dentro del mismo tablero sin cambiar nombre', async ({ trelloPage, board, list }) => {
+  test('@smoke @postivo Copiar lista dentro del mismo tablero sin cambiar nombre', async ({ trelloPage, board, list }) => {
     await copyAndValidateList({ trelloPage, board, list, newListName: '', confirm: true });
   });
 
-  test('Copiar lista con una tarjeta', async ({ trelloPage, board, list, card }) => {
+  test('@smoke @postivo Copiar lista con una tarjeta', async ({ trelloPage, board, list, card }) => {
     await copyAndValidateList({ trelloPage, board, list, card, newListName: list.name + '_copy', confirm: true });
   });
 
-  test('Cancelar la acción de copiar lista', async ({ trelloPage, board, list }) => {
+  test('@smoke @negativo Cancelar la acción de copiar lista', async ({ trelloPage, board, list }) => {
     await copyAndValidateList({ trelloPage, board, list, newListName: '', confirm: false });
   });
 
