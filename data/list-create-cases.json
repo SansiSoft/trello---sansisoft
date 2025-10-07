@@ -4,104 +4,134 @@
     "title": "Crear lista con nombre válido",
     "priority": "Alta",
     "description": "Verificar que un usuario pueda crear una lista con un nombre válido y que se muestre correctamente en el tablero.",
-    "newName": "FAKER:listName"
+    "newName": "FAKER:listName",
+    "marksUI": ["smoke","positivo"],
+    "marksAPI": ["smoke","positivo"]
   },
   {
     "id": 2,
     "title": "Intentar crear lista sin nombre",
     "priority": "Alta",
     "description": "Comprobar que el sistema no permita crear una lista sin nombre, mostrando error o bloqueando la acción.",
-    "newName": "EMPTY"
+    "newName": "EMPTY",
+    "marksUI": ["bug","negativo"],
+    "marksAPI": ["bug","negativo"]
   },
   {
     "id": 3,
     "title": "Crear lista con caracteres especiales",
     "priority": "Media",
     "description": "Validar que el sistema acepte nombres de lista con caracteres especiales (ej: !@#$% Lista ^&*()) y se muestre correctamente en la UI.",
-    "newName": "SPECIAL:symbols"
+    "newName": "SPECIAL:symbols",
+    "marksUI": ["positivo"],
+    "marksAPI": ["positivo"]
   },
   {
     "id": 4,
     "title": "Crear lista con nombre muy largo",
     "priority": "Media",
     "description": "Verificar que al ingresar un nombre mayor a 512 caracteres, el sistema lo trunque o bloquee la entrada.",
-    "newName": "REPEAT:L:600"
+    "newName": "REPEAT:L:600",
+    "marksUI": ["positivo"],
+    "marksAPI": ["bug"]
   },
   {
     "id": 5,
     "title": "Crear múltiples listas consecutivamente",
     "priority": "Baja",
     "description": "Comprobar que un usuario pueda crear varias listas de forma consecutiva y todas se muestren en el tablero.",
-    "newName": "FAKER:multiList"
+    "newName": "FAKER:multiList",
+    "marksUI": ["positivo"],
+    "marksAPI": ["bug","positivo"]
   },
   {
     "id": 6,
     "title": "Crear lista y refrescar tablero",
     "priority": "Media",
     "description": "Verificar que la lista creada se mantenga visible después de refrescar la página.",
-    "newName": "FAKER:refreshList"
+    "newName": "FAKER:refreshList",
+    "marksUI": ["positivo"],
+    "marksAPI": ["positivo"]
   },
   {
     "id": 7,
     "title": "Crear lista con nombre duplicado",
     "priority": "Media",
     "description": "Comprobar que el sistema permita crear listas con el mismo nombre y que ambas aparezcan en el tablero.",
-    "newName": "DUPLICATE:TaskList"
+    "newName": "DUPLICATE:TaskList",
+    "marksUI": ["positivo"],
+    "marksAPI": ["positivo"]
   },
   {
     "id": 8,
     "title": "Crear lista con un solo carácter",
     "priority": "Baja",
     "description": "Validar que el sistema acepte un nombre de lista de un solo carácter (ej: A).",
-    "newName": "SINGLE:A"
+    "newName": "SINGLE:A",
+    "marksUI": ["positivo"],
+    "marksAPI": ["positivo"]
   },
   {
     "id": 9,
     "title": "Crear lista con espacios iniciales y finales",
     "priority": "Baja",
     "description": "Verificar que los espacios innecesarios al inicio o al final del nombre sean eliminados o normalizados.",
-    "newName": "   Espacios   "
+    "newName": "   Espacios   ",
+    "marksUI": ["positivo"],
+    "marksAPI": ["positivo"]
   },
   {
     "id": 10,
     "title": "Crear lista y moverla inmediatamente",
     "priority": "Media",
     "description": "Comprobar que una lista recién creada pueda moverse de posición en el tablero sin errores.",
-    "newName": "FAKER:movedList"
+    "newName": "FAKER:movedList",
+    "marksUI": ["positivo"],
+    "marksAPI": ["positivo"]
   },
   {
     "id": 11,
     "title": "Crear lista con combinación de mayúsculas y minúsculas",
     "priority": "Baja",
     "description": "Verificar que el sistema muestre correctamente listas con nombres que alternen mayúsculas y minúsculas.",
-    "newName": "TestListCamelCase"
+    "newName": "TestListCamelCase",
+    "marksUI": ["positivo"],
+    "marksAPI": ["positivo"]
   },
   {
     "id": 12,
     "title": "Crear lista con nombre en otro idioma",
     "priority": "Baja",
     "description": "Validar que se acepten nombres con caracteres de otros idiomas (ej: 日本語リスト, ListaEspañol, Список).",
-    "newName": "INTERNATIONAL:日本語リスト"
+    "newName": "INTERNATIONAL:日本語リスト",
+    "marksUI": ["positivo"],
+    "marksAPI": ["positivo"]
   },
   {
     "id": 13,
     "title": "Crear lista y cancelar la acción",
     "priority": "Media",
     "description": "Comprobar que al cancelar la acción de creación no aparezca ninguna lista nueva en el tablero.",
-    "newName": "CANCEL:createList"
+    "newName": "CANCEL:createList",
+    "marksUI": ["negativo"],
+    "marksAPI": ["negativo"]
   },
   {
     "id": 14,
     "title": "Crear lista con nombre numérico",
     "priority": "Baja",
     "description": "Verificar que el sistema acepte listas cuyo nombre sea solo un número (ej: 12345).",
-    "newName": "NUMERIC:12345"
+    "newName": "NUMERIC:12345",
+    "marksUI": ["positivo"],
+    "marksAPI": ["positivo"]
   },
   {
     "id": 15,
     "title": "Crear lista y verificar persistencia entre sesiones",
     "priority": "Alta",
     "description": "Comprobar que la lista creada se mantenga disponible al cerrar sesión y volver a iniciar.",
-    "newName": "FAKER:persistentList"
+    "newName": "FAKER:persistentList",
+    "marksUI": ["smoke","positivo"],
+    "marksAPI": ["smoke","positivo"]
   }
 ]

@@ -16,7 +16,8 @@ const API_TOKEN = process.env.TRELLO_TOKEN;
 test.describe('API - Crear listas (POST /lists)', () => {
 
   for (const testCase of listCases) {
-    test(`${testCase.id} - ${testCase.title}`, async ({ apiContext, apiBoard }) => {
+  const marksString = testCase.marksAPI?.map(mark => `@${mark}`).join(' ') || '';
+  test(`${marksString}${testCase.id} - ${testCase.title}`, async ({ apiContext, apiBoard }) => {
       const boardId =  apiBoard.id;
       const listName = testCase.name || generateListName();
 
@@ -39,6 +40,7 @@ test.describe('API - Crear listas (POST /lists)', () => {
                 description: `Se creó una lista con nombre vacío: "${response.name}"`,
                 evidence: JSON.stringify(response).slice(0, 500)
                 });
+                test.fail("bug conocido: Deberia dar error con nombre vacio");
             }
         }
 
@@ -52,6 +54,7 @@ test.describe('API - Crear listas (POST /lists)', () => {
                 description: `Se creó una lista con ${actualLength} caracteres`,
                 evidence: JSON.stringify(response).slice(0, 500)
                 });
+                test.fail("bug conocido: Se creo con mas de 512 caracteres");
             }
         }
 
@@ -64,6 +67,7 @@ test.describe('API - Crear listas (POST /lists)', () => {
                 description: `Se esperaba error 4xx pero se devolvio status 200`,
                 evidence: JSON.stringify(response).slice(0, 500)
             });
+            test.fail("bug conocido: API permitió crear varias listas (id invalido)");
         }
 
         // Casos “positivos” siguen usando expect
@@ -82,7 +86,7 @@ test.describe('API - Crear listas (POST /lists)', () => {
   }
 
   // Caso negativo adicional: token inválido
-  test('NEG-01 - Crear lista sin autenticación', async ({ apiBoard }) => {
+  test('@negativo NEG-01 - Crear lista sin autenticación', async ({ apiBoard }) => {
     const invalidApi = new TrelloAPI({
         key: API_KEY,
         token: 'invalid_token_12345',
