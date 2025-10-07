@@ -14,7 +14,7 @@
     "priority": "Alta",
     "description": "Comprobar que el sistema no permita crear una lista sin nombre, mostrando error o bloqueando la acción.",
     "newName": "EMPTY",
-    "marksUI": ["bug","negativo"],
+    "marksUI": ["negativo"],
     "marksAPI": ["bug","negativo"]
   },
   {
@@ -32,8 +32,8 @@
     "priority": "Media",
     "description": "Verificar que al ingresar un nombre mayor a 512 caracteres, el sistema lo trunque o bloquee la entrada.",
     "newName": "REPEAT:L:600",
-    "marksUI": ["positivo"],
-    "marksAPI": ["bug"]
+    "marksUI": ["positivo","bug"],
+    "marksAPI": ["positivo","bug"]
   },
   {
     "id": 5,
