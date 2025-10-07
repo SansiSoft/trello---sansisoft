@@ -17,8 +17,8 @@ test.beforeEach(async ({ trelloPage }) => {
 
 test.describe('Cambiando de visibilidad',()=>{
   const states = [
-    {id:'CB014' ,isPublic: true, label: 'Public' },
-    {id:'CB015', isWorkspace: true, label: 'Workspace' },
+    {id:'EB014' ,isPublic: true, label: 'Public' },
+    {id:'EB015', isWorkspace: true, label: 'Workspace' },
   ];
 
   for (const state of states) {
@@ -32,7 +32,7 @@ test.describe('Cambiando de visibilidad',()=>{
   }
 
 
-test('@smoke @e2e CB016: El board debe mantenerse en privado', async ({ trelloPage }) => {
+test('@smoke @e2e EB016: El board debe mantenerse en privado', async ({ trelloPage }) => {
   const boardPage = new BoardPage(trelloPage);
   await boardPage.openMenuButton.click();
   await boardPage.visibilityButton.click();
@@ -40,7 +40,7 @@ test('@smoke @e2e CB016: El board debe mantenerse en privado', async ({ trelloPa
 });
 
 
-test('@smoke @e2e CB017: Verificar que se edite el nombre del tablero en la lista de tableros', async ({ trelloPage,cleanupBoard }) => {
+test('@smoke @e2e EB017: Verificar que se edite el nombre del tablero en la lista de tableros', async ({ trelloPage,cleanupBoard }) => {
     const boardPage = new BoardPage(trelloPage);
     const newName = 'Edited Board Name ' + Date.now();
     await boardPage.changeBoardName(newName);
