@@ -15,14 +15,14 @@ test.beforeEach(async ({ trelloPage }) => {
 });
 
 
-test.describe('Cambiando los estados del tablero',()=>{
+test.describe('Cambiando de visibilidad',()=>{
   const states = [
-    { isPublic: true, label: 'Public' },
-    { isWorkspace: true, label: 'Workspace' },
+    {id:'CB014' ,isPublic: true, label: 'Public' },
+    {id:'CB015', isWorkspace: true, label: 'Workspace' },
   ];
 
   for (const state of states) {
-    test(`Verificar que se cambie la visibilidad a :  ${state.label}`, async ({ trelloPage }) => {
+    test(`@smoke @e2e${state.id}: Verificar que se cambie la visibilidad a :  ${state.label}`, async ({ trelloPage }) => {
       const boardPage = new BoardPage(trelloPage);
       await boardPage.changeBoardVisibility(state);
       await boardPage.openMenuButton.click();
@@ -30,9 +30,9 @@ test.describe('Cambiando los estados del tablero',()=>{
       await expect(boardPage.visibilityButton).toHaveText(new RegExp(state.label));
     });
   }
-})
 
-test('El board debe mantenerse en privado', async ({ trelloPage }) => {
+
+test('@smoke @e2e CB016: El board debe mantenerse en privado', async ({ trelloPage }) => {
   const boardPage = new BoardPage(trelloPage);
   await boardPage.openMenuButton.click();
   await boardPage.visibilityButton.click();
@@ -40,7 +40,7 @@ test('El board debe mantenerse en privado', async ({ trelloPage }) => {
 });
 
 
-test('Verificar que se edite el nombre del tablero en la lista de tableros', async ({ trelloPage,cleanupBoard }) => {
+test('@smoke @e2e CB017: Verificar que se edite el nombre del tablero en la lista de tableros', async ({ trelloPage,cleanupBoard }) => {
     const boardPage = new BoardPage(trelloPage);
     const newName = 'Edited Board Name ' + Date.now();
     await boardPage.changeBoardName(newName);
@@ -52,5 +52,7 @@ test('Verificar que se edite el nombre del tablero en la lista de tableros', asy
     await expect(boardLink).toHaveCount(1);
     cleanupBoard.registerBoard(newName);
 });
+
+})
 
 
