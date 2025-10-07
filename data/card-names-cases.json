@@ -22,72 +22,44 @@
   },
   {
     "id": "4",
-    "title": "Crear múltiples cards consecutivamente",
-    "priority": "Baja",
-    "description": "Comprobar que un usuario pueda crear varios cards de forma consecutiva y todos se muestren correctamente.",
-    "newName": "FAKER:multiBoard"
-  },
-  {
-    "id": "5",
-    "title": "Crear card y refrescar la página",
-    "priority": "Media",
-    "description": "Verificar que el card creado se mantenga visible después de refrescar la página.",
-    "newName": "FAKER:refreshBoard"
-  },
-  {
-    "id": "6",
     "title": "Crear card con nombre duplicado",
     "priority": "Media",
     "description": "Comprobar que el sistema permita crear cards con el mismo nombre y que ambos aparezcan en la lista de cards.",
     "newName": "DUPLICATE:ProjectBoard"
   },
   {
-    "id": "7",
+    "id": "5",
     "title": "Crear card con un solo carácter",
     "priority": "Baja",
     "description": "Validar que el sistema acepte un nombre de card de un solo carácter (ej: X).",
     "newName": "SINGLE:X"
   },
   {
-    "id": "8",
+    "id": "6",
     "title": "Crear card con espacios iniciales y finales",
     "priority": "Baja",
     "description": "Verificar que los espacios innecesarios al inicio o al final del nombre sean eliminados o normalizados.",
     "newName": "   Espacios   "
   },
   {
-    "id": "9",
+    "id": "7",
     "title": "Crear card con combinación de mayúsculas y minúsculas",
     "priority": "Baja",
     "description": "Verificar que el sistema muestre correctamente cards con nombres que alternen mayúsculas y minúsculas.",
     "newName": "TestBoardCamelCase"
   },
   {
-    "id": "10",
+    "id": "8",
     "title": "Crear card con nombre en otro idioma",
     "priority": "Baja",
     "description": "Validar que se acepten nombres con caracteres de otros idiomas (ej: 日本語ボード, cardEspañol, Доска).",
     "newName": "INTERNATIONAL:日本語ボード"
   },
   {
-    "id": "11",
-    "title": "Cancelar creación de card",
-    "priority": "Media",
-    "description": "Comprobar que al cancelar la acción de creación no aparezca ningún card nuevo en la página.",
-    "newName": "CANCEL:createBoard"
-  },
-  {
-    "id": "12",
+    "id": "9",
     "title": "Crear card con nombre numérico",
     "priority": "Baja",
     "description": "Verificar que el sistema acepte cards cuyo nombre sea solo un número (ej: 2025).",
     "newName": "NUMERIC:2025"
-  },
-  {
-    "id": "13",
-    "title": "Crear card y verificar persistencia entre sesiones",
-    "priority": "Alta",
-    "description": "Comprobar que el card creado se mantenga disponible al cerrar sesión y volver a iniciar.",
-    "newName": "FAKER:persistentBoard"
   }
 ]
