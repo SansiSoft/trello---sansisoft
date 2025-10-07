@@ -1,0 +1,29 @@
+{
+  "checklists": [
+    {
+      "title": "Checklist estándar",
+      "type": "work",
+      "description": "Título de checklist estándar."
+    },
+    {
+      "title": "Este es un título extremadamente largo diseñado para pruebas de estrés, con el objetivo de verificar cómo la interfaz de usuario maneja el desbordamiento de texto, los saltos de línea y la legibilidad general en diferentes resoluciones de pantalla.",
+      "type": "long_stress_test",
+      "description": "Prueba de título muy largo para verificar el manejo del UI."
+    },
+    {
+      "title": "Checklist con emojis 📋✅🔥🚀",
+      "type": "emojis",
+      "description": "Verifica el soporte de emojis."
+    },
+    {
+      "title": "Título con !@#$%^&*()_+-=[]{}|;:'\",.<>/?`~",
+      "type": "special_chars",
+      "description": "Prueba de un amplio rango de caracteres especiales."
+    },
+    {
+      "title": "Título con ñ, á, é, í, ó, ú, ü",
+      "type": "accents_and_ñ",
+      "description": "Verifica el correcto manejo de acentos y la letra ñ."
+    }
+  ]
+}

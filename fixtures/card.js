@@ -2,6 +2,7 @@
 const { test, expect } = require('./login.js');
 const { TrelloHomePage } = require('../pages/trello_home_page.js');
 const { CardPage } = require('../pages/card_page.js');
+const {BoardAPI} = require("../trello_api/modules/board_api");
 
 // Fixture para testing de cards
 const cardList = test.extend({
@@ -22,6 +23,7 @@ const cardList = test.extend({
         // Crear instancia de CardPage y pasarla al test
         const cardPage = new CardPage(trelloPage, cardTitle);
         await use(cardPage);
+        await trello_home_page.deleteBoard();
     },
 });
 
