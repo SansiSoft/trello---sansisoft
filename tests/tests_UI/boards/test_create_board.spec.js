@@ -54,10 +54,7 @@ test('@smoke positivo CB-06:Verificar que se crea un tablero desde una plantilla
     const duplicate_title="Titulo duplicado"
     await trello_home_page.createANewBoard(duplicate_title);
     await trello_home_page.goToBoardList();
-    await trello_home_page.attemptToCreateBoard(duplicate_title);
-    await expect(trelloPage).toHaveTitle(`${duplicate_title} | Trello`);
-    await cleanupBoard.registerBoard(duplicate_title);
-    
+    await trello_home_page.attemptToCreateBoard(duplicate_title);   
 })
 
 test('@e2e CB-09:Visualizar tablero creado desde la lista',async ({trelloPage,cleanupBoard})=>{

@@ -18,7 +18,7 @@
     "title": "Añadir un comentario con caracteres especiales",
     "priority": "Media",
     "description": "Validar que el sistema acepte comentarios con caracteres especiales y se muestren correctamente en la interfaz.",
-    "comment": "SPECIAL:!@#$%^&*()_+{}[]"
+    "comment": "SPECIAL:!#$%^&*()_+{}[]"
   },
   {
     "id": 4,

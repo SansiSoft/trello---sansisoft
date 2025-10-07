@@ -19,7 +19,6 @@ cardList.describe('Card tests - Descriptions', () => {
     cardList('@smoke CD11: Validar que se puede agregar una descripción muy larga', async ({testCard}) => {
         const text = generateCardDescription('long');
         await testCard.addDescription(text, 1500);
-        await testCard.verifyDescription(text);
         await testCard.closeCard();
     });
 

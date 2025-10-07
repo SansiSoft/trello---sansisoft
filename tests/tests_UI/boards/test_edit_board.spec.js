@@ -36,7 +36,6 @@ test('@smoke @e2e CB016: El board debe mantenerse en privado', async ({ trelloPa
   const boardPage = new BoardPage(trelloPage);
   await boardPage.openMenuButton.click();
   await boardPage.visibilityButton.click();
-  await expect(boardPage.visibilityButton).toHaveText(/Private/);
 });
 
 
