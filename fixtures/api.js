@@ -19,6 +19,7 @@ const test = base.extend({
       getList: api.getList.bind(api),
       getBoardLists: api.getBoardLists.bind(api),
       verifyToken: api.verifyToken.bind(api),
+      createList: api.createList.bind(api),
     };
 
     try {
