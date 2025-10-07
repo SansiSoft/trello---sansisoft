@@ -1,4 +1,4 @@
-const { test } = require('../../../fixtures/list');
+const { test, expect } = require('../../../fixtures/list');
 const { ListPage } = require('../../../pages/list_page');
 const { processTestCases, reportKnownBug, captureUIBug } = require('../../../utils/helpers');
 const path = require('path');
@@ -22,13 +22,13 @@ for (const testCase of createCases) {
     // Validaciones por caso
     if (testCase.id === 2) {
       // Caso vacío → no debería crearse lista
-    //   await listPage.expectListNotCreated();
-    const notCreated = await listPage.expectListNotCreated();
-    console.log('Lista creada?:', !notCreated); // false = no se creó, true = se creó
+      const listLocator = listPage.listByName(testCase.newName === 'EMPTY' ? '' : testCase.newName);
+      await expect(listLocator, `La lista "${testCase.newName}" no debería haberse creado`).toHaveCount(3);
     } else if (testCase.id === 4) {
       // Caso nombre largo → validar truncado a 512 chars
       const expectedName = testCase.newName.substring(0, 512);
-      await listPage.expectListName(expectedName);
+      const listLocator = listPage.listByName(expectedName);
+      await expect(listLocator, 'El nombre de la lista truncada no coincide').toHaveText(expectedName, { timeout: 10000 });
 
       // Revisión visual: overflow por nombre largo
       const layoutInfo = await listPage.checkLayoutIssues(expectedName);
@@ -52,29 +52,13 @@ for (const testCase of createCases) {
       }
     } else if (testCase.id === 13) {
       // Caso cancelar → no debería aparecer la lista
-      await listPage.expectListNotCreated();
+      const listLocator = listPage.listByName(testCase.newName === 'CANCEL:createList' ? '' : testCase.newName);
+      await expect(listLocator, `La lista "${testCase.newName}" no debería haberse creado`).toHaveCount(3);
     } else {
       // Todos los demás → debería aparecer la lista
-      await listPage.expectListName(testCase.newName);
+      const listLocator = listPage.listByName(testCase.newName);
+      await expect(listLocator, 'El nombre de la lista creada no coincide').toHaveText(testCase.newName, { timeout: 10000 });
     }
   });
 }
-// const { test, expect } = require('../../fixtures/list');
-// const { ListPage } = require('../../pages/list_page');
 
-// test('Crear lista con nombre válido', async ({ trelloPage, board }) => {
-//   const listPage = new ListPage(trelloPage);
-
-//   // 1️⃣ Abrir el tablero
-//   await trelloPage.goto(board.url);
-//   await trelloPage.waitForLoadState('networkidle');
-
-//   // 2️⃣ Nombre de la lista que quieres crear
-//   const listName = `Lista_UI_${Date.now()}`;
-
-//   // 3️⃣ Crear lista desde UI
-//   await listPage.createList(listName);
-
-//   // 4️⃣ Verificar que la lista aparece en el tablero
-//   await listPage.expectListName(listName);
-// });
