@@ -93,7 +93,48 @@ const test = base.extend({
         logger.error(`Error en teardown de board: ${err.message}`);
       }
     }
-  }
+  },
+    multipleBoards: async ({}, use) => {
+    const boards = [];
+    // Crear 3 tableros
+    for (let i = 1; i <= 3; i++) {
+      const uniqueId = Date.now() + i;
+      const boardName = `Board_Test_${uniqueId}`;
+      const resp = await fetch(
+        `https://api.trello.com/1/boards/?name=${boardName}&key=${API_KEY}&token=${API_TOKEN}`,
+        { method: 'POST' }
+      );
+      const board = await resp.json();
+
+      if (board.id) {
+        logger.success(`Board ${i} creado - ID: ${board.id}, Nombre: ${board.name}`);
+        boards.push(board);
+      } else {
+        logger.error(`Error al crear board ${i}: ${JSON.stringify(board)}`);
+      }
+    }
+
+    // Pasar los boards al test
+    await use(boards);
+
+    // 🧹 Limpieza
+    for (const board of boards) {
+      try {
+        const deleteResp = await fetch(
+          `https://api.trello.com/1/boards/${board.id}?key=${API_KEY}&token=${API_TOKEN}`,
+          { method: 'DELETE' }
+        );
+        if (deleteResp.ok) {
+          logger.success(`🧹 Board eliminado - ID: ${board.id}, Nombre: ${board.name}`);
+        } else {
+          logger.error(`Error al eliminar board - ID: ${board.id}`);
+        }
+      } catch (err) {
+        logger.error(`Error al eliminar board ${board.id}: ${err.message}`);
+      }
+    }
+  },
 });
+
 
 module.exports = { test, expect };
