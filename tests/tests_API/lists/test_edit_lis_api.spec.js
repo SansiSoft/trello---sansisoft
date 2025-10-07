@@ -13,7 +13,7 @@ const TrelloAPI = require('../../../utils/trello_api');
 test.describe('API - Editar nombres de listas', () => {
 
   for (const testCase of listCases) {
-    test(`${testCase.id} - ${testCase.title}`, async ({ apiContext, apiBoard, apiList }) => {
+    test(`@smoke ${testCase.id} - ${testCase.title}`, async ({ apiContext, apiBoard, apiList }) => {
       const originalName = apiList.name;
       
       logger.info(`\n API Test Case ${testCase.id}: "${testCase.title}"`);

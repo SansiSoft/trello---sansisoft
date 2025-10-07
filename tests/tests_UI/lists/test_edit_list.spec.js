@@ -10,7 +10,7 @@ const rawListCases = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
 const listCases = processTestCases(rawListCases);
 
 for (const testCase of listCases) {
-  test(`${testCase.id} - ${testCase.title}`, async ({ trelloPage, board, list }, testInfo) => {
+  test(`@smoke @positivo ${testCase.id} - ${testCase.title}`, async ({ trelloPage, board, list }, testInfo) => {
     const listPage = new ListPage(trelloPage);
 
     await trelloPage.goto(board.url);
