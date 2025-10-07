@@ -1,27 +1,19 @@
 const { test: base, expect } = require('@playwright/test');
-const { LoginPage } = require('../pages/login_page');
-require('dotenv').config();
+const path = require('path');
 
 const test = base.extend({
-  trelloPage: async ({ page }, use) => {
-    const loginPage = new LoginPage(page);
+  trelloPage: async ({ browser }, use) => {
+    const context = await browser.newContext({
+      storageState: path.join(__dirname, '../data/storageState.json'),
+    });
 
-    await loginPage.goto();
-    await loginPage.login(process.env.EMAIL, process.env.PASSWORD);
+    const page = await context.newPage();
+    await page.goto('https://trello.com');
+    await page.waitForLoadState('networkidle');
 
-    // Capturar la nueva pestaña de Trello
-    const [trelloPage] = await Promise.all([
-      page.waitForEvent('popup'),
-      loginPage.goToTrelloApp()
-    ]);
+    await use(page);
 
-    await trelloPage.waitForLoadState();
-    await expect(trelloPage).toHaveTitle(/Trello/);
-
-    // Pasar la página de Trello al test
-    await use(trelloPage);
-  }
+    await context.close();
+  },
 });
-
 module.exports = { test, expect };
-

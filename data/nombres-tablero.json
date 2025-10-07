@@ -1,0 +1,7 @@
+[
+  { "id": "CB-01", "title": "Nombre normal", "newName": "FAKER:word" },
+  { "id": "CB-02", "title": "Con caracteres especiales", "newName": "SPECIAL:mixed" },
+  { "id": "CB-03", "title": "Nombre unicode", "newName": "SPECIAL:unicode" },
+  { "id": "CB-04", "title": "Nombre de tablero largo pero valido", "newName": "REPEAT:A:50" }
+  
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "id": "CB-API01",
+    "title": "Crear tablero con nombre válido",
+    "priority": "Alta",
+    "description": "Verificar que un usuario pueda crear un tablero con un nombre válido y que se muestre correctamente en la página principal.",
+    "newName": "FAKER:boardName"
+  },
+  {
+    "id": "CB-API02",
+    "title": "Crear tablero con caracteres especiales",
+    "priority": "Media",
+    "description": "Validar que el sistema acepte nombres de tablero con caracteres especiales (ej: !@#$% Board ^&*()) y se muestre correctamente en la UI.",
+    "newName": "SPECIAL:symbols"
+  },
+  {
+    "id": "CB-API03",
+    "title": "Crear tablero con nombre muy largo",
+    "priority": "Media",
+    "description": "Verificar que al ingresar un nombre mayor a 512 caracteres, el sistema lo trunque o bloquee la entrada.",
+    "newName": "REPEAT:B:600"
+  },
+  {
+    "id": "CB-API04",
+    "title": "Crear múltiples tableros consecutivamente",
+    "priority": "Baja",
+    "description": "Comprobar que un usuario pueda crear varios tableros de forma consecutiva y todos se muestren correctamente.",
+    "newName": "FAKER:multiBoard"
+  },
+  {
+    "id": "CB-API05",
+    "title": "Crear tablero y refrescar la página",
+    "priority": "Media",
+    "description": "Verificar que el tablero creado se mantenga visible después de refrescar la página.",
+    "newName": "FAKER:refreshBoard"
+  },
+  {
+    "id": "CB-API06",
+    "title": "Crear tablero con nombre duplicado",
+    "priority": "Media",
+    "description": "Comprobar que el sistema permita crear tableros con el mismo nombre y que ambos aparezcan en la lista de tableros.",
+    "newName": "DUPLICATE:ProjectBoard"
+  },
+  {
+    "id": "CB-API07",
+    "title": "Crear tablero con un solo carácter",
+    "priority": "Baja",
+    "description": "Validar que el sistema acepte un nombre de tablero de un solo carácter (ej: X).",
+    "newName": "SINGLE:X"
+  },
+  {
+    "id": "CB-API08",
+    "title": "Crear tablero con espacios iniciales y finales",
+    "priority": "Baja",
+    "description": "Verificar que los espacios innecesarios al inicio o al final del nombre sean eliminados o normalizados.",
+    "newName": "   Espacios   "
+  },
+  {
+    "id": "CB-API09",
+    "title": "Crear tablero con combinación de mayúsculas y minúsculas",
+    "priority": "Baja",
+    "description": "Verificar que el sistema muestre correctamente tableros con nombres que alternen mayúsculas y minúsculas.",
+    "newName": "TestBoardCamelCase"
+  },
+  {
+    "id": "CB-API10",
+    "title": "Crear tablero con nombre en otro idioma",
+    "priority": "Baja",
+    "description": "Validar que se acepten nombres con caracteres de otros idiomas (ej: 日本語ボード, TableroEspañol, Доска).",
+    "newName": "INTERNATIONAL:日本語ボード"
+  },
+  {
+    "id": "CB-API11",
+    "title": "Cancelar creación de tablero",
+    "priority": "Media",
+    "description": "Comprobar que al cancelar la acción de creación no aparezca ningún tablero nuevo en la página.",
+    "newName": "CANCEL:createBoard"
+  },
+  {
+    "id": "CB-API12",
+    "title": "Crear tablero con nombre numérico",
+    "priority": "Baja",
+    "description": "Verificar que el sistema acepte tableros cuyo nombre sea solo un número (ej: 2025).",
+    "newName": "NUMERIC:2025"
+  },
+  {
+    "id": "CB-API13",
+    "title": "Crear tablero y verificar persistencia entre sesiones",
+    "priority": "Alta",
+    "description": "Comprobar que el tablero creado se mantenga disponible al cerrar sesión y volver a iniciar.",
+    "newName": "FAKER:persistentBoard"
+  }
+]

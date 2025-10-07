@@ -1,31 +1,32 @@
-import { ROUTES } from "../utils/routes";
+const { expect } = require('@playwright/test');
 
 class LoginPage {
+  /**
+   * @param {import('@playwright/test').Page} page
+   */
+  constructor(page) {
+    this.page = page;
+    this.usernameInput = page.locator('input[name="username"]');
+    this.passwordInput = page.locator('input[name="password"]');
+    this.loginButton = page.locator('#login-submit');
+  }
 
-    constructor(page) {
-        this.page = page; 
-        
-        this.emailInput = 'input#username-uid1';
-        this.continueBtn = 'button[data-testid="login-submit-idf-testid"]'  
-        this.passwordInput= 'input#password'; 
-    }
+  async goto() {
+    await this.page.goto('https://trello.com/login');
+  }
 
-    async goto() {
-        await this.page.goto(ROUTES.LOGIN);
-    }
+  async login(email, password) {
+    await this.usernameInput.waitFor({ timeout: 15000 });
+    await this.usernameInput.fill(email);
+    await this.loginButton.click();
 
-    async login(email, password) {
-        await this.page.fill(this.emailInput, email);
-        await this.page.click(this.continueBtn);
-        await this.page.fill(this.passwordInput, password);
-        await this.page.click(this.continueBtn);
-    }
+    await this.passwordInput.waitFor({ timeout: 15000 });
+    await this.passwordInput.fill(password);
+    await this.loginButton.click();
 
-    async goToTrelloApp() {
-        await this.page.locator('a:has-text("Trello")').first().click();
-    }
+    await this.page.waitForURL('**/boards', { timeout: 200000 });
+    await expect(this.page).toHaveURL(/boards/);
+  }
 }
 
-
 module.exports = { LoginPage };
-
